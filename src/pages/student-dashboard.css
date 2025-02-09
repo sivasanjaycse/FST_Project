@@ -1,0 +1,113 @@
+.dashboard-container {
+    text-align: center;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+  }
+  
+  .dashboard-menu {
+    margin: 20px 0;
+  }
+  
+  .menu-btn {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    margin: 5px;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  .menu-btn:hover {
+    background-color: #0056b3;
+  }
+  
+  .logout-btn {
+    background-color: #dc3545;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  .logout-btn:hover {
+    background-color: #a71d2a;
+  }
+  .Dean {
+    text-align: left; /* Aligns text to the left */
+    margin-left: 20px; /* Adds some left margin */
+    padding: 10px; /* Adds spacing inside the div */
+    border-left: 4px solid blue; /* Optional: Adds a left border for styling */
+  }
+  .Dean {
+    text-align: left;
+    padding: 20px;
+    margin: 20px;
+  }
+  
+  .dean-img {
+    float: left; /* Wrap text around image */
+    width: 150px; /* Adjust image size */
+    height: auto;
+    margin-right: 15px; /* Adds space between image and text */
+    border-radius: 10px; /* Optional: Rounds image corners */
+  }
+  
+  @media (max-width: 600px) {
+    .dean-img {
+      float: none; /* Disable float on smaller screens */
+      display: block;
+      margin: 0 auto 10px;
+    }
+  }
+  /* Table Container */
+.table-container {
+  margin: 20px auto;
+  width: 90%;
+  overflow-x: auto;
+}
+
+/* Styling the Table */
+.counsellor-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
+}
+
+/* Table Header */
+.counsellor-table thead {
+  background-color: #007bff;
+  color: white;
+}
+
+.counsellor-table th, .counsellor-table td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: left;
+}
+
+.counsellor-table th {
+  font-size: 16px;
+  text-transform: uppercase;
+}
+
+/* Table Row Hover Effect */
+.counsellor-table tbody tr:hover {
+  background-color: #f1f1f1;
+}
+
+/* Responsive Table */
+@media (max-width: 768px) {
+  .table-container {
+    width: 100%;
+    overflow-x: scroll;
+  }
+  .counsellor-table th, .counsellor-table td {
+    font-size: 14px;
+    padding: 8px;
+  }
+}
+
+    

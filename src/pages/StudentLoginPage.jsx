@@ -17,8 +17,14 @@ const StudentLoginPage = () => {
     }
     if (username === 'sample' || password === 'sample') 
     {
-    
+      localStorage.setItem('isLoggedIn', 'true'); // Save login state
+      alert('Login successful!');
+      window.location.href = '/student-dashboard'; 
     return;
+    }
+    else{
+      alert('login Unsucessful');
+      return;
     }
     };
 
