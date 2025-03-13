@@ -2,6 +2,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom'; // Importing Link from React Router
 import './IntroPage.css'; // Importing styles for the intro page
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faUserGraduate, faUserTie,faUsers} from '@fortawesome/free-solid-svg-icons';
+import { config } from '@fortawesome/fontawesome-svg-core';
+import '@fortawesome/fontawesome-svg-core/styles.css';
+
+// Prevent Font Awesome from dynamically adding its CSS
+config.autoAddCss = false;
 
 const IntroPage = () => {
   return (
@@ -14,17 +21,19 @@ const IntroPage = () => {
         
         <div className="login-buttons">
           <Link to="/student-login">
-            <button className="login-btn">Student &#x1F468;&#x200D;&#x1F393;
+            <button className="login-btn">
+              <FontAwesomeIcon icon={faUserGraduate} className="icon" /> Student
             </button>
           </Link>
-          <Link to ="/Mess Supervisor login"> 
-          <button className="login-btn">Mess Supervisor &#x1F477;&#x200D;&#x2642;
-            
-          </button>
+          <Link to="/Mess Supervisor login"> 
+            <button className="login-btn">
+            <FontAwesomeIcon icon={faUsers} className="icon" /> Mess Supervisor
+            </button>
           </Link>
-          <Link to="/Staff Login">
-          <button className="login-btn">Staff Login &#x1F468;&#x200D;&#x1F4BC;
-          </button>
+          <Link to="/Mess Administrator Login">
+            <button className="login-btn">
+            <FontAwesomeIcon icon={faUserTie} className="icon" /> Mess Administrator
+            </button>
           </Link>
         </div>
       </div>
