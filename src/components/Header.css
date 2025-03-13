@@ -1,35 +1,51 @@
 /* src/components/Header.css */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Montserrat:wght@700&display=swap');
 
 .header {
-    background-color: #333;
-    color: white;
-    padding: 20px;
-    text-align: center;
-  }
+    background: linear-gradient(135deg, rgba(51,51,51,0.95), rgba(31,31,31,0.95));
+    color: rgba(245,245,245,0.95);
+    padding: 1.5rem 2rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 1000;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
   
-  .title {
-    font-size: 2.5rem;
-    font-weight: bold;
-    margin: 0;
+.title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.2rem;
+    font-weight: 700;
     text-transform: uppercase;
-  }
-  
-  .nav-links {
-    list-style: none;
-    padding: 0;
-    margin: 10px 0 0;
-  }
-  
-  .nav-link {
-    color: white;
-    text-decoration: none;
-    font-size: 1.2rem;
-    margin: 0 15px;
-    padding: 5px 10px;
-    border-radius: 5px;
-  }
-  
-  .nav-link:hover {
-    background-color: #555;
-  }
+    color: rgba(245,245,245,0.95);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    letter-spacing: 1.5px;
+    margin: 0;
+    padding: 0.5rem 1rem;
+    position: relative;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+.title:hover {
+    transform: translateY(-2px);
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3);
+}
+
+.title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60%;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.5), transparent);
+    border-radius: 2px;
+}
+
   
