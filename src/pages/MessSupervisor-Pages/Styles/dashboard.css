@@ -1,14 +1,42 @@
+.supervisor-dashboard-page {
+    position: relative;
+    height: 100vh;
+    background: url('/src/Images/FOOD-BG.jpg') no-repeat center center fixed ;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    font-family: Arial, sans-serif;
+    background-color: #000;
+    width:105%;
+}
+
+.supervisor-dashboard-page::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.45);
+    z-index: 1;
+}
+.supervisor-announcement-container h1{
+    font-size: 2.5rem;
+}
 .supervisor-announcement-container{
     position: relative;
     z-index: 2;
     background-color: rgba(0, 0, 0, 0.65); /* Transparent black background */
-    padding: 20px;
+    padding: 1rem;
     border-radius: 10px;
-    width: 100%;
-    max-width: 700px;
-    margin-top:11rem;
+    width: 90%;
+    height:65%;
+    margin-top:10rem;
 }
 .supervisor-announcement-list
 {
-    align-items: right;
+    text-align: left;
 }
