@@ -4,3 +4,8 @@
     width: 100%;
     z-index: 1000;
   }
+.footer{
+  position:static;
+  bottom: 0;
+  width:100%;
+}

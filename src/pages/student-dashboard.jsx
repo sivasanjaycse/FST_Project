@@ -1,5 +1,6 @@
 import React from 'react';
 import { Form, useNavigate } from 'react-router-dom';
+import Footer from '../components/footer'
 import './student-dashboard.css'; // Import CSS for styling
 import deanImage from '../Images/Dean.png'
 
@@ -24,13 +25,15 @@ const StudentDashboard = () => {
   ];
 
   return (
+    <>
+    <div className="student-dashboard-page">
     <div className="dashboard-container">
       <h1>Welcome to CEG Hostels</h1>
-      <p>College of Engineering Guindy (CEG) Hostels was established to render outstanding services for the welfare of students. The Hostel not only believes in transparent administration but also in establishing sound systems and procedures and implementation of the same to achieve the goal. Over the period of time, the CEG Hostels has established such systems, procedures and rules for an effective administration. The CEG Hostels is established for the welfare of the students and is under the direct control of the Institution. CEG Hostels comprises of 22 blocks (located at CEG Campus), out of which boys are accommodated in 14 Blocks and Girls in 8 Blocks. All the blocks are named as the Tamil flowers name in India. In addition to this, all the hostel blocks provide the green environment, surrounded by the trees where it provides the peaceful and friendly environment to the students, along with the peaceful chirping of birds. The overall supervision of the CEG hostel management consists of Warden, Executive warden and Deputy wardens who are the faculty members of the College of Engineering Guindy across various departments. The Hostel office is functioning with the office staff, where executive warden will head the administration of the hostel related activities. Apart from this, hostel council consists of Warden, Executive warden, Deputy block warden, Resident Counsellors, Student chairman and block secretaries from all the blocks to take a look into various hostel related issues. For each mess, the mess secretary, mess provision in-charge is elected by the students will ensure the proper maintenance of the mess and other mess related activities like cleanliness, hygiene in mess hall and surroundings.</p>
+      <p className='blackTxt'>College of Engineering Guindy (CEG) Hostels was established to render outstanding services for the welfare of students. The Hostel not only believes in transparent administration but also in establishing sound systems and procedures and implementation of the same to achieve the goal. Over the period of time, the CEG Hostels has established such systems, procedures and rules for an effective administration. The CEG Hostels is established for the welfare of the students and is under the direct control of the Institution. CEG Hostels comprises of 22 blocks (located at CEG Campus), out of which boys are accommodated in 14 Blocks and Girls in 8 Blocks. All the blocks are named as the Tamil flowers name in India. In addition to this, all the hostel blocks provide the green environment, surrounded by the trees where it provides the peaceful and friendly environment to the students, along with the peaceful chirping of birds. The overall supervision of the CEG hostel management consists of Warden, Executive warden and Deputy wardens who are the faculty members of the College of Engineering Guindy across various departments. The Hostel office is functioning with the office staff, where executive warden will head the administration of the hostel related activities. Apart from this, hostel council consists of Warden, Executive warden, Deputy block warden, Resident Counsellors, Student chairman and block secretaries from all the blocks to take a look into various hostel related issues. For each mess, the mess secretary, mess provision in-charge is elected by the students will ensure the proper maintenance of the mess and other mess related activities like cleanliness, hygiene in mess hall and surroundings.</p>
       <div class="Dean"><h2>Dean's Message</h2>
       <h3 color='blue'>Dr.K.S EASWARAKUMAR</h3></div>
       <img src={deanImage} alt="Dean" className="dean-img" />
-      <p>Greetings! It’s my great pleasure to welcome all the College of Engineering Guindy hostel residents to CEG Hostel, where we provide the best facilities and homely environment for you throughout the CEG life. We strive to nurture and rebuild an atmosphere where every student feels welcome home vibe at the hostel. In a day’s course a student spends only two fold times more occasional stay at the hostel than the classroom premises, for which we extent a worry-free environment to enable them on concentrating their studies to attain the successful carrier in their life. The natural beauty of our hostel campus is fully surrounded by the trees which give the pleasant and green pollution free environment for the students to develop their academic life in a healthy way.
+      <p className='blackTxt'>Greetings! It’s my great pleasure to welcome all the College of Engineering Guindy hostel residents to CEG Hostel, where we provide the best facilities and homely environment for you throughout the CEG life. We strive to nurture and rebuild an atmosphere where every student feels welcome home vibe at the hostel. In a day’s course a student spends only two fold times more occasional stay at the hostel than the classroom premises, for which we extent a worry-free environment to enable them on concentrating their studies to attain the successful carrier in their life. The natural beauty of our hostel campus is fully surrounded by the trees which give the pleasant and green pollution free environment for the students to develop their academic life in a healthy way.
 
 The CEG Hostels provides the facilities to the students with uninterrupted power supply, Wi-Fi, laundry, student amenities centre, coffee hut, smart projector hall, medical support, gym, library for hostel students, comfortable study rooms, quality food and the freedom to roam the green campus. As a part of green initiative and to reduce the energy dependence, we have a biogas plant running in the Mega mess for cooking purposes as a modern form energy which can be produced from the food and vegetable wastages.
 
@@ -72,6 +75,8 @@ We strongly recommend you to take full part in the hostel culture, and never mis
 
       <button className="logout-btn" onClick={handleLogout}>Logout</button>
     </div>
+    </div>
+    </>
   );
 };
 

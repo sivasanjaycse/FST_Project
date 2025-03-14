@@ -1,9 +1,38 @@
+/*.student-dashboard-page{
+  margin-top: 100 px;
+  position: relative;
+  height: 100vh;
+  background: url('/src/Images/FOOD-BG.jpg') no-repeat center center fixed;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  font-family: Arial, sans-serif;
+  background-color: #000;
+}
+.student-dashboard-page::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.45);
+  z-index: 1;
+}*/
 .dashboard-container {
+  color: #000;
+    position: relative;
+    z-index: 2;
     text-align: center;
     padding: 20px;
     font-family: Arial, sans-serif;
   }
-  
+  .blackTxt{
+    color:black;
+  }
   .dashboard-menu {
     margin: 20px 0;
   }
