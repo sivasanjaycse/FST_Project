@@ -10,6 +10,7 @@ import IntroPage from './pages/IntroPage'
 import MessSupervisorLogin from './pages/MessSupervisorLogin'
 import MessAdminLoginPage from './pages/MessAdminLogin'
 import MessSupervisorDashboardPage from './pages/MessSupervisor-Pages/JSX-Pages/MessSupervisorDashboard'
+import MessSupervisorDailyLogPage from './pages/MessSupervisor-Pages/JSX-Pages/MessSupervisorDailyLog'
 function App() 
 {
   return (
@@ -23,6 +24,7 @@ function App()
         <Route path="/student-dashboard" element={<StudentDashboard />} />
         <Route path="/Mess Supervisor login" element={<MessSupervisorLogin/>}/>
         <Route path="/Mess Supervisor Dashboard" element={<MessSupervisorDashboardPage/>}/>
+        <Route path="/Mess Supervisor DailyLog" element={<MessSupervisorDailyLogPage/>}/>
         <Route path='/Mess Administrator Login' element={<MessAdminLoginPage/>}/>
       </Routes>
     </Router>
