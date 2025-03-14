@@ -1,0 +1,50 @@
+
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow-x: hidden; /* Force hiding extra width */
+}
+
+.help-page {
+    position: relative;
+    width: 100%;
+    min-height: 100vh; /* Full-screen height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url('/src/Images/FOOD-BG.jpg') no-repeat center center/cover;
+}
+
+/* White Transparent Overlay */
+.help-page::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.65); /* White transparent layer */
+}
+
+/* Content Container */
+.help-container {
+    margin-top: 10rem;
+    margin-bottom:1rem;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.8); /* Slightly stronger white for readability */
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    font-family: 'Poppins', sans-serif;
+    z-index: 2;
+    position: relative; /* Ensures it stays above the overlay */
+    width: 30%;
+}
+.help-content{
+    color:black;
+}
+.help-heading{
+    color:black;
+    font-size:1.5rem;
+    font-weight:bold;
+}
