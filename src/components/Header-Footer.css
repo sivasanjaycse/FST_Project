@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Montserrat:wght@700&display=swap');
 
 .header {
-    background: linear-gradient(135deg, rgba(51,51,51,0.95), rgba(31,31,31,0.95));
+    background: linear-gradient(135deg, rgba(51,51,51,1), rgba(31,31,31,1));
     color: rgba(245,245,245,0.95);
     padding: 1.5rem 2rem;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
@@ -12,6 +12,7 @@
     position: relative;
     z-index: 1000;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    margin-bottom: 20px;
 }
   
 .title {
@@ -48,4 +49,23 @@
     border-radius: 2px;
 }
 
+.footer {
+    background: rgb(51,51,51);
+    color: rgba(245,245,245,0.95);
+    padding: 1.5rem 2rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 1000;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    margin-top: 20px;
+}
+
+.extro {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+}
   

@@ -1,6 +1,7 @@
 .intro-page {
+    position: relative;
     height: 100vh;
-    background: url('https://via.placeholder.com/1500x800') no-repeat center center fixed;
+    background: url('/src/Images/FOOD-BG.jpg') no-repeat center center fixed;
     background-size: cover;
     display: flex;
     justify-content: center;
@@ -8,33 +9,49 @@
     text-align: center;
     color: white;
     font-family: Arial, sans-serif;
-  }
-  
-  .intro-content {
-    background-color: rgba(0, 0, 0, 0.6); /* Transparent black background */
+    background-color: #000;
+}
+
+.intro-page::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.45);
+    z-index: 1;
+}
+
+.intro-content {
+    position: relative;
+    z-index: 2;
+    background-color: rgba(0, 0, 0, 0.65); /* Transparent black background */
     padding: 30px;
     border-radius: 10px;
     width: 100%;
     max-width: 700px;
-  }
-  
-  h1 {
+}
+
+h1 {
     font-size: 3rem;
     margin-bottom: 20px;
-  }
-  
-  p {
+}
+
+p {
     font-size: 1.2rem;
     margin-bottom: 30px;
-  }
-  
-  .login-buttons {
+    color: rgba(245,245,245,0.95);
+    text-align: justify;
+}
+
+.login-buttons {
     display: flex;
     justify-content: space-around;
     gap: 20px;
-  }
-  
-  .login-btn {
+}
+
+.login-btn {
     padding: 15px 30px;
     font-size: 1.2rem;
     background-color: #4CAF50;
@@ -44,19 +61,19 @@
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
     cursor: pointer;
     transition: transform 0.2s, box-shadow 0.3s;
-  }
-  
-  .login-btn .icon {
+}
+
+.login-btn .icon {
     font-size: 1.5rem;
-  }
-  
-  .login-btn:hover {
+}
+
+.login-btn:hover {
     transform: translateY(-5px);
     box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
-  }
-  
-  .login-btn:active {
+}
+
+.login-btn:active {
     transform: translateY(2px);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-  }
+}
   

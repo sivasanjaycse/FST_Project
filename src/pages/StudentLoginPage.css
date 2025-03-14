@@ -1,15 +1,34 @@
 /* src/pages/StudentLoginPage.css */
 .login-page {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background: #f0f4f8;
-    font-family: Arial, sans-serif;
+  position: relative;
+  height: 100vh;
+  background: url('/src/Images/FOOD-BG.jpg') no-repeat center center fixed;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  font-family: Arial, sans-serif;
+  background-color: #000;
   }
+
+  .login-page::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.45);
+    z-index: 1;
+}
+
   
   .login-container {
-    background-color: white;
+    position: relative;
+    z-index: 2;
+    background-color: rgba(0, 0, 0, 0.65);
     padding: 30px;
     border-radius: 10px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
@@ -35,7 +54,7 @@
   }
   
   .input-group input {
-    width: 100%;
+    width: 95%;
     padding: 10px;
     font-size: 1rem;
     border-radius: 5px;

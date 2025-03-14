@@ -1,5 +1,7 @@
 // src/pages/StudentLoginPage.jsx
 import React, { useState } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faUser, faLock} from '@fortawesome/free-solid-svg-icons';
 import './StudentLoginPage.css'; // Importing the styles for the login page
 
 const MessSupervisorLogin = () => {
@@ -23,11 +25,11 @@ const MessSupervisorLogin = () => {
   return (
     <div className="login-page">
       <div className="login-container">
-        <h2>Mess Supervisor Login</h2>
+        <h2><FontAwesomeIcon icon={faUser} className="icon" /> Mess Supervisor Login</h2>
         {error && <p className="error-message">{error}</p>}
         <form onSubmit={handleSubmit} className="login-form">
           <div className="input-group">
-            <label htmlFor="username">Username</label>
+            <label htmlFor="username"><FontAwesomeIcon icon={faUser} className="icon" /> Username</label>
             <input 
               type="text" 
               id="username" 
@@ -38,7 +40,7 @@ const MessSupervisorLogin = () => {
           </div>
 
           <div className="input-group">
-            <label htmlFor="password">Password</label>
+            <label htmlFor="password"><FontAwesomeIcon icon={faLock} className="icon" /> Password</label>
             <input 
               type="password" 
               id="password" 
