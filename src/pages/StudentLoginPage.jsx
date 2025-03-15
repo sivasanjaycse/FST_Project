@@ -2,7 +2,6 @@
 import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUserGraduate, faLock} from '@fortawesome/free-solid-svg-icons';
-import Footer from '../components/footer'
 import './StudentLoginPage.css'; // Importing the styles for the login page
 
 const StudentLoginPage = () => {
@@ -64,7 +63,6 @@ const StudentLoginPage = () => {
         </form>
       </div>
     </div>
-    <Footer/>
     </>
   );
 };

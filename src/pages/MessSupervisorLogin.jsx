@@ -19,6 +19,7 @@ const MessSupervisorLogin = () => {
     }
 
     // You can replace this with actual login logic
+    window.location.href = '/Mess Supervisor Dashboard'
     console.log('MessSupervisor Logged in:', { username, password });
   };
 

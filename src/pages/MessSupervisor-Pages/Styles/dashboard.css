@@ -1,0 +1,14 @@
+.supervisor-announcement-container{
+    position: relative;
+    z-index: 2;
+    background-color: rgba(0, 0, 0, 0.65); /* Transparent black background */
+    padding: 20px;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 700px;
+    margin-top:11rem;
+}
+.supervisor-announcement-list
+{
+    align-items: right;
+}

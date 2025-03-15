@@ -16,7 +16,11 @@
     "font-awesome": "^4.7.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "react-router-dom": "^7.1.5"
+    "react-router-dom": "^7.1.5",
+    "@mui/material": "^5.x.x",
+  "@mui/icons-material": "^5.x.x",
+  "@emotion/react": "^11.x.x",
+  "@emotion/styled": "^11.x.x"
   },
   "devDependencies": {
     "@eslint/js": "^9.19.0",
