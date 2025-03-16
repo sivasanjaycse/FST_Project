@@ -8,6 +8,7 @@ app.use(express.json());
 
 const groceriesFilePath = "./groceries.json";
 const menuFilePath = "./menu.json"; // Added menu file path
+const feedbackFile = "./feedback.json";
 
 // Read JSON file utility function
 const readJSONFile = (filePath) => {
@@ -93,5 +94,79 @@ app.post("/update-menu", (req, res) => {
   writeJSONFile(menuFilePath, newData);
   res.json({ message: "Menu updated successfully" });
 });
+const readFeedback = () => {
+  const data = fs.readFileSync(feedbackFile);
+  return JSON.parse(data);
+};
 
+app.get("/feedback", (req, res) => {
+  const { date } = req.query;
+  const feedback = readFeedback().filter((item) => item.date === date);
+
+  if (feedback.length === 0) {
+    return res.status(200).json({ message: "No feedback available" });
+  }
+
+  const totalMainDish = feedback.reduce(
+    (sum, item) => sum + item.main_dish_rating,
+    0
+  );
+  const totalSideDish = feedback.reduce(
+    (sum, item) => sum + item.side_dish_rating,
+    0
+  );
+  const totalOverall = feedback.reduce(
+    (sum, item) => sum + item.overall_rating,
+    0
+  );
+
+  const averageMainDish = (totalMainDish / feedback.length).toFixed(2);
+  const averageSideDish = (totalSideDish / feedback.length).toFixed(2);
+  const averageOverall = (totalOverall / feedback.length).toFixed(2);
+
+  const bestReview = feedback.reduce((a, b) =>
+    a.review.length > b.review.length ? a : b
+  );
+  const worstReview = feedback.reduce((a, b) =>
+    a.review.length < b.review.length ? a : b
+  );
+
+  res.json({
+    averageMainDish,
+    averageSideDish,
+    averageOverall,
+    bestReview: bestReview.review,
+    worstReview: worstReview.review,
+  });
+});
+const DATA_FILE = "dailyLogs.json";
+
+// Read daily logs
+app.get("/daily-logs", (req, res) => {
+  fs.readFile(DATA_FILE, "utf8", (err, data) => {
+    if (err) return res.status(500).json({ error: "Error reading data" });
+    res.json(JSON.parse(data));
+  });
+});
+
+// Add a new log entry
+app.post("/daily-logs", (req, res) => {
+  const { date, studentCount } = req.body;
+
+  if (!date || !studentCount) {
+    return res.status(400).json({ error: "Date and student count required" });
+  }
+
+  fs.readFile(DATA_FILE, "utf8", (err, data) => {
+    if (err) return res.status(500).json({ error: "Error reading data" });
+
+    let logs = JSON.parse(data);
+    logs.push({ date, studentCount });
+
+    fs.writeFile(DATA_FILE, JSON.stringify(logs, null, 2), (writeErr) => {
+      if (writeErr) return res.status(500).json({ error: "Error saving data" });
+      res.json({ message: "Log added successfully", logs });
+    });
+  });
+});
 app.listen(5000, () => console.log("Server running on port 5000"));

@@ -17,7 +17,7 @@ const SupervisorNavbar = () => {
       <NavLink to="/Mess Supervisor Menu" className="nav-item">
         Mess Menu
       </NavLink>
-      <NavLink to="/feedbacks" className="nav-item">
+      <NavLink to="/Mess Supervisor Feedback" className="nav-item">
         Feedbacks
       </NavLink>
       <NavLink to="/Mess Supervisor Help" className="nav-item">

@@ -1,157 +1,172 @@
-
-html, body {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    overflow-x: hidden; /* Force hiding extra width */
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden; /* Force hiding extra width */
 }
 
 .daily-log-page {
-    position: relative;
-    width: 100%;
-    min-height: 100vh; /* Full-screen height */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: url('/src/Images/FOOD-BG.jpg') no-repeat center center/cover;
+  position: relative;
+  width: 100%;
+  min-height: 100vh; /* Full-screen height */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url("/src/Images/FOOD-BG.jpg") no-repeat center center/cover;
 }
 
 /* White Transparent Overlay */
 .daily-log-page::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.65); /* White transparent layer */
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.65); /* White transparent layer */
 }
 
 /* Content Container */
 .daily-log-container {
-    margin-top: 10rem;
-    margin-bottom:1rem;
-    padding: 20px;
-    background: rgba(255, 255, 255, 0.8); /* Slightly stronger white for readability */
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    font-family: 'Poppins', sans-serif;
-    z-index: 2;
-    position: relative; /* Ensures it stays above the overlay */
-    width: 60%;
+  margin-top: 10rem;
+  margin-bottom: 1rem;
+  padding: 20px;
+  background: rgba(
+    255,
+    255,
+    255,
+    0.8
+  ); /* Slightly stronger white for readability */
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  font-family: "Poppins", sans-serif;
+  z-index: 2;
+  position: relative; /* Ensures it stays above the overlay */
+  width: 60%;
 }
 
 /* Section Titles */
 .section-title {
-    font-size: 1.5rem;
-    font-weight: 600;
-    color: #2E7D32; /* Dark green */
-    margin-bottom: 10px;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #2e7d32; /* Dark green */
+  margin-bottom: 10px;
 }
 
 /* Buttons */
-.log-btn, .download-btn {
-    background: #2E7D32; /* Green */
-    color: white;
-    padding: 10px 20px;
-    font-size: 1rem;
-    font-weight: 600;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: 0.3s ease-in-out;
+.log-btn,
+.download-btn {
+  background: #2e7d32; /* Green */
+  color: white;
+  padding: 10px 20px;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
 }
 
-.log-btn:hover, .download-btn:hover {
-    background: #1B5E20; /* Darker green */
+.log-btn:hover,
+.download-btn:hover {
+  background: #1b5e20; /* Darker green */
 }
 
 /* Date Picker */
 .date-picker {
-    padding: 8px;
-    font-size: 1rem;
-    border: 2px solid #757575; /* Medium Grey */
-    border-radius: 5px;
-    margin-right: 10px;
+  padding: 8px;
+  font-size: 1rem;
+  border: 2px solid #757575; /* Medium Grey */
+  border-radius: 5px;
+  margin-right: 10px;
 }
 
 /* Table Styles */
+
 .log-table {
-    margin-left: 2rem;
-    width: 50%;
-    border-collapse: collapse;
-    background: white;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 0 auto; /* Center horizontally */
+  width: 50%;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.log-table th, .log-table td {
-    padding: 12px;
-    border: 1px solid #ddd;
-    text-align: center;
+/* Center both buttons */
+.log-section,
+.waste-management {
+  text-align: center; /* Center elements inside these sections */
+}
+
+.log-table th,
+.log-table td {
+  padding: 12px;
+  border: 1px solid #ddd;
+  text-align: center;
 }
 
 .log-table th {
-    background: #757575; /* Medium grey */
-    color: white;
+  background: #757575; /* Medium grey */
+  color: white;
 }
 
 .log-table tr:nth-child(even) {
-    background: #e0e0e0; /* Light grey */
+  background: #e0e0e0; /* Light grey */
 }
 
 /* Modal Styles */
 .modal-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
-  }
-  
-  .modal-box {
-    background: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-    text-align: center;
-    width: 300px;
-  }
-  
-  .modal-input {
-    width: 80%;
-    padding: 8px;
-    margin: 10px 0;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-  }
-  
-  .modal-actions {
-    display: flex;
-    justify-content: space-around;
-  }
-  
-  .submit-btn, .close-btn {
-    padding: 8px 15px;
-    margin: 5px;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
-  }
-  
-  .submit-btn {
-    background: #28a745;
-    color: white;
-  }
-  
-  .close-btn {
-    background: #dc3545;
-    color: white;
-  }
-  
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-box {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  width: 300px;
+}
+
+.modal-input {
+  width: 80%;
+  padding: 8px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: space-around;
+}
+
+.submit-btn,
+.close-btn {
+  padding: 8px 15px;
+  margin: 5px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.submit-btn {
+  background: #28a745;
+  color: white;
+}
+
+.close-btn {
+  background: #dc3545;
+  color: white;
+}

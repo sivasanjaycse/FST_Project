@@ -1,20 +1,55 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 import SupervisorNavbar from "./supervisorNavbar";
 import "../Styles/dailylog.css";
 
 const MessSupervisorDailyLogPage = () => {
+  const [logs, setLogs] = useState([]);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [newStudentCount, setNewStudentCount] = useState("");
+  const [selectedDate, setSelectedDate] = useState(
+    new Date().toISOString().split("T")[0]
+  );
+
+  // Fetch logs from backend
+  useEffect(() => {
+    axios
+      .get("http://localhost:5000/daily-logs")
+      .then((response) => setLogs(response.data))
+      .catch((error) => console.error("Error fetching logs:", error));
+  }, []);
+
+  // Handle log submission
+  const handleSubmitLog = () => {
+    if (!newStudentCount) {
+      alert("Please enter a valid student count.");
+      return;
+    }
+
+    axios
+      .post("http://localhost:5000/daily-logs", {
+        date: selectedDate,
+        studentCount: parseInt(newStudentCount, 10),
+      })
+      .then((response) => {
+        setLogs(response.data.logs);
+        setIsModalOpen(false);
+        setNewStudentCount("");
+      })
+      .catch((error) => console.error("Error adding log:", error));
+  };
 
   return (
     <>
-      <SupervisorNavbar onTabChange={(tabIndex) => console.log("Active Tab:", tabIndex)} />
+      <SupervisorNavbar />
       <div className="daily-log-page">
         <div className="daily-log-container">
-          
           {/* Section 1: Log Student Count */}
           <section className="log-section">
             <h2 className="section-title">Enter Today's Student Count</h2>
-            <button className="log-btn" onClick={() => setIsModalOpen(true)}>Enter Daily Log</button>
+            <button className="log-btn" onClick={() => setIsModalOpen(true)}>
+              Enter Daily Log
+            </button>
           </section>
 
           <hr />
@@ -30,48 +65,18 @@ const MessSupervisorDailyLogPage = () => {
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                <td>11-08-2005</td>
-                <td>1222</td>
-                </tr>
-                <tr>
-                <td>11-08-2005</td>
-                <td>1222</td>
-                </tr>
-                <tr>
-                <td>11-08-2005</td>
-                <td>1222</td>
-                </tr>
-                <tr>
-                <td>11-08-2005</td>
-                <td>1222</td>
-                </tr>
-                <tr>
-                <td>11-08-2005</td>
-                <td>1222</td>
-                </tr>
-                <tr>
-                <td>11-08-2005</td>
-                <td>1222</td>
-                </tr>
-                <tr>
-                <td>11-08-2005</td>
-                <td>1222</td>
-                </tr>
-                <tr>
-                <td>11-08-2005</td>
-                <td>1222</td>
-                </tr>
-                <tr>
-                <td>11-08-2005</td>
-                <td>1222</td>
-                </tr>
-                <tr>
-                <td>11-08-2005</td>
-                <td>1222</td>
-                </tr>
-
-                {/* Data will be dynamically mapped here */}
+                {logs.length > 0 ? (
+                  logs.map((log, index) => (
+                    <tr key={index}>
+                      <td>{log.date}</td>
+                      <td>{log.studentCount}</td>
+                    </tr>
+                  ))
+                ) : (
+                  <tr>
+                    <td colSpan="2">No logs available</td>
+                  </tr>
+                )}
               </tbody>
             </table>
           </section>
@@ -87,15 +92,28 @@ const MessSupervisorDailyLogPage = () => {
         </div>
       </div>
 
-      {/* Modal (conditionally rendered) */}
+      {/* Modal for adding new log */}
       {isModalOpen && (
         <div className="modal-overlay">
           <div className="modal-box">
             <h3>Enter the Number of Students</h3>
-            <input type="number" className="modal-input" placeholder="Enter count" />
+            <input
+              type="number"
+              className="modal-input"
+              placeholder="Enter count"
+              value={newStudentCount}
+              onChange={(e) => setNewStudentCount(e.target.value)}
+            />
             <div className="modal-actions">
-              <button className="submit-btn" onClick={() => setIsModalOpen(false)}>Submit</button>
-              <button className="close-btn" onClick={() => setIsModalOpen(false)}>Close</button>
+              <button className="submit-btn" onClick={handleSubmitLog}>
+                Submit
+              </button>
+              <button
+                className="close-btn"
+                onClick={() => setIsModalOpen(false)}
+              >
+                Close
+              </button>
             </div>
           </div>
         </div>

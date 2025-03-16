@@ -1,0 +1,23 @@
+[
+  {
+    "date": "2025-03-15",
+    "review": "The food was amazing, especially the main dish!",
+    "main_dish_rating": 4.8,
+    "side_dish_rating": 3.5,
+    "overall_rating": 4.2
+  },
+  {
+    "date": "2025-03-15",
+    "review": "The side dish was terrible, not fresh at all.",
+    "main_dish_rating": 3.2,
+    "side_dish_rating": 1.5,
+    "overall_rating": 2.3
+  },
+  {
+    "date": "2025-03-14",
+    "review": "The meal was decent, but the main dish could be better.",
+    "main_dish_rating": 3.9,
+    "side_dish_rating": 2.8,
+    "overall_rating": 3.4
+  }
+]

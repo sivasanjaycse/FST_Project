@@ -23,9 +23,9 @@
   {
     "id": 4,
     "name": "eww",
-    "quantity_kg_l": 2,
-    "cost_per_unit": 2,
-    "total_cost": 4
+    "quantity_kg_l": 3,
+    "cost_per_unit": 10,
+    "total_cost": 30
   },
   {
     "id": 5,
