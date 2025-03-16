@@ -3,53 +3,70 @@ const cors = require("cors");
 const fs = require("fs");
 
 const app = express();
-const PORT = 5000;
-
 app.use(cors());
 app.use(express.json());
 
-const DATA_FILE = "groceries.json";
+const filePath = "./groceries.json";
 
-// Load grocery data from file
-const loadGroceries = () => {
-    if (!fs.existsSync(DATA_FILE)) return [];
-    return JSON.parse(fs.readFileSync(DATA_FILE, "utf8"));
+// Read groceries from JSON file
+const readGroceries = () => {
+  const data = fs.readFileSync(filePath);
+  return JSON.parse(data);
 };
 
-// Save grocery data to file
-const saveGroceries = (data) => {
-    fs.writeFileSync(DATA_FILE, JSON.stringify(data, null, 2), "utf8");
+// Write groceries to JSON file
+const writeGroceries = (data) => {
+  fs.writeFileSync(filePath, JSON.stringify(data, null, 2));
 };
 
-// GET all groceries
+// Fetch all groceries
 app.get("/groceries", (req, res) => {
-    res.json(loadGroceries());
+  res.json(readGroceries());
 });
 
-// POST to add or take items
-app.post("/groceries/:action", (req, res) => {
-    const { id, quantity, price } = req.body;
-    const action = req.params.action;
-    let groceries = loadGroceries();
-    
-    const index = groceries.findIndex(item => item.id === id);
-    if (index === -1) return res.status(404).json({ error: "Item not found" });
+// Add new product
+app.post("/groceries/add-product", (req, res) => {
+  const groceries = readGroceries();
+  const { name, quantity, price } = req.body;
+  
+  if (!name || isNaN(quantity) || isNaN(price)) {
+    return res.status(400).json({ error: "Invalid input" });
+  }
 
-    if (action === "add") {
-        groceries[index].quantity_kg_l += quantity;
-        groceries[index].cost_per_unit = price;
-    } else if (action === "take") {
-        groceries[index].quantity_kg_l = Math.max(0, groceries[index].quantity_kg_l - quantity);
-    }
+  const newProduct = {
+    id: groceries.length + 1,
+    name,
+    quantity_kg_l: quantity,
+    cost_per_unit: price,
+    total_cost: quantity * price
+  };
 
-    groceries[index].total_cost = groceries[index].quantity_kg_l * groceries[index].cost_per_unit;
-    
-    saveGroceries(groceries);
-    res.json({ message: "Updated successfully", groceries });
+  groceries.push(newProduct);
+  writeGroceries(groceries);
+
+  res.json({ message: "Product added successfully", product: newProduct });
 });
 
-// Start server
-app.listen(PORT, () => {
-    console.log(`Server running on http://localhost:${PORT}`);
+// Update quantity (Add or Take)
+app.post("/groceries/:type", (req, res) => {
+  const groceries = readGroceries();
+  const { id, quantity, price } = req.body;
+  const product = groceries.find(item => item.id === id);
+
+  if (!product) {
+    return res.status(404).json({ error: "Product not found" });
+  }
+
+  if (req.params.type === "add") {
+    product.quantity_kg_l += quantity;
+    product.cost_per_unit = price; 
+  } else if (req.params.type === "take") {
+    product.quantity_kg_l = Math.max(0, product.quantity_kg_l - quantity);
+  }
+
+  product.total_cost = product.quantity_kg_l * product.cost_per_unit;
+  writeGroceries(groceries);
+  res.json({ message: "Quantity updated", product });
 });
 
+app.listen(5000, () => console.log("Server running on port 5000"));

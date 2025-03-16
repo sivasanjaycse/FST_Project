@@ -1,20 +1,37 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "../Styles/groceries.css";
+import SupervisorNavbar from "./supervisorNavbar";
 
 const MessSupervisorGroceryPage = () => {
   const [groceries, setGroceries] = useState([]);
+  const [filteredGroceries, setFilteredGroceries] = useState([]);
+  const [searchQuery, setSearchQuery] = useState("");
   const [showModal, setShowModal] = useState(false);
-  const [modalData, setModalData] = useState({ id: null, type: "", quantity: "", price: "" });
+  const [modalData, setModalData] = useState({ id: null, type: "", name: "", quantity: "", price: "" });
 
   useEffect(() => {
     axios.get("http://localhost:5000/groceries")
-      .then(response => setGroceries(response.data))
+      .then(response => {
+        const sortedData = response.data.sort((a, b) => a.name.localeCompare(b.name));
+        setGroceries(sortedData);
+        setFilteredGroceries(sortedData);
+      })
       .catch(error => console.error("Error fetching data:", error));
   }, []);
 
+  const handleSearch = (e) => {
+    const query = e.target.value.toLowerCase();
+    setSearchQuery(query);
+    setFilteredGroceries(groceries.filter(item => item.name.toLowerCase().includes(query)));
+  };
+
   const handleOpenModal = (id, type) => {
-    setModalData({ id, type, quantity: "", price: "" });
+    if (type === "addProduct") {
+      setModalData({ id: null, type, name: "", quantity: "", price: "" });
+    } else {
+      setModalData({ id, type, quantity: "", price: "" });
+    }
     setShowModal(true);
   };
 
@@ -23,10 +40,17 @@ const MessSupervisorGroceryPage = () => {
   };
 
   const handleSubmit = () => {
-    const { id, type, quantity, price } = modalData;
-    const updateData = { quantity: parseFloat(quantity), price: parseFloat(price) };
-    
-    axios.post(`http://localhost:5000/groceries/${type}`, { id, ...updateData })
+    const { id, type, name, quantity, price } = modalData;
+    const requestData = {
+      id,
+      name,
+      quantity: parseFloat(quantity),
+      price: parseFloat(price)
+    };
+
+    const endpoint = type === "addProduct" ? "add-product" : `${type}`;
+
+    axios.post(`http://localhost:5000/groceries/${endpoint}`, requestData)
       .then(() => {
         setShowModal(false);
         window.location.reload();
@@ -35,47 +59,66 @@ const MessSupervisorGroceryPage = () => {
   };
 
   return (
-    <div className="grocery-page">
-      <h2 className="section-title">Grocery Inventory</h2>
-      <table className="grocery-table">
-        <thead>
-          <tr>
-            <th>Product No</th>
-            <th>Name</th>
-            <th>Quantity (kg/l)</th>
-            <th>Cost per L/Kg</th>
-            <th>Total Cost</th>
-            <th>Add</th>
-            <th>Take</th>
-          </tr>
-        </thead>
-        <tbody>
-          {groceries.map((item) => (
-            <tr key={item.id}>
-              <td>{item.id}</td>
-              <td>{item.name}</td>
-              <td>{item.quantity_kg_l}</td>
-              <td>{item.cost_per_unit}</td>
-              <td>{item.total_cost}</td>
-              <td><button className="add-btn" onClick={() => handleOpenModal(item.id, "add")}>Add</button></td>
-              <td><button className="take-btn" onClick={() => handleOpenModal(item.id, "take")}>Take</button></td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
+    <>
+      <SupervisorNavbar />
+      <div className="supervisor-grocery-page">
+        <div className="grocery-container">
+          <h2 className="section-title">Grocery Inventory</h2>
 
-      {showModal && (
-        <div className="modal-overlay">
-          <div className="modal-box">
-            <h3>{modalData.type === "add" ? "Add Quantity" : "Take Quantity"}</h3>
-            <input type="number" name="quantity" placeholder="Enter Quantity" value={modalData.quantity} onChange={handleChange} />
-            {modalData.type === "add" && <input type="number" name="price" placeholder="Enter Price per unit" value={modalData.price} onChange={handleChange} />}
-            <button onClick={handleSubmit}>Submit</button>
-            <button onClick={() => setShowModal(false)}>Cancel</button>
-          </div>
+          {/* Search Bar */}
+          <input 
+            type="text" 
+            className="search-bar" 
+            placeholder="Search for a product..." 
+            value={searchQuery} 
+            onChange={handleSearch} 
+          />
+
+          <table className="grocery-table">
+            <thead>
+              <tr>
+                <th>Product No</th>
+                <th>Name</th>
+                <th>Quantity (kg/l)</th>
+                <th>Cost per L/Kg</th>
+                <th>Total Cost</th>
+                <th>Add</th>
+                <th>Take</th>
+              </tr>
+            </thead>
+            <tbody>
+              {filteredGroceries.map((item) => (
+                <tr key={item.id}>
+                  <td>{item.id}</td>
+                  <td>{item.name}</td>
+                  <td>{item.quantity_kg_l}</td>
+                  <td>{item.cost_per_unit}</td>
+                  <td>{item.total_cost}</td>
+                  <td><button className="add-btn" onClick={() => handleOpenModal(item.id, "add")}>Add</button></td>
+                  <td><button className="take-btn" onClick={() => handleOpenModal(item.id, "take")}>Take</button></td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+
+          {/* Add Product Button */}
+          <button className="add-product-btn" onClick={() => handleOpenModal(null, "addProduct")}>Add Product</button>
+
+          {showModal && (
+            <div className="modal-overlay">
+              <div className="modal-box">
+                <h3>{modalData.type === "addProduct" ? "Add New Product" : modalData.type === "add" ? "Add Quantity" : "Take Quantity"}</h3>
+                {modalData.type === "addProduct" && <input type="text" name="name" className="modal-input" placeholder="Enter Product Name" value={modalData.name} onChange={handleChange} />}
+                <input type="number" name="quantity" placeholder="Enter Quantity" value={modalData.quantity} onChange={handleChange} />
+                <input type="number" name="price" placeholder="Enter Price per unit" value={modalData.price} onChange={handleChange} />
+                <button onClick={handleSubmit}>Submit</button>
+                <button onClick={() => setShowModal(false)}>Cancel</button>
+              </div>
+            </div>
+          )}
         </div>
-      )}
-    </div>
+      </div>
+    </>
   );
 };
 
