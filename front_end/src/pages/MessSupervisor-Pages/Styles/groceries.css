@@ -1,0 +1,139 @@
+/* Container for the Groceries Page */
+.grocery-page {
+    margin: 80px auto 20px; /* leave space for header and navbar */
+    max-width: 1000px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  /* Section Title */
+  .section-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #2E7D32; /* dark green */
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  /* Grocery Table Styling */
+  .grocery-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+  }
+  
+  .grocery-table th,
+  .grocery-table td {
+    padding: 12px;
+    border: 1px solid #ddd;
+    text-align: center;
+  }
+  
+  .grocery-table th {
+    background: #757575; /* medium grey */
+    color: white;
+    font-weight: 600;
+  }
+  
+  .grocery-table tr:nth-child(even) {
+    background: #f2f2f2;
+  }
+  
+  /* Add & Take Button Styles */
+  .add-btn,
+  .take-btn {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background 0.3s ease;
+  }
+  
+  .add-btn {
+    background: #4CAF50; /* green */
+    color: white;
+  }
+  
+  .add-btn:hover {
+    background: #388E3C;
+  }
+  
+  .take-btn {
+    background: #d32f2f; /* red-ish for a negative update */ 
+    color: white;
+  }
+  
+  .take-btn:hover {
+    background: #b71c1c;
+  }
+  
+  /* Modal Overlay for Floating Box */
+  .modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  /* Modal Box Styling */
+  .modal-box {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    width: 300px;
+    text-align: center;
+  }
+  
+  /* Modal Input Styles */
+  .modal-box input[type="number"] {
+    width: 80%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+  }
+  
+  /* Modal Button Styles */
+  .modal-box button {
+    padding: 8px 15px;
+    margin: 5px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: opacity 0.3s ease;
+  }
+  
+  .modal-box button:hover {
+    opacity: 0.9;
+  }
+  
+  /* Primary Modal Button (Submit) */
+  .modal-box button:first-child {
+    background: #4CAF50;
+    color: white;
+  }
+  
+  /* Secondary Modal Button (Cancel) */
+  .modal-box button:last-child {
+    background: #757575;
+    color: white;
+  }
+  

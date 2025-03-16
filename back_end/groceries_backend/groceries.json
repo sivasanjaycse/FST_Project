@@ -1,0 +1,16 @@
+[
+  {
+    "id": 1,
+    "name": "Rice",
+    "quantity_kg_l": 0,
+    "cost_per_unit": 6,
+    "total_cost": 0
+  },
+  {
+    "id": 2,
+    "name": "Oil",
+    "quantity_kg_l": 7,
+    "cost_per_unit": 2,
+    "total_cost": 14
+  }
+]
