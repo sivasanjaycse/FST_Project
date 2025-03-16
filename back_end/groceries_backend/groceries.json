@@ -2,9 +2,9 @@
   {
     "id": 1,
     "name": "Rice",
-    "quantity_kg_l": 0,
-    "cost_per_unit": 6,
-    "total_cost": 0
+    "quantity_kg_l": 1233,
+    "cost_per_unit": 32121,
+    "total_cost": 39605193
   },
   {
     "id": 2,
@@ -17,7 +17,7 @@
     "id": 3,
     "name": "Siva Sanjay ",
     "quantity_kg_l": 0,
-    "cost_per_unit": 10,
+    "cost_per_unit": 2,
     "total_cost": 0
   },
   {
@@ -51,9 +51,9 @@
   {
     "id": 8,
     "name": "323213",
-    "quantity_kg_l": 343253,
+    "quantity_kg_l": 343251,
     "cost_per_unit": 235235,
-    "total_cost": 80745119455
+    "total_cost": 80744648985
   },
   {
     "id": 9,
@@ -65,9 +65,9 @@
   {
     "id": 10,
     "name": "2323",
-    "quantity_kg_l": 2323,
+    "quantity_kg_l": 0,
     "cost_per_unit": 232313,
-    "total_cost": 539663099
+    "total_cost": 0
   },
   {
     "id": 11,
@@ -96,5 +96,12 @@
     "quantity_kg_l": 21321321,
     "cost_per_unit": 312312,
     "total_cost": 6658904404152
+  },
+  {
+    "id": 15,
+    "name": "dsad",
+    "quantity_kg_l": 323,
+    "cost_per_unit": 23213,
+    "total_cost": 7497799
   }
 ]

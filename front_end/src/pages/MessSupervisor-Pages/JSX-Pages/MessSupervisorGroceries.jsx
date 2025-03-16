@@ -8,22 +8,33 @@ const MessSupervisorGroceryPage = () => {
   const [filteredGroceries, setFilteredGroceries] = useState([]);
   const [searchQuery, setSearchQuery] = useState("");
   const [showModal, setShowModal] = useState(false);
-  const [modalData, setModalData] = useState({ id: null, type: "", name: "", quantity: "", price: "" });
+  const [modalData, setModalData] = useState({
+    id: null,
+    type: "",
+    name: "",
+    quantity: "",
+    price: "",
+  });
 
   useEffect(() => {
-    axios.get("http://localhost:5000/groceries")
-      .then(response => {
-        const sortedData = response.data.sort((a, b) => a.name.localeCompare(b.name));
+    axios
+      .get("http://localhost:5000/groceries")
+      .then((response) => {
+        const sortedData = response.data.sort((a, b) =>
+          a.name.localeCompare(b.name)
+        );
         setGroceries(sortedData);
         setFilteredGroceries(sortedData);
       })
-      .catch(error => console.error("Error fetching data:", error));
+      .catch((error) => console.error("Error fetching data:", error));
   }, []);
 
   const handleSearch = (e) => {
     const query = e.target.value.toLowerCase();
     setSearchQuery(query);
-    setFilteredGroceries(groceries.filter(item => item.name.toLowerCase().includes(query)));
+    setFilteredGroceries(
+      groceries.filter((item) => item.name.toLowerCase().includes(query))
+    );
   };
 
   const handleOpenModal = (id, type) => {
@@ -45,17 +56,18 @@ const MessSupervisorGroceryPage = () => {
       id,
       name,
       quantity: parseFloat(quantity),
-      price: parseFloat(price)
+      price: parseFloat(price),
     };
 
     const endpoint = type === "addProduct" ? "add-product" : `${type}`;
 
-    axios.post(`http://localhost:5000/groceries/${endpoint}`, requestData)
+    axios
+      .post(`http://localhost:5000/groceries/${endpoint}`, requestData)
       .then(() => {
         setShowModal(false);
         window.location.reload();
       })
-      .catch(error => console.error("Error updating data:", error));
+      .catch((error) => console.error("Error updating data:", error));
   };
 
   return (
@@ -66,12 +78,12 @@ const MessSupervisorGroceryPage = () => {
           <h2 className="section-title">Grocery Inventory</h2>
 
           {/* Search Bar */}
-          <input 
-            type="text" 
-            className="search-bar" 
-            placeholder="Search for a product..." 
-            value={searchQuery} 
-            onChange={handleSearch} 
+          <input
+            type="text"
+            className="search-bar"
+            placeholder="Search for a product..."
+            value={searchQuery}
+            onChange={handleSearch}
           />
 
           <table className="grocery-table">
@@ -94,23 +106,76 @@ const MessSupervisorGroceryPage = () => {
                   <td>{item.quantity_kg_l}</td>
                   <td>{item.cost_per_unit}</td>
                   <td>{item.total_cost}</td>
-                  <td><button className="add-btn" onClick={() => handleOpenModal(item.id, "add")}>Add</button></td>
-                  <td><button className="take-btn" onClick={() => handleOpenModal(item.id, "take")}>Take</button></td>
+                  <td>
+                    <button
+                      className="add-btn"
+                      onClick={() => handleOpenModal(item.id, "add")}
+                    >
+                      Add
+                    </button>
+                  </td>
+                  <td>
+                    <button
+                      className="take-btn"
+                      onClick={() => handleOpenModal(item.id, "take")}
+                    >
+                      Take
+                    </button>
+                  </td>
                 </tr>
               ))}
             </tbody>
           </table>
 
           {/* Add Product Button */}
-          <button className="add-product-btn" onClick={() => handleOpenModal(null, "addProduct")}>Add Product</button>
+          <button
+            className="add-product-btn"
+            onClick={() => handleOpenModal(null, "addProduct")}
+          >
+            Add Product
+          </button>
 
           {showModal && (
             <div className="modal-overlay">
               <div className="modal-box">
-                <h3>{modalData.type === "addProduct" ? "Add New Product" : modalData.type === "add" ? "Add Quantity" : "Take Quantity"}</h3>
-                {modalData.type === "addProduct" && <input type="text" name="name" className="modal-input" placeholder="Enter Product Name" value={modalData.name} onChange={handleChange} />}
-                <input type="number" name="quantity" placeholder="Enter Quantity" value={modalData.quantity} onChange={handleChange} />
-                <input type="number" name="price" placeholder="Enter Price per unit" value={modalData.price} onChange={handleChange} />
+                <h3>
+                  {modalData.type === "addProduct"
+                    ? "Add New Product"
+                    : modalData.type === "add"
+                    ? "Add Quantity"
+                    : "Take Quantity"}
+                </h3>
+
+                {modalData.type === "addProduct" && (
+                  <input
+                    type="text"
+                    name="name"
+                    className="modal-input"
+                    placeholder="Enter Product Name"
+                    value={modalData.name}
+                    onChange={handleChange}
+                  />
+                )}
+
+                <input
+                  type="number"
+                  name="quantity"
+                  placeholder="Enter Quantity"
+                  value={modalData.quantity}
+                  onChange={handleChange}
+                />
+
+                {/* Only show price input if not taking a product */}
+                {modalData.type !== "take" && (
+                  <input
+                    type="number"
+                    name="price"
+                    placeholder="Enter Price per unit"
+                    value={modalData.price}
+                    onChange={handleChange}
+                  />
+                )}
+
                 <button onClick={handleSubmit}>Submit</button>
                 <button onClick={() => setShowModal(false)}>Cancel</button>
               </div>

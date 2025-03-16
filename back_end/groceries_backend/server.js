@@ -6,29 +6,39 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-const filePath = "./groceries.json";
+const groceriesFilePath = "./groceries.json";
+const menuFilePath = "./menu.json"; // Added menu file path
 
-// Read groceries from JSON file
-const readGroceries = () => {
-  const data = fs.readFileSync(filePath);
-  return JSON.parse(data);
+// Read JSON file utility function
+const readJSONFile = (filePath) => {
+  try {
+    const data = fs.readFileSync(filePath, "utf8");
+    return JSON.parse(data);
+  } catch (error) {
+    console.error(`Error reading ${filePath}:`, error);
+    return [];
+  }
 };
 
-// Write groceries to JSON file
-const writeGroceries = (data) => {
-  fs.writeFileSync(filePath, JSON.stringify(data, null, 2));
+// Write JSON file utility function
+const writeJSONFile = (filePath, data) => {
+  try {
+    fs.writeFileSync(filePath, JSON.stringify(data, null, 2));
+  } catch (error) {
+    console.error(`Error writing ${filePath}:`, error);
+  }
 };
 
-// Fetch all groceries
+// Fetch groceries
 app.get("/groceries", (req, res) => {
-  res.json(readGroceries());
+  res.json(readJSONFile(groceriesFilePath));
 });
 
 // Add new product
 app.post("/groceries/add-product", (req, res) => {
-  const groceries = readGroceries();
+  const groceries = readJSONFile(groceriesFilePath);
   const { name, quantity, price } = req.body;
-  
+
   if (!name || isNaN(quantity) || isNaN(price)) {
     return res.status(400).json({ error: "Invalid input" });
   }
@@ -38,20 +48,20 @@ app.post("/groceries/add-product", (req, res) => {
     name,
     quantity_kg_l: quantity,
     cost_per_unit: price,
-    total_cost: quantity * price
+    total_cost: quantity * price,
   };
 
   groceries.push(newProduct);
-  writeGroceries(groceries);
+  writeJSONFile(groceriesFilePath, groceries);
 
   res.json({ message: "Product added successfully", product: newProduct });
 });
 
 // Update quantity (Add or Take)
 app.post("/groceries/:type", (req, res) => {
-  const groceries = readGroceries();
+  const groceries = readJSONFile(groceriesFilePath);
   const { id, quantity, price } = req.body;
-  const product = groceries.find(item => item.id === id);
+  const product = groceries.find((item) => item.id === id);
 
   if (!product) {
     return res.status(404).json({ error: "Product not found" });
@@ -59,14 +69,29 @@ app.post("/groceries/:type", (req, res) => {
 
   if (req.params.type === "add") {
     product.quantity_kg_l += quantity;
-    product.cost_per_unit = price; 
+    product.cost_per_unit = price;
   } else if (req.params.type === "take") {
     product.quantity_kg_l = Math.max(0, product.quantity_kg_l - quantity);
   }
 
   product.total_cost = product.quantity_kg_l * product.cost_per_unit;
-  writeGroceries(groceries);
+  writeJSONFile(groceriesFilePath, groceries);
   res.json({ message: "Quantity updated", product });
+});
+
+// **MENU API ROUTES**
+
+// Fetch menu
+app.get("/menu", (req, res) => {
+  const menuData = readJSONFile(menuFilePath);
+  res.json(menuData);
+});
+
+// Update menu
+app.post("/update-menu", (req, res) => {
+  const newData = req.body;
+  writeJSONFile(menuFilePath, newData);
+  res.json({ message: "Menu updated successfully" });
 });
 
 app.listen(5000, () => console.log("Server running on port 5000"));
