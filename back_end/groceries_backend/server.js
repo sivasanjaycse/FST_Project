@@ -7,8 +7,9 @@ app.use(cors());
 app.use(express.json());
 
 const groceriesFilePath = "./groceries.json";
-const menuFilePath = "./menu.json"; // Added menu file path
+const menuFilePath = "./menu.json";
 const feedbackFile = "./feedback.json";
+const DATA_FILE = "dailyLogs.json";
 
 // Read JSON file utility function
 const readJSONFile = (filePath) => {
@@ -80,7 +81,7 @@ app.post("/groceries/:type", (req, res) => {
   res.json({ message: "Quantity updated", product });
 });
 
-// **MENU API ROUTES**
+/****************************************************************************************************** */
 
 // Fetch menu
 app.get("/menu", (req, res) => {
@@ -99,9 +100,13 @@ const readFeedback = () => {
   return JSON.parse(data);
 };
 
+/*************************************************************************************************************/
+
 app.get("/feedback", (req, res) => {
-  const { date } = req.query;
-  const feedback = readFeedback().filter((item) => item.date === date);
+  const { date, session } = req.query;
+  const feedback = readFeedback().filter(
+    (item) => item.date === date && item.session === session
+  );
 
   if (feedback.length === 0) {
     return res.status(200).json({ message: "No feedback available" });
@@ -139,7 +144,8 @@ app.get("/feedback", (req, res) => {
     worstReview: worstReview.review,
   });
 });
-const DATA_FILE = "dailyLogs.json";
+
+/****************************************************************************************************************/
 
 // Read daily logs
 app.get("/daily-logs", (req, res) => {
@@ -151,17 +157,19 @@ app.get("/daily-logs", (req, res) => {
 
 // Add a new log entry
 app.post("/daily-logs", (req, res) => {
-  const { date, studentCount } = req.body;
+  const { date, session, studentCount } = req.body;
 
-  if (!date || !studentCount) {
-    return res.status(400).json({ error: "Date and student count required" });
+  if (!date || !session || !studentCount) {
+    return res
+      .status(400)
+      .json({ error: "Date, session, and student count required" });
   }
 
   fs.readFile(DATA_FILE, "utf8", (err, data) => {
     if (err) return res.status(500).json({ error: "Error reading data" });
 
     let logs = JSON.parse(data);
-    logs.push({ date, studentCount });
+    logs.push({ date, session, studentCount });
 
     fs.writeFile(DATA_FILE, JSON.stringify(logs, null, 2), (writeErr) => {
       if (writeErr) return res.status(500).json({ error: "Error saving data" });
@@ -169,4 +177,48 @@ app.post("/daily-logs", (req, res) => {
     });
   });
 });
+
+/***************************************************************************************************************/
+
+app.post("/groceries/take", (req, res) => {
+  const { id, quantity, session, date } = req.body;
+  let groceries = readGroceries();
+
+  const item = groceries.find((item) => item.id === id);
+  if (!item) return res.status(404).json({ message: "Product not found" });
+
+  if (item.quantity_kg_l < quantity) {
+    return res.status(400).json({ message: "Not enough stock" });
+  }
+
+  item.quantity_kg_l -= quantity;
+  item.total_cost = (item.quantity_kg_l * item.cost_per_unit).toFixed(2);
+  writeGroceries(groceries);
+
+  const totalCost = (quantity * item.cost_per_unit).toFixed(2);
+  let sessionUsage = readSessionUsage();
+  sessionUsage.push({ date, session, totalCost });
+  writeSessionUsage(sessionUsage);
+
+  res.status(200).json({ message: "Grocery taken successfully", sessionUsage });
+});
+
+function readGroceries() {
+  return JSON.parse(fs.readFileSync("groceries.json", "utf8"));
+}
+
+function writeGroceries(data) {
+  fs.writeFileSync("groceries.json", JSON.stringify(data, null, 2));
+}
+
+function readSessionUsage() {
+  return JSON.parse(fs.readFileSync("session_usage.json", "utf8"));
+}
+
+function writeSessionUsage(data) {
+  fs.writeFileSync("session_usage.json", JSON.stringify(data, null, 2));
+}
+
+/***********************************************************************************************/
+
 app.listen(5000, () => console.log("Server running on port 5000"));

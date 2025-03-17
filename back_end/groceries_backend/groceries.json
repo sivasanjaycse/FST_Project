@@ -44,16 +44,16 @@
   {
     "id": 7,
     "name": "4234",
-    "quantity_kg_l": 432,
+    "quantity_kg_l": 0,
     "cost_per_unit": 4234,
-    "total_cost": 1829088
+    "total_cost": 0
   },
   {
     "id": 8,
     "name": "323213",
-    "quantity_kg_l": 343251,
+    "quantity_kg_l": 342997,
     "cost_per_unit": 235235,
-    "total_cost": 80744648985
+    "total_cost": 80684899295
   },
   {
     "id": 9,
@@ -72,9 +72,9 @@
   {
     "id": 11,
     "name": "saS",
-    "quantity_kg_l": 232,
+    "quantity_kg_l": 222,
     "cost_per_unit": 23123,
-    "total_cost": 5364536
+    "total_cost": 5133306
   },
   {
     "id": 12,

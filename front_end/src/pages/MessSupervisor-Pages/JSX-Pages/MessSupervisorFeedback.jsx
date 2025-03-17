@@ -4,7 +4,6 @@ import "../Styles/feedback.css";
 import SupervisorNavbar from "./supervisorNavbar";
 
 const RatingCircle = ({ title, rating, delay }) => {
-  // Ensure rating is a valid number, else default to 0
   const numericRating = parseFloat(rating);
   const safeRating = !isNaN(numericRating) ? numericRating.toFixed(1) : "N/A";
 
@@ -40,13 +39,20 @@ const MessSupervisorFeedbackPage = () => {
   const [selectedDate, setSelectedDate] = useState(
     new Date().toISOString().split("T")[0]
   );
+  const [selectedSession, setSelectedSession] = useState("Breakfast");
 
-  useEffect(() => {
+  const fetchFeedback = () => {
     axios
-      .get(`http://localhost:5000/feedback?date=${selectedDate}`)
+      .get(
+        `http://localhost:5000/feedback?date=${selectedDate}&session=${selectedSession}`
+      )
       .then((response) => setFeedbackData(response.data))
       .catch((error) => console.error("Error fetching feedback:", error));
-  }, [selectedDate]);
+  };
+
+  useEffect(() => {
+    fetchFeedback();
+  }, [selectedDate, selectedSession]); // Fetch data when date or session changes
 
   return (
     <>
@@ -55,13 +61,25 @@ const MessSupervisorFeedbackPage = () => {
         <div className="feedback-container">
           <h2 className="supervisor-feedback-title">Daily Food Feedback</h2>
 
-          {/* Date Picker */}
-          <input
-            type="date"
-            value={selectedDate}
-            onChange={(e) => setSelectedDate(e.target.value)}
-            className="date-picker"
-          />
+          {/* Date & Session Picker */}
+          <div className="filters">
+            <input
+              type="date"
+              value={selectedDate}
+              onChange={(e) => setSelectedDate(e.target.value)}
+              className="date-picker"
+            />
+            <select
+              value={selectedSession}
+              onChange={(e) => setSelectedSession(e.target.value)}
+              className="session-picker"
+            >
+              <option value="Breakfast">Breakfast</option>
+              <option value="Lunch">Lunch</option>
+              <option value="Snacks">Snacks</option>
+              <option value="Dinner">Dinner</option>
+            </select>
+          </div>
 
           {feedbackData ? (
             <>
@@ -84,14 +102,14 @@ const MessSupervisorFeedbackPage = () => {
               </div>
 
               <div className="reviews">
-                <div className="best-review">
-                  <h3>Good Review</h3>
-                  <p>{feedbackData.bestReview}</p>
-                </div>
-
                 <div className="worst-review">
                   <h3>Bad Review</h3>
                   <p>{feedbackData.worstReview}</p>
+                </div>
+
+                <div className="best-review">
+                  <h3>Good Review</h3>
+                  <p>{feedbackData.bestReview}</p>
                 </div>
               </div>
             </>

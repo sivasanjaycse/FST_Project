@@ -3,6 +3,8 @@ import axios from "axios";
 import "../Styles/groceries.css";
 import SupervisorNavbar from "./supervisorNavbar";
 
+const sessions = ["Breakfast", "Lunch", "Snacks", "Dinner"];
+
 const MessSupervisorGroceryPage = () => {
   const [groceries, setGroceries] = useState([]);
   const [filteredGroceries, setFilteredGroceries] = useState([]);
@@ -14,6 +16,7 @@ const MessSupervisorGroceryPage = () => {
     name: "",
     quantity: "",
     price: "",
+    session: "Breakfast",
   });
 
   useEffect(() => {
@@ -39,9 +42,16 @@ const MessSupervisorGroceryPage = () => {
 
   const handleOpenModal = (id, type) => {
     if (type === "addProduct") {
-      setModalData({ id: null, type, name: "", quantity: "", price: "" });
+      setModalData({
+        id: null,
+        type,
+        name: "",
+        quantity: "",
+        price: "",
+        session: "Breakfast",
+      });
     } else {
-      setModalData({ id, type, quantity: "", price: "" });
+      setModalData({ id, type, quantity: "", price: "", session: "Breakfast" });
     }
     setShowModal(true);
   };
@@ -51,15 +61,20 @@ const MessSupervisorGroceryPage = () => {
   };
 
   const handleSubmit = () => {
-    const { id, type, name, quantity, price } = modalData;
+    const { id, type, name, quantity, price, session } = modalData;
+    const todayDate = new Date().toISOString().split("T")[0];
+
     const requestData = {
       id,
       name,
       quantity: parseFloat(quantity),
       price: parseFloat(price),
+      date: todayDate,
+      session,
     };
 
-    const endpoint = type === "addProduct" ? "add-product" : `${type}`;
+    const endpoint =
+      type === "addProduct" ? "add-product" : type === "add" ? "add" : "take";
 
     axios
       .post(`http://localhost:5000/groceries/${endpoint}`, requestData)
@@ -165,7 +180,7 @@ const MessSupervisorGroceryPage = () => {
                   onChange={handleChange}
                 />
 
-                {/* Only show price input if not taking a product */}
+                {/* Show Price Input for Add and Add Product */}
                 {modalData.type !== "take" && (
                   <input
                     type="number"
@@ -174,6 +189,21 @@ const MessSupervisorGroceryPage = () => {
                     value={modalData.price}
                     onChange={handleChange}
                   />
+                )}
+
+                {/* Session Dropdown when Taking Groceries */}
+                {modalData.type === "take" && (
+                  <select
+                    name="session"
+                    value={modalData.session}
+                    onChange={handleChange}
+                  >
+                    {sessions.map((session, index) => (
+                      <option key={index} value={session}>
+                        {session}
+                      </option>
+                    ))}
+                  </select>
                 )}
 
                 <button onClick={handleSubmit}>Submit</button>

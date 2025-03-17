@@ -1,23 +1,802 @@
 [
   {
     "date": "2025-03-15",
-    "review": "The food was amazing, especially the main dish!",
-    "main_dish_rating": 4.8,
-    "side_dish_rating": 3.5,
-    "overall_rating": 4.2
+    "session": "Snacks",
+    "main_dish_rating": 3,
+    "side_dish_rating": 5,
+    "overall_rating": 5,
+    "review": "Great meal, loved the taste!"
+  },
+  {
+    "date": "2025-03-10",
+    "session": "Breakfast",
+    "main_dish_rating": 1,
+    "side_dish_rating": 4,
+    "overall_rating": 2,
+    "review": "Disappointed, expected more quality."
+  },
+  {
+    "date": "2025-03-12",
+    "session": "Dinner",
+    "main_dish_rating": 1,
+    "side_dish_rating": 3,
+    "overall_rating": 2,
+    "review": "Disappointed, expected more quality."
   },
   {
     "date": "2025-03-15",
-    "review": "The side dish was terrible, not fresh at all.",
-    "main_dish_rating": 3.2,
-    "side_dish_rating": 1.5,
-    "overall_rating": 2.3
+    "session": "Lunch",
+    "main_dish_rating": 2,
+    "side_dish_rating": 5,
+    "overall_rating": 4,
+    "review": "Too spicy for my liking."
+  },
+  {
+    "date": "2025-03-15",
+    "session": "Snacks",
+    "main_dish_rating": 3,
+    "side_dish_rating": 1,
+    "overall_rating": 2,
+    "review": "Overcooked and dry, not great."
   },
   {
     "date": "2025-03-14",
-    "review": "The meal was decent, but the main dish could be better.",
-    "main_dish_rating": 3.9,
-    "side_dish_rating": 2.8,
-    "overall_rating": 3.4
+    "session": "Breakfast",
+    "main_dish_rating": 5,
+    "side_dish_rating": 3,
+    "overall_rating": 4,
+    "review": "Great meal, loved the taste!"
+  },
+  {
+    "date": "2025-03-11",
+    "session": "Snacks",
+    "main_dish_rating": 3,
+    "side_dish_rating": 3,
+    "overall_rating": 3,
+    "review": "Disappointed, expected more quality."
+  },
+  {
+    "date": "2025-03-09",
+    "session": "Breakfast",
+    "main_dish_rating": 2,
+    "side_dish_rating": 3,
+    "overall_rating": 1,
+    "review": "Too spicy for my liking."
+  },
+  {
+    "date": "2025-03-09",
+    "session": "Snacks",
+    "main_dish_rating": 1,
+    "side_dish_rating": 1,
+    "overall_rating": 1,
+    "review": "Average meal, nothing special."
+  },
+  {
+    "date": "2025-03-12",
+    "session": "Lunch",
+    "main_dish_rating": 3,
+    "side_dish_rating": 1,
+    "overall_rating": 4,
+    "review": "Perfectly cooked, enjoyed it."
+  },
+  {
+    "date": "2025-03-14",
+    "session": "Snacks",
+    "main_dish_rating": 2,
+    "side_dish_rating": 2,
+    "overall_rating": 5,
+    "review": "Not fresh, needs improvement."
+  },
+  {
+    "date": "2025-03-10",
+    "session": "Snacks",
+    "main_dish_rating": 2,
+    "side_dish_rating": 3,
+    "overall_rating": 4,
+    "review": "Not fresh, needs improvement."
+  },
+  {
+    "date": "2025-03-12",
+    "session": "Breakfast",
+    "main_dish_rating": 2,
+    "side_dish_rating": 5,
+    "overall_rating": 5,
+    "review": "Disappointed, expected more quality."
+  },
+  {
+    "date": "2025-03-09",
+    "session": "Dinner",
+    "main_dish_rating": 2,
+    "side_dish_rating": 5,
+    "overall_rating": 2,
+    "review": "Not fresh, needs improvement."
+  },
+  {
+    "date": "2025-03-12",
+    "session": "Lunch",
+    "main_dish_rating": 4,
+    "side_dish_rating": 1,
+    "overall_rating": 3,
+    "review": "Could be better, a bit bland."
+  },
+  {
+    "date": "2025-03-11",
+    "session": "Dinner",
+    "main_dish_rating": 2,
+    "side_dish_rating": 4,
+    "overall_rating": 3,
+    "review": "Average meal, nothing special."
+  },
+  {
+    "date": "2025-03-09",
+    "session": "Snacks",
+    "main_dish_rating": 1,
+    "side_dish_rating": 2,
+    "overall_rating": 1,
+    "review": "Could be better, a bit bland."
+  },
+  {
+    "date": "2025-03-11",
+    "session": "Breakfast",
+    "main_dish_rating": 3,
+    "side_dish_rating": 4,
+    "overall_rating": 3,
+    "review": "Disappointed, expected more quality."
+  },
+  {
+    "date": "2025-03-13",
+    "session": "Lunch",
+    "main_dish_rating": 4,
+    "side_dish_rating": 3,
+    "overall_rating": 2,
+    "review": "Perfectly cooked, enjoyed it."
+  },
+  {
+    "date": "2025-03-09",
+    "session": "Dinner",
+    "main_dish_rating": 4,
+    "side_dish_rating": 3,
+    "overall_rating": 2,
+    "review": "Not fresh, needs improvement."
+  },
+  {
+    "date": "2025-03-11",
+    "session": "Snacks",
+    "main_dish_rating": 5,
+    "side_dish_rating": 2,
+    "overall_rating": 4,
+    "review": "Perfectly cooked, enjoyed it."
+  },
+  {
+    "date": "2025-03-09",
+    "session": "Lunch",
+    "main_dish_rating": 4,
+    "side_dish_rating": 5,
+    "overall_rating": 1,
+    "review": "Best food I've had this week!"
+  },
+  {
+    "date": "2025-03-12",
+    "session": "Lunch",
+    "main_dish_rating": 4,
+    "side_dish_rating": 4,
+    "overall_rating": 5,
+    "review": "Great meal, loved the taste!"
+  },
+  {
+    "date": "2025-03-12",
+    "session": "Dinner",
+    "main_dish_rating": 2,
+    "side_dish_rating": 4,
+    "overall_rating": 4,
+    "review": "Not fresh, needs improvement."
+  },
+  {
+    "date": "2025-03-13",
+    "session": "Snacks",
+    "main_dish_rating": 4,
+    "side_dish_rating": 2,
+    "overall_rating": 3,
+    "review": "Overcooked and dry, not great."
+  },
+  {
+    "date": "2025-03-11",
+    "session": "Breakfast",
+    "main_dish_rating": 1,
+    "side_dish_rating": 2,
+    "overall_rating": 3,
+    "review": "Too spicy for my liking."
+  },
+  {
+    "date": "2025-03-09",
+    "session": "Snacks",
+    "main_dish_rating": 3,
+    "side_dish_rating": 5,
+    "overall_rating": 2,
+    "review": "Average meal, nothing special."
+  },
+  {
+    "date": "2025-03-10",
+    "session": "Lunch",
+    "main_dish_rating": 5,
+    "side_dish_rating": 3,
+    "overall_rating": 5,
+    "review": "Could be better, a bit bland."
+  },
+  {
+    "date": "2025-03-11",
+    "session": "Dinner",
+    "main_dish_rating": 3,
+    "side_dish_rating": 1,
+    "overall_rating": 5,
+    "review": "Loved the dessert, main dish was okay."
+  },
+  {
+    "date": "2025-03-09",
+    "session": "Lunch",
+    "main_dish_rating": 1,
+    "side_dish_rating": 5,
+    "overall_rating": 4,
+    "review": "Overcooked and dry, not great."
+  },
+  {
+    "date": "2025-03-09",
+    "session": "Dinner",
+    "main_dish_rating": 2,
+    "side_dish_rating": 1,
+    "overall_rating": 3,
+    "review": "Disappointed, expected more quality."
+  },
+  {
+    "date": "2025-03-15",
+    "session": "Snacks",
+    "main_dish_rating": 4,
+    "side_dish_rating": 1,
+    "overall_rating": 4,
+    "review": "Could be better, a bit bland."
+  },
+  {
+    "date": "2025-03-14",
+    "session": "Dinner",
+    "main_dish_rating": 4,
+    "side_dish_rating": 3,
+    "overall_rating": 2,
+    "review": "Not fresh, needs improvement."
+  },
+  {
+    "date": "2025-03-14",
+    "session": "Snacks",
+    "main_dish_rating": 4,
+    "side_dish_rating": 4,
+    "overall_rating": 1,
+    "review": "Average meal, nothing special."
+  },
+  {
+    "date": "2025-03-09",
+    "session": "Snacks",
+    "main_dish_rating": 1,
+    "side_dish_rating": 5,
+    "overall_rating": 3,
+    "review": "Perfectly cooked, enjoyed it."
+  },
+  {
+    "date": "2025-03-14",
+    "session": "Snacks",
+    "main_dish_rating": 3,
+    "side_dish_rating": 3,
+    "overall_rating": 5,
+    "review": "Could be better, a bit bland."
+  },
+  {
+    "date": "2025-03-12",
+    "session": "Breakfast",
+    "main_dish_rating": 1,
+    "side_dish_rating": 1,
+    "overall_rating": 5,
+    "review": "Great meal, loved the taste!"
+  },
+  {
+    "date": "2025-03-11",
+    "session": "Lunch",
+    "main_dish_rating": 2,
+    "side_dish_rating": 4,
+    "overall_rating": 1,
+    "review": "Overcooked and dry, not great."
+  },
+  {
+    "date": "2025-03-11",
+    "session": "Dinner",
+    "main_dish_rating": 4,
+    "side_dish_rating": 1,
+    "overall_rating": 2,
+    "review": "Not fresh, needs improvement."
+  },
+  {
+    "date": "2025-03-12",
+    "session": "Breakfast",
+    "main_dish_rating": 4,
+    "side_dish_rating": 5,
+    "overall_rating": 5,
+    "review": "Could be better, a bit bland."
+  },
+  {
+    "date": "2025-03-11",
+    "session": "Snacks",
+    "main_dish_rating": 4,
+    "side_dish_rating": 5,
+    "overall_rating": 3,
+    "review": "Too spicy for my liking."
+  },
+  {
+    "date": "2025-03-15",
+    "session": "Lunch",
+    "main_dish_rating": 5,
+    "side_dish_rating": 2,
+    "overall_rating": 5,
+    "review": "Great meal, loved the taste!"
+  },
+  {
+    "date": "2025-03-12",
+    "session": "Snacks",
+    "main_dish_rating": 2,
+    "side_dish_rating": 1,
+    "overall_rating": 2,
+    "review": "Average meal, nothing special."
+  },
+  {
+    "date": "2025-03-09",
+    "session": "Lunch",
+    "main_dish_rating": 1,
+    "side_dish_rating": 1,
+    "overall_rating": 2,
+    "review": "Best food I've had this week!"
+  },
+  {
+    "date": "2025-03-09",
+    "session": "Lunch",
+    "main_dish_rating": 2,
+    "side_dish_rating": 5,
+    "overall_rating": 4,
+    "review": "Could be better, a bit bland."
+  },
+  {
+    "date": "2025-03-11",
+    "session": "Lunch",
+    "main_dish_rating": 3,
+    "side_dish_rating": 2,
+    "overall_rating": 5,
+    "review": "Could be better, a bit bland."
+  },
+  {
+    "date": "2025-03-15",
+    "session": "Lunch",
+    "main_dish_rating": 1,
+    "side_dish_rating": 1,
+    "overall_rating": 4,
+    "review": "Overcooked and dry, not great."
+  },
+  {
+    "date": "2025-03-10",
+    "session": "Snacks",
+    "main_dish_rating": 4,
+    "side_dish_rating": 3,
+    "overall_rating": 3,
+    "review": "Overcooked and dry, not great."
+  },
+  {
+    "date": "2025-03-14",
+    "session": "Dinner",
+    "main_dish_rating": 3,
+    "side_dish_rating": 3,
+    "overall_rating": 3,
+    "review": "Could be better, a bit bland."
+  },
+  {
+    "date": "2025-03-09",
+    "session": "Breakfast",
+    "main_dish_rating": 1,
+    "side_dish_rating": 3,
+    "overall_rating": 4,
+    "review": "Average meal, nothing special."
+  },
+  {
+    "date": "2025-03-09",
+    "session": "Breakfast",
+    "main_dish_rating": 3,
+    "side_dish_rating": 2,
+    "overall_rating": 5,
+    "review": "Loved the dessert, main dish was okay."
+  },
+  {
+    "date": "2025-03-12",
+    "session": "Lunch",
+    "main_dish_rating": 5,
+    "side_dish_rating": 2,
+    "overall_rating": 1,
+    "review": "Disappointed, expected more quality."
+  },
+  {
+    "date": "2025-03-10",
+    "session": "Dinner",
+    "main_dish_rating": 5,
+    "side_dish_rating": 1,
+    "overall_rating": 3,
+    "review": "Too spicy for my liking."
+  },
+  {
+    "date": "2025-03-13",
+    "session": "Snacks",
+    "main_dish_rating": 3,
+    "side_dish_rating": 2,
+    "overall_rating": 2,
+    "review": "Average meal, nothing special."
+  },
+  {
+    "date": "2025-03-10",
+    "session": "Breakfast",
+    "main_dish_rating": 3,
+    "side_dish_rating": 5,
+    "overall_rating": 4,
+    "review": "Not fresh, needs improvement."
+  },
+  {
+    "date": "2025-03-09",
+    "session": "Lunch",
+    "main_dish_rating": 3,
+    "side_dish_rating": 2,
+    "overall_rating": 5,
+    "review": "Overcooked and dry, not great."
+  },
+  {
+    "date": "2025-03-14",
+    "session": "Breakfast",
+    "main_dish_rating": 3,
+    "side_dish_rating": 1,
+    "overall_rating": 1,
+    "review": "Too spicy for my liking."
+  },
+  {
+    "date": "2025-03-11",
+    "session": "Lunch",
+    "main_dish_rating": 4,
+    "side_dish_rating": 1,
+    "overall_rating": 3,
+    "review": "Great meal, loved the taste!"
+  },
+  {
+    "date": "2025-03-11",
+    "session": "Breakfast",
+    "main_dish_rating": 1,
+    "side_dish_rating": 3,
+    "overall_rating": 2,
+    "review": "Not fresh, needs improvement."
+  },
+  {
+    "date": "2025-03-10",
+    "session": "Snacks",
+    "main_dish_rating": 2,
+    "side_dish_rating": 3,
+    "overall_rating": 5,
+    "review": "Too spicy for my liking."
+  },
+  {
+    "date": "2025-03-15",
+    "session": "Breakfast",
+    "main_dish_rating": 4,
+    "side_dish_rating": 1,
+    "overall_rating": 1,
+    "review": "Could be better, a bit bland."
+  },
+  {
+    "date": "2025-03-10",
+    "session": "Breakfast",
+    "main_dish_rating": 3,
+    "side_dish_rating": 2,
+    "overall_rating": 4,
+    "review": "Not fresh, needs improvement."
+  },
+  {
+    "date": "2025-03-13",
+    "session": "Snacks",
+    "main_dish_rating": 3,
+    "side_dish_rating": 2,
+    "overall_rating": 2,
+    "review": "Best food I've had this week!"
+  },
+  {
+    "date": "2025-03-10",
+    "session": "Snacks",
+    "main_dish_rating": 5,
+    "side_dish_rating": 3,
+    "overall_rating": 1,
+    "review": "Too spicy for my liking."
+  },
+  {
+    "date": "2025-03-09",
+    "session": "Dinner",
+    "main_dish_rating": 1,
+    "side_dish_rating": 1,
+    "overall_rating": 3,
+    "review": "Disappointed, expected more quality."
+  },
+  {
+    "date": "2025-03-12",
+    "session": "Dinner",
+    "main_dish_rating": 5,
+    "side_dish_rating": 5,
+    "overall_rating": 4,
+    "review": "Perfectly cooked, enjoyed it."
+  },
+  {
+    "date": "2025-03-15",
+    "session": "Breakfast",
+    "main_dish_rating": 1,
+    "side_dish_rating": 1,
+    "overall_rating": 2,
+    "review": "Perfectly cooked, enjoyed it."
+  },
+  {
+    "date": "2025-03-14",
+    "session": "Breakfast",
+    "main_dish_rating": 5,
+    "side_dish_rating": 3,
+    "overall_rating": 4,
+    "review": "Could be better, a bit bland."
+  },
+  {
+    "date": "2025-03-12",
+    "session": "Dinner",
+    "main_dish_rating": 1,
+    "side_dish_rating": 2,
+    "overall_rating": 1,
+    "review": "Best food I've had this week!"
+  },
+  {
+    "date": "2025-03-15",
+    "session": "Lunch",
+    "main_dish_rating": 5,
+    "side_dish_rating": 5,
+    "overall_rating": 5,
+    "review": "Perfectly cooked, enjoyed it."
+  },
+  {
+    "date": "2025-03-09",
+    "session": "Lunch",
+    "main_dish_rating": 5,
+    "side_dish_rating": 5,
+    "overall_rating": 4,
+    "review": "Great meal, loved the taste!"
+  },
+  {
+    "date": "2025-03-10",
+    "session": "Snacks",
+    "main_dish_rating": 5,
+    "side_dish_rating": 1,
+    "overall_rating": 4,
+    "review": "Average meal, nothing special."
+  },
+  {
+    "date": "2025-03-11",
+    "session": "Snacks",
+    "main_dish_rating": 1,
+    "side_dish_rating": 5,
+    "overall_rating": 1,
+    "review": "Not fresh, needs improvement."
+  },
+  {
+    "date": "2025-03-14",
+    "session": "Lunch",
+    "main_dish_rating": 5,
+    "side_dish_rating": 2,
+    "overall_rating": 2,
+    "review": "Best food I've had this week!"
+  },
+  {
+    "date": "2025-03-09",
+    "session": "Dinner",
+    "main_dish_rating": 3,
+    "side_dish_rating": 3,
+    "overall_rating": 3,
+    "review": "Overcooked and dry, not great."
+  },
+  {
+    "date": "2025-03-15",
+    "session": "Lunch",
+    "main_dish_rating": 3,
+    "side_dish_rating": 5,
+    "overall_rating": 3,
+    "review": "Overcooked and dry, not great."
+  },
+  {
+    "date": "2025-03-10",
+    "session": "Lunch",
+    "main_dish_rating": 1,
+    "side_dish_rating": 4,
+    "overall_rating": 3,
+    "review": "Not fresh, needs improvement."
+  },
+  {
+    "date": "2025-03-14",
+    "session": "Dinner",
+    "main_dish_rating": 2,
+    "side_dish_rating": 3,
+    "overall_rating": 4,
+    "review": "Too spicy for my liking."
+  },
+  {
+    "date": "2025-03-13",
+    "session": "Lunch",
+    "main_dish_rating": 5,
+    "side_dish_rating": 1,
+    "overall_rating": 5,
+    "review": "Average meal, nothing special."
+  },
+  {
+    "date": "2025-03-11",
+    "session": "Breakfast",
+    "main_dish_rating": 3,
+    "side_dish_rating": 1,
+    "overall_rating": 1,
+    "review": "Not fresh, needs improvement."
+  },
+  {
+    "date": "2025-03-09",
+    "session": "Lunch",
+    "main_dish_rating": 2,
+    "side_dish_rating": 4,
+    "overall_rating": 3,
+    "review": "Best food I've had this week!"
+  },
+  {
+    "date": "2025-03-11",
+    "session": "Snacks",
+    "main_dish_rating": 4,
+    "side_dish_rating": 1,
+    "overall_rating": 4,
+    "review": "Could be better, a bit bland."
+  },
+  {
+    "date": "2025-03-13",
+    "session": "Dinner",
+    "main_dish_rating": 2,
+    "side_dish_rating": 4,
+    "overall_rating": 2,
+    "review": "Best food I've had this week!"
+  },
+  {
+    "date": "2025-03-11",
+    "session": "Snacks",
+    "main_dish_rating": 5,
+    "side_dish_rating": 3,
+    "overall_rating": 5,
+    "review": "Average meal, nothing special."
+  },
+  {
+    "date": "2025-03-14",
+    "session": "Breakfast",
+    "main_dish_rating": 3,
+    "side_dish_rating": 5,
+    "overall_rating": 1,
+    "review": "Average meal, nothing special."
+  },
+  {
+    "date": "2025-03-10",
+    "session": "Snacks",
+    "main_dish_rating": 5,
+    "side_dish_rating": 4,
+    "overall_rating": 1,
+    "review": "Average meal, nothing special."
+  },
+  {
+    "date": "2025-03-12",
+    "session": "Dinner",
+    "main_dish_rating": 3,
+    "side_dish_rating": 2,
+    "overall_rating": 3,
+    "review": "Not fresh, needs improvement."
+  },
+  {
+    "date": "2025-03-09",
+    "session": "Lunch",
+    "main_dish_rating": 2,
+    "side_dish_rating": 3,
+    "overall_rating": 2,
+    "review": "Too spicy for my liking."
+  },
+  {
+    "date": "2025-03-09",
+    "session": "Breakfast",
+    "main_dish_rating": 1,
+    "side_dish_rating": 5,
+    "overall_rating": 4,
+    "review": "Disappointed, expected more quality."
+  },
+  {
+    "date": "2025-03-09",
+    "session": "Snacks",
+    "main_dish_rating": 2,
+    "side_dish_rating": 1,
+    "overall_rating": 2,
+    "review": "Perfectly cooked, enjoyed it."
+  },
+  {
+    "date": "2025-03-12",
+    "session": "Breakfast",
+    "main_dish_rating": 1,
+    "side_dish_rating": 2,
+    "overall_rating": 2,
+    "review": "Great meal, loved the taste!"
+  },
+  {
+    "date": "2025-03-13",
+    "session": "Lunch",
+    "main_dish_rating": 4,
+    "side_dish_rating": 2,
+    "overall_rating": 5,
+    "review": "Average meal, nothing special."
+  },
+  {
+    "date": "2025-03-15",
+    "session": "Dinner",
+    "main_dish_rating": 2,
+    "side_dish_rating": 3,
+    "overall_rating": 5,
+    "review": "Too spicy for my liking."
+  },
+  {
+    "date": "2025-03-15",
+    "session": "Dinner",
+    "main_dish_rating": 4,
+    "side_dish_rating": 1,
+    "overall_rating": 3,
+    "review": "Best food I've had this week!"
+  },
+  {
+    "date": "2025-03-15",
+    "session": "Breakfast",
+    "main_dish_rating": 2,
+    "side_dish_rating": 2,
+    "overall_rating": 4,
+    "review": "Not fresh, needs improvement."
+  },
+  {
+    "date": "2025-03-10",
+    "session": "Dinner",
+    "main_dish_rating": 1,
+    "side_dish_rating": 5,
+    "overall_rating": 1,
+    "review": "Great meal, loved the taste!"
+  },
+  {
+    "date": "2025-03-11",
+    "session": "Dinner",
+    "main_dish_rating": 5,
+    "side_dish_rating": 1,
+    "overall_rating": 5,
+    "review": "Could be better, a bit bland."
+  },
+  {
+    "date": "2025-03-10",
+    "session": "Dinner",
+    "main_dish_rating": 1,
+    "side_dish_rating": 5,
+    "overall_rating": 3,
+    "review": "Overcooked and dry, not great."
+  },
+  {
+    "date": "2025-03-10",
+    "session": "Dinner",
+    "main_dish_rating": 5,
+    "side_dish_rating": 1,
+    "overall_rating": 5,
+    "review": "Loved the dessert, main dish was okay."
+  },
+  {
+    "date": "2025-03-11",
+    "session": "Lunch",
+    "main_dish_rating": 3,
+    "side_dish_rating": 3,
+    "overall_rating": 3,
+    "review": "Not fresh, needs improvement."
   }
 ]
