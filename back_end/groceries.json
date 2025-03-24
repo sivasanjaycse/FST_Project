@@ -1,0 +1,9 @@
+[
+  {
+    "id": 1,
+    "name": "Rice",
+    "quantity_kg_l": 0,
+    "cost_per_unit": 100,
+    "total_cost": 0
+  }
+]

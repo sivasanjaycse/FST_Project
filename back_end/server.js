@@ -31,56 +31,6 @@ const writeJSONFile = (filePath, data) => {
   }
 };
 
-// Fetch groceries
-app.get("/groceries", (req, res) => {
-  res.json(readJSONFile(groceriesFilePath));
-});
-
-// Add new product
-app.post("/groceries/add-product", (req, res) => {
-  const groceries = readJSONFile(groceriesFilePath);
-  const { name, quantity, price } = req.body;
-
-  if (!name || isNaN(quantity) || isNaN(price)) {
-    return res.status(400).json({ error: "Invalid input" });
-  }
-
-  const newProduct = {
-    id: groceries.length + 1,
-    name,
-    quantity_kg_l: quantity,
-    cost_per_unit: price,
-    total_cost: quantity * price,
-  };
-
-  groceries.push(newProduct);
-  writeJSONFile(groceriesFilePath, groceries);
-
-  res.json({ message: "Product added successfully", product: newProduct });
-});
-
-// Update quantity (Add or Take)
-app.post("/groceries/:type", (req, res) => {
-  const groceries = readJSONFile(groceriesFilePath);
-  const { id, quantity, price } = req.body;
-  const product = groceries.find((item) => item.id === id);
-
-  if (!product) {
-    return res.status(404).json({ error: "Product not found" });
-  }
-
-  if (req.params.type === "add") {
-    product.quantity_kg_l += quantity;
-    product.cost_per_unit = price;
-  } else if (req.params.type === "take") {
-    product.quantity_kg_l = Math.max(0, product.quantity_kg_l - quantity);
-  }
-
-  product.total_cost = product.quantity_kg_l * product.cost_per_unit;
-  writeJSONFile(groceriesFilePath, groceries);
-  res.json({ message: "Quantity updated", product });
-});
-
 /****************************************************************************************************** */
 
 // Fetch menu
@@ -179,6 +129,82 @@ app.post("/daily-logs", (req, res) => {
 });
 
 /***************************************************************************************************************/
+// Fetch groceries
+app.get("/groceries", (req, res) => {
+  res.json(readJSONFile(groceriesFilePath));
+});
+
+// Add new product
+app.post("/groceries/add-product", (req, res) => {
+  const groceries = readJSONFile(groceriesFilePath);
+  const { name, quantity, price } = req.body;
+
+  if (!name || isNaN(quantity) || isNaN(price)) {
+    return res.status(400).json({ error: "Invalid input" });
+  }
+
+  const newProduct = {
+    id: groceries.length + 1,
+    name,
+    quantity_kg_l: quantity,
+    cost_per_unit: price,
+    total_cost: quantity * price,
+  };
+
+  groceries.push(newProduct);
+  writeJSONFile(groceriesFilePath, groceries);
+
+  res.json({ message: "Product added successfully", product: newProduct });
+});
+
+// Remove product
+app.delete("/groceries/:id", (req, res) => {
+  const groceries = readJSONFile(groceriesFilePath);
+  const productId = parseInt(req.params.id);
+  const productIndex = groceries.findIndex((item) => item.id === productId);
+  if (productIndex === -1) {
+    return res.status(404).json({ error: "Product not found" });
+  }
+  const product = groceries[productIndex];
+  groceries.splice(productIndex, 1);
+  writeJSONFile(groceriesFilePath, groceries);
+  return res.json({ message: `Product "${product.name}" removed successfully` });
+});
+
+
+
+// Update quantity (Add or Take)
+app.post("/groceries/:type", (req, res) => {
+  const groceries = readJSONFile(groceriesFilePath);
+  const { id, quantity, price, session, date } = req.body;
+  const product = groceries.find((item) => item.id === id);
+
+  if (!product) {
+    return res.status(404).json({ error: "Product not found" });
+  }
+
+  if (req.params.type === "add") {
+    let newttl=quantity*price;
+    newttl += product.total_cost;
+    product.quantity_kg_l += quantity;
+    product.cost_per_unit = newttl/product.quantity_kg_l;
+  } else if (req.params.type === "take") {
+    if (product.quantity_kg_l < quantity) {
+      return res.status(400).json({ message: "Not enough stock" });
+    }
+    product.quantity_kg_l -= quantity;
+  }
+
+  product.total_cost = product.quantity_kg_l * product.cost_per_unit;
+  writeJSONFile(groceriesFilePath, groceries);
+
+  // Record session usage
+  let sessionUsage = readSessionUsage();
+  sessionUsage.push({ date, session, totalCost: (quantity * product.cost_per_unit).toFixed(2) });
+  writeSessionUsage(sessionUsage);
+
+  res.json({ message: "Quantity updated", product });
+});
 
 app.post("/groceries/take", (req, res) => {
   const { id, quantity, session, date } = req.body;
@@ -211,9 +237,15 @@ function writeGroceries(data) {
   fs.writeFileSync("groceries.json", JSON.stringify(data, null, 2));
 }
 
-function readSessionUsage() {
-  return JSON.parse(fs.readFileSync("session_usage.json", "utf8"));
-}
+const readSessionUsage = () => {
+  try {
+    const data = fs.readFileSync("session_usage.json", "utf8");
+    return data ? JSON.parse(data) : []; // Return an empty array if data is empty
+  } catch (error) {
+    console.error(`Error reading session_usage.json:`, error);
+    return []; // Return an empty array on error
+  }
+};
 
 function writeSessionUsage(data) {
   fs.writeFileSync("session_usage.json", JSON.stringify(data, null, 2));

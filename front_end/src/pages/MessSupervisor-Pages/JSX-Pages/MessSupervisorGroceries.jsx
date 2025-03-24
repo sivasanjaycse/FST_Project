@@ -85,6 +85,30 @@ const MessSupervisorGroceryPage = () => {
       .catch((error) => console.error("Error updating data:", error));
   };
 
+  const handleRemoveProduct = (id) => {
+    const product = groceries.find(item => item.id === id);
+  
+    if (!product) {
+      alert("Product not found!");
+      return;
+    }
+  
+    if (product.quantity_kg_l > 0) {
+      alert(`Cannot remove "${product.name}". Quantity is ${product.quantity_kg_l}.`);
+      return;
+    }
+  
+    axios
+      .delete(`http://localhost:5000/groceries/${id}`)
+      .then(response => {
+        alert(response.data.message); // Show success message only if deleted
+        fetchGroceries(); // Refresh list
+      });
+  };
+  
+  
+
+
   return (
     <>
       <SupervisorNavbar />
@@ -111,6 +135,7 @@ const MessSupervisorGroceryPage = () => {
                 <th>Total Cost</th>
                 <th>Add</th>
                 <th>Take</th>
+                <th>Remove</th>
               </tr>
             </thead>
             <tbody>
@@ -135,6 +160,14 @@ const MessSupervisorGroceryPage = () => {
                       onClick={() => handleOpenModal(item.id, "take")}
                     >
                       Take
+                    </button>
+                  </td>
+                  <td>
+                    <button
+                      className="remove-btn"
+                      onClick={() => handleRemoveProduct(item.id)}
+                    >
+                      Remove
                     </button>
                   </td>
                 </tr>
