@@ -71,7 +71,9 @@
 
 /* Add & Take Button Styles */
 .add-btn,
-.take-btn {
+.take-btn,
+.remove-btn,
+.take-session-select {
   padding: 8px 12px;
   border: none;
   border-radius: 5px;
@@ -94,6 +96,10 @@
   color: white;
 }
 
+.remove-btn {
+  background: #c51616; /* red-ish for a negative update */
+  color: white;
+}
 .take-btn:hover {
   background: #b71c1c;
 }
@@ -191,4 +197,8 @@ input {
   padding: 20px;
   border-radius: 5px;
   text-align: center;
+}
+
+.take-session-select {
+  background: #dadada;
 }

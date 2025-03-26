@@ -86,28 +86,25 @@ const MessSupervisorGroceryPage = () => {
   };
 
   const handleRemoveProduct = (id) => {
-    const product = groceries.find(item => item.id === id);
-  
+    const product = groceries.find((item) => item.id === id);
+
     if (!product) {
       alert("Product not found!");
       return;
     }
-  
+
     if (product.quantity_kg_l > 0) {
-      alert(`Cannot remove "${product.name}". Quantity is ${product.quantity_kg_l}.`);
+      alert(
+        `Cannot remove "${product.name}". Quantity is ${product.quantity_kg_l}.`
+      );
       return;
     }
-  
-    axios
-      .delete(`http://localhost:5000/groceries/${id}`)
-      .then(response => {
-        alert(response.data.message); // Show success message only if deleted
-        fetchGroceries(); // Refresh list
-      });
-  };
-  
-  
 
+    axios.delete(`http://localhost:5000/groceries/${id}`).then((response) => {
+      alert(response.data.message); // Show success message only if deleted
+      window.location.reload();
+    });
+  };
 
   return (
     <>
@@ -144,8 +141,8 @@ const MessSupervisorGroceryPage = () => {
                   <td>{item.id}</td>
                   <td>{item.name}</td>
                   <td>{item.quantity_kg_l}</td>
-                  <td>{item.cost_per_unit}</td>
-                  <td>{item.total_cost}</td>
+                  <td>{parseFloat(item.cost_per_unit).toFixed(2)}</td>
+                  <td>{parseFloat(item.total_cost).toFixed(2)}</td>
                   <td>
                     <button
                       className="add-btn"
@@ -228,11 +225,16 @@ const MessSupervisorGroceryPage = () => {
                 {modalData.type === "take" && (
                   <select
                     name="session"
+                    className="take-session-select"
                     value={modalData.session}
                     onChange={handleChange}
                   >
                     {sessions.map((session, index) => (
-                      <option key={index} value={session}>
+                      <option
+                        className="take-session-select"
+                        key={index}
+                        value={session}
+                      >
                         {session}
                       </option>
                     ))}

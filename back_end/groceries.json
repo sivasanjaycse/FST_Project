@@ -2,8 +2,29 @@
   {
     "id": 1,
     "name": "Rice",
-    "quantity_kg_l": 0,
-    "cost_per_unit": 100,
-    "total_cost": 0
+    "quantity_kg_l": 10,
+    "cost_per_unit": 150,
+    "total_cost": "1500.00"
+  },
+  {
+    "id": 2,
+    "name": "Meat",
+    "quantity_kg_l": 19,
+    "cost_per_unit": 85.58851674641149,
+    "total_cost": "1626.18"
+  },
+  {
+    "id": 3,
+    "name": "Oil",
+    "quantity_kg_l": 20,
+    "cost_per_unit": 128,
+    "total_cost": 2560
+  },
+  {
+    "id": 4,
+    "name": "Watermelon",
+    "quantity_kg_l": 198,
+    "cost_per_unit": 25,
+    "total_cost": "4950.00"
   }
 ]

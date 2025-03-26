@@ -168,10 +168,10 @@ app.delete("/groceries/:id", (req, res) => {
   const product = groceries[productIndex];
   groceries.splice(productIndex, 1);
   writeJSONFile(groceriesFilePath, groceries);
-  return res.json({ message: `Product "${product.name}" removed successfully` });
+  return res.json({
+    message: `Product "${product.name}" removed successfully`,
+  });
 });
-
-
 
 // Update quantity (Add or Take)
 app.post("/groceries/:type", (req, res) => {
@@ -184,49 +184,42 @@ app.post("/groceries/:type", (req, res) => {
   }
 
   if (req.params.type === "add") {
-    let newttl=quantity*price;
-    newttl += product.total_cost;
+    const newTotalCost = product.total_cost + quantity * price;
     product.quantity_kg_l += quantity;
-    product.cost_per_unit = newttl/product.quantity_kg_l;
+    product.cost_per_unit = newTotalCost / product.quantity_kg_l;
+    product.total_cost = newTotalCost.toFixed(2);
   } else if (req.params.type === "take") {
     if (product.quantity_kg_l < quantity) {
       return res.status(400).json({ message: "Not enough stock" });
     }
+
     product.quantity_kg_l -= quantity;
+    product.total_cost = (
+      product.quantity_kg_l * product.cost_per_unit
+    ).toFixed(2);
+
+    // Update session usage
+    let sessionUsage = readSessionUsage();
+    const totalCost = (quantity * product.cost_per_unit).toFixed(2);
+
+    // Check if an entry for the same date and session exists
+    const existingEntry = sessionUsage.find(
+      (entry) => entry.date === date && entry.session === session
+    );
+
+    if (existingEntry) {
+      existingEntry.totalCost = (
+        parseFloat(existingEntry.totalCost) + parseFloat(totalCost)
+      ).toFixed(2);
+    } else {
+      sessionUsage.push({ date, session, totalCost });
+    }
+
+    writeSessionUsage(sessionUsage);
   }
 
-  product.total_cost = product.quantity_kg_l * product.cost_per_unit;
   writeJSONFile(groceriesFilePath, groceries);
-
-  // Record session usage
-  let sessionUsage = readSessionUsage();
-  sessionUsage.push({ date, session, totalCost: (quantity * product.cost_per_unit).toFixed(2) });
-  writeSessionUsage(sessionUsage);
-
   res.json({ message: "Quantity updated", product });
-});
-
-app.post("/groceries/take", (req, res) => {
-  const { id, quantity, session, date } = req.body;
-  let groceries = readGroceries();
-
-  const item = groceries.find((item) => item.id === id);
-  if (!item) return res.status(404).json({ message: "Product not found" });
-
-  if (item.quantity_kg_l < quantity) {
-    return res.status(400).json({ message: "Not enough stock" });
-  }
-
-  item.quantity_kg_l -= quantity;
-  item.total_cost = (item.quantity_kg_l * item.cost_per_unit).toFixed(2);
-  writeGroceries(groceries);
-
-  const totalCost = (quantity * item.cost_per_unit).toFixed(2);
-  let sessionUsage = readSessionUsage();
-  sessionUsage.push({ date, session, totalCost });
-  writeSessionUsage(sessionUsage);
-
-  res.status(200).json({ message: "Grocery taken successfully", sessionUsage });
 });
 
 function readGroceries() {
