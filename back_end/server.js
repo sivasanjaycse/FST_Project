@@ -10,6 +10,7 @@ const groceriesFilePath = "./groceries.json";
 const menuFilePath = "./menu.json";
 const feedbackFile = "./feedback.json";
 const DATA_FILE = "dailyLogs.json";
+const preferenceFilePath = "./student_preferences_update.json";
 
 // Read JSON file utility function
 const readJSONFile = (filePath) => {
@@ -31,8 +32,8 @@ const writeJSONFile = (filePath, data) => {
   }
 };
 
-/****************************************************************************************************** */
-
+/************************SUPERVISOR FEATURES****************************************************************************** */
+/************************MENU****************************************************************************************** */
 // Fetch menu
 app.get("/menu", (req, res) => {
   const menuData = readJSONFile(menuFilePath);
@@ -50,7 +51,7 @@ const readFeedback = () => {
   return JSON.parse(data);
 };
 
-/*************************************************************************************************************/
+/************************FEEDBACK*************************************************************************************/
 
 app.get("/feedback", (req, res) => {
   const { date, session } = req.query;
@@ -95,7 +96,7 @@ app.get("/feedback", (req, res) => {
   });
 });
 
-/****************************************************************************************************************/
+/************************DAILY LOGS****************************************************************************************/
 
 // Read daily logs
 app.get("/daily-logs", (req, res) => {
@@ -128,7 +129,7 @@ app.post("/daily-logs", (req, res) => {
   });
 });
 
-/***************************************************************************************************************/
+/*************************GROCERIES**************************************************************************************/
 // Fetch groceries
 app.get("/groceries", (req, res) => {
   res.json(readJSONFile(groceriesFilePath));
@@ -222,14 +223,6 @@ app.post("/groceries/:type", (req, res) => {
   res.json({ message: "Quantity updated", product });
 });
 
-function readGroceries() {
-  return JSON.parse(fs.readFileSync("groceries.json", "utf8"));
-}
-
-function writeGroceries(data) {
-  fs.writeFileSync("groceries.json", JSON.stringify(data, null, 2));
-}
-
 const readSessionUsage = () => {
   try {
     const data = fs.readFileSync("session_usage.json", "utf8");
@@ -244,6 +237,34 @@ function writeSessionUsage(data) {
   fs.writeFileSync("session_usage.json", JSON.stringify(data, null, 2));
 }
 
-/***********************************************************************************************/
+/***********************MESS ADMIN FEATURES**************************************************************************************/
+/**************************DASHBOARD***************************************************************************** */
 
+// **Fetch Pending Approvals**
+app.get("/pending-approvals", (req, res) => {
+  const data = readJSONFile(preferenceFilePath);
+  const pendingApprovals = data.filter(
+    (student) => student.status === "Approval Pending"
+  );
+  res.json(pendingApprovals);
+});
+
+// **Approve Student Request**
+app.post("/approve-request", (req, res) => {
+  const { rollno } = req.body;
+  let data = readJSONFile(preferenceFilePath);
+
+  const studentIndex = data.findIndex((student) => student.rollno === rollno);
+  if (studentIndex === -1) {
+    return res.status(404).json({ message: "Student not found" });
+  }
+
+  data[studentIndex].status = "Approved";
+  writeJSONFile(preferenceFilePath, data);
+
+  res.json({
+    message: "Request approved successfully",
+    student: data[studentIndex],
+  });
+});
 app.listen(5000, () => console.log("Server running on port 5000"));

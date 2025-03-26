@@ -15,6 +15,7 @@ import MessSupervisorHelpPage from "./pages/MessSupervisor-Pages/JSX-Pages/MessS
 import MessSupervisorGroceriesPage from "./pages/MessSupervisor-Pages/JSX-Pages/MessSupervisorGroceries";
 import MessSupervisorMenuPage from "./pages/MessSupervisor-Pages/JSX-Pages/MessSupervisorMenu";
 import MessSupervisorFeedbackPage from "./pages/MessSupervisor-Pages/JSX-Pages/MessSupervisorFeedback";
+import MessAdminDashboardPage from "./pages/MessAdministrator-Pages/JSX_Pages/MessAdminDashboard";
 function App() {
   return (
     <div>
@@ -57,6 +58,10 @@ function App() {
           <Route
             path="/Mess Administrator Login"
             element={<MessAdminLoginPage />}
+          />
+          <Route
+            path="/Mess Admin Dashboard"
+            element={<MessAdminDashboardPage />}
           />
         </Routes>
       </Router>
