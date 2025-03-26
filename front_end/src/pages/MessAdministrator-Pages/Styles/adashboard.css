@@ -40,9 +40,7 @@
   position: relative; /* Ensures it stays above the overlay */
   width: 70%;
 }
-/* .help-content {
-  color: black;
-} */
+
 .approval-title {
   text-align: center;
   font-size: 24px;

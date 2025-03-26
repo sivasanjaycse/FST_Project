@@ -12,6 +12,7 @@ const feedbackFile = "./feedback.json";
 const DATA_FILE = "dailyLogs.json";
 const preferenceFilePath = "./student_preferences_update.json";
 const menuApprovalFilePath = "./menu_pending_approval.json";
+const ANNOUNCEMENTS_FILE = "./announcements.json";
 
 // Read JSON file utility function
 const readJSONFile = (filePath) => {
@@ -291,4 +292,49 @@ app.post("/approve-request", (req, res) => {
     student: data[studentIndex],
   });
 });
+
+/***********************Announcements Page ************************************************************************************************* */
+
+
+// Fetch announcements
+app.get("/announcements", (req, res) => {
+  fs.readFile(ANNOUNCEMENTS_FILE, "utf8", (err, data) => {
+    if (err) return res.status(500).json({ error: "Failed to read file" });
+    res.json(JSON.parse(data));
+  });
+});
+
+// Add announcement
+app.post("/add-announcement", (req, res) => {
+  const { announcement, viewer } = req.body;
+  if (!announcement) return res.status(400).json({ error: "Empty announcement" });
+
+  fs.readFile(ANNOUNCEMENTS_FILE, "utf8", (err, data) => {
+    const announcements = err ? [] : JSON.parse(data);
+    announcements.push({ announcement, viewer });
+
+    fs.writeFile(ANNOUNCEMENTS_FILE, JSON.stringify(announcements, null, 2), (err) => {
+      if (err) return res.status(500).json({ error: "Failed to save announcement" });
+      res.json({ message: "Announcement added" });
+    });
+  });
+});
+
+// Delete announcement
+app.post("/delete-announcement", (req, res) => {
+  const { index } = req.body;
+
+  fs.readFile(ANNOUNCEMENTS_FILE, "utf8", (err, data) => {
+    if (err) return res.status(500).json({ error: "Failed to read file" });
+
+    let announcements = JSON.parse(data);
+    announcements.splice(index, 1);
+
+    fs.writeFile(ANNOUNCEMENTS_FILE, JSON.stringify(announcements, null, 2), (err) => {
+      if (err) return res.status(500).json({ error: "Failed to delete announcement" });
+      res.json({ message: "Announcement deleted" });
+    });
+  });
+});
+
 app.listen(5000, () => console.log("Server running on port 5000"));

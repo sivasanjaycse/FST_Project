@@ -1,0 +1,134 @@
+.admin-announcements-page {
+    position: relative;
+    width: 100%;
+    min-height: 100vh; /* Full-screen height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url("/src/Images/FOOD-BG.jpg") no-repeat center center/cover;
+  }
+  
+  /* White Transparent Overlay */
+  .admin-announcements-page::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.65);
+  }
+  
+  
+  /* Content Container */
+  .admin-announcements-container {
+    margin-top: 10rem;
+    margin-bottom: 1rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    padding: 20px;
+    background: rgba(
+      255,
+      255,
+      255,
+      0.8
+    ); /* Slightly stronger white for readability */
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    font-family: "Poppins", sans-serif;
+    z-index: 2;
+    position: relative; /* Ensures it stays above the overlay */
+    width: 70%;
+    
+  }
+  .admin-announcements-container p{
+    color:rgb(56, 55, 55);
+  }
+  .announcements-list {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .announcement-item {
+    background: white;
+    padding: 10px;
+    margin: 10px auto;
+    width: 60%;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .delete-btn {
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+  
+  .delete-btn:hover {
+    background-color: #cc0000;
+  }
+  
+  .add-btn {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .add-btn:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Modal */
+  .modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 20px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    z-index: 1000;
+    width: 40%;
+  }
+  
+  .modal-content {
+    text-align: center;
+  }
+  
+  textarea {
+    width: 100%;
+    height: 80px;
+    margin: 10px 0;
+    padding: 5px;
+  }
+  
+  select {
+    width: 100%;
+    padding: 5px;
+    margin: 10px 0;
+  }
+  
+  .modal-buttons {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .close-btn {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  

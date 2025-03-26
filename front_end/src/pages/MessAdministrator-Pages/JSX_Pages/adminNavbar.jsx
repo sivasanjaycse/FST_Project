@@ -8,10 +8,10 @@ const AdminNavbar = () => {
       <NavLink to="/Mess Admin Dashboard" className="nav-item">
         Dashboard
       </NavLink>
-      <NavLink to="/Mess Supervisor DailyLog" className="nav-item">
-        Daily Log
+      <NavLink to="/Mess Admin Announcements" className="nav-item">
+        Announcements
       </NavLink>
-      <NavLink to="/Mess Supervisor Groceries" className="nav-item">
+      <NavLink to="/Student Announcements" className="nav-item">
         Groceries
       </NavLink>
       <NavLink to="/Mess Supervisor Menu" className="nav-item">

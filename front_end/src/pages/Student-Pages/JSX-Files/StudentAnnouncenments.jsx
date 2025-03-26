@@ -1,9 +1,7 @@
-import "../Styles/dashboard.css";
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import SupervisorNavbar from "./supervisorNavbar";
 
-const MessSupervisorDashboardPage = () => {
+const StudentAnnouncementsPage = () => {
   const [announcements, setAnnouncements] = useState([]);
 
   useEffect(() => {
@@ -13,7 +11,7 @@ const MessSupervisorDashboardPage = () => {
         // Filter announcements for Supervisor or Everyone
         const filteredAnnouncements = response.data.filter(
           (announcement) =>
-            announcement.viewer === "supervisors" || announcement.viewer === "everyone"
+            announcement.viewer === "students" || announcement.viewer === "everyone"
         );
         setAnnouncements(filteredAnnouncements);
       })
@@ -22,7 +20,6 @@ const MessSupervisorDashboardPage = () => {
 
   return (
     <>
-      <SupervisorNavbar onTabChange={(tabIndex) => console.log("Active Tab:", tabIndex)} />
       <div className="supervisor-dashboard-page">
         <div className="supervisor-announcement-container">
           <h1>Announcements</h1>
@@ -40,4 +37,4 @@ const MessSupervisorDashboardPage = () => {
     </>
   );
 };
-export default MessSupervisorDashboardPage;
+export default StudentAnnouncementsPage;
