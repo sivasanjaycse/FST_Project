@@ -16,13 +16,16 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.65); /* White transparent layer */
+  background: rgba(0, 0, 0, 0.65);
 }
+
 
 /* Content Container */
 .admin-dashboard-content-container {
   margin-top: 10rem;
   margin-bottom: 1rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
   padding: 20px;
   background: rgba(
     255,
@@ -98,3 +101,56 @@
   background-color: white;
   color: #35cc3a;
 }
+
+/* 
+/* .menu-notification {
+  background-color: #ffcc00;
+  padding: 10px;
+  text-align: center;
+  border-radius: 5px;
+  margin: 10px 0;
+} */
+
+.view-menu-btn {
+  background-color: #007bff;
+  color: white;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+}
+
+.menu-modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  padding: 20px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  z-index: 1000;
+}
+
+.menu-modal-content {
+  text-align: center;
+}
+
+.menu-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.menu-table th, .menu-table td {
+  border: 1px solid black;
+  padding: 10px;
+}
+
+
+.close-btn {
+  background-color: #dc3545;
+  color: white;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+  margin-left: 10px;
+} 

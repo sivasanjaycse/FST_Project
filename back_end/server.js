@@ -11,6 +11,7 @@ const menuFilePath = "./menu.json";
 const feedbackFile = "./feedback.json";
 const DATA_FILE = "dailyLogs.json";
 const preferenceFilePath = "./student_preferences_update.json";
+const menuApprovalFilePath = "./menu_pending_approval.json";
 
 // Read JSON file utility function
 const readJSONFile = (filePath) => {
@@ -32,24 +33,47 @@ const writeJSONFile = (filePath, data) => {
   }
 };
 
+const readFeedback = () => {
+  const data = fs.readFileSync(feedbackFile);
+  return JSON.parse(data);
+};
+
 /************************SUPERVISOR FEATURES****************************************************************************** */
 /************************MENU****************************************************************************************** */
-// Fetch menu
+// **1️⃣ Fetch Current Menu**
 app.get("/menu", (req, res) => {
   const menuData = readJSONFile(menuFilePath);
   res.json(menuData);
 });
 
-// Update menu
+// **2️⃣ Submit Menu Change Request (Stores in Pending Approval)**
 app.post("/update-menu", (req, res) => {
   const newData = req.body;
-  writeJSONFile(menuFilePath, newData);
-  res.json({ message: "Menu updated successfully" });
+  writeJSONFile(menuApprovalFilePath, newData);
+  res.json({ message: "Menu update request submitted for approval." });
 });
-const readFeedback = () => {
-  const data = fs.readFileSync(feedbackFile);
-  return JSON.parse(data);
-};
+
+// **3️⃣ Fetch Pending Menu Changes**
+app.get("/pending-menu-updates", (req, res) => {
+  const pendingUpdates = readJSONFile(menuApprovalFilePath);
+  res.json(pendingUpdates);
+});
+
+// **4️⃣ Approve Menu Update**
+app.post("/approve-menu-update", (req, res) => {
+  const approvedData = readJSONFile(menuApprovalFilePath);
+
+  if (approvedData.length === 0) {
+    return res.status(404).json({ message: "No pending menu updates." });
+  }
+
+  writeJSONFile(menuFilePath, approvedData); // Update the main menu file
+  writeJSONFile(menuApprovalFilePath, []); // Clear pending approvals
+
+  res.json({ message: "Menu update approved and applied successfully." });
+});
+
+
 
 /************************FEEDBACK*************************************************************************************/
 
@@ -188,7 +212,7 @@ app.post("/groceries/:type", (req, res) => {
     const newTotalCost = product.total_cost + quantity * price;
     product.quantity_kg_l += quantity;
     product.cost_per_unit = newTotalCost / product.quantity_kg_l;
-    product.total_cost = newTotalCost.toFixed(2);
+    product.total_cost = newTotalCost;
   } else if (req.params.type === "take") {
     if (product.quantity_kg_l < quantity) {
       return res.status(400).json({ message: "Not enough stock" });

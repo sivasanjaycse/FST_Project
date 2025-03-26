@@ -2,15 +2,22 @@
   {
     "rollno": "12345",
     "name": "John Doe",
-    "current_mess": "Mess A",
-    "changing_mess": "Mess B",
+    "current_mess": "Veg",
+    "changing_mess": "Non Veg",
+    "status": "Approved"
+  },
+  {
+    "rollno": "12395",
+    "name": "Ram Doe",
+    "current_mess": "Veg",
+    "changing_mess": "Non Veg",
     "status": "Approval Pending"
   },
   {
     "rollno": "67890",
     "name": "Jane Smith",
-    "current_mess": "Mess C",
-    "changing_mess": "Mess A",
+    "current_mess": "Non Veg",
+    "changing_mess": "Veg",
     "status": "Approved"
   }
 ]
