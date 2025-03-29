@@ -70,7 +70,7 @@
 }
 
 /* Add & Take Button Styles */
-.add-btn,
+.add-btn1,
 .take-btn,
 .remove-btn,
 .take-session-select {
@@ -82,12 +82,12 @@
   transition: background 0.3s ease;
 }
 
-.add-btn {
+.add-btn1 {
   background: #4caf50; /* green */
   color: white;
 }
 
-.add-btn:hover {
+.add-btn1:hover {
   background: #388e3c;
 }
 

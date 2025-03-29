@@ -145,7 +145,7 @@ const MessSupervisorGroceryPage = () => {
                   <td>{parseFloat(item.total_cost).toFixed(2)}</td>
                   <td>
                     <button
-                      className="add-btn"
+                      className="add-btn1"
                       onClick={() => handleOpenModal(item.id, "add")}
                     >
                       Add

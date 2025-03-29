@@ -17,7 +17,8 @@ import MessSupervisorMenuPage from "./pages/MessSupervisor-Pages/JSX-Pages/MessS
 import MessSupervisorFeedbackPage from "./pages/MessSupervisor-Pages/JSX-Pages/MessSupervisorFeedback";
 import MessAdminDashboardPage from "./pages/MessAdministrator-Pages/JSX_Pages/MessAdminDashboard";
 import MessAdminAnnouncementsPage from "./pages/MessAdministrator-Pages/JSX_Pages/MessAdminAnnouncement";
-import StudentAnnouncementsPage from "./pages/Student-Pages/JSX-Files/StudentAnnouncenments"
+import StudentAnnouncementsPage from "./pages/Student-Pages/JSX-Files/StudentAnnouncenments";
+import WasteManagementPage from "./pages/MessAdministrator-Pages/JSX_Pages/MessAdminWM";
 function App() {
   return (
     <div>
@@ -74,6 +75,7 @@ function App() {
             path="/Mess Admin Announcements"
             element={<MessAdminAnnouncementsPage />}
           />
+          <Route path="/Mess Admin WM" element={<WasteManagementPage />} />
         </Routes>
       </Router>
       <Footer />

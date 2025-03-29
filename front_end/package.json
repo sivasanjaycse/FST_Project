@@ -18,10 +18,12 @@
     "react-dom": "^19.0.0",
     "react-router-dom": "^7.1.5",
     "@mui/material": "^5.x.x",
-  "@mui/icons-material": "^5.x.x",
-  "@emotion/react": "^11.x.x",
-  "@emotion/styled": "^11.x.x",
-  "axios": "^x.x.x" 
+    "@mui/icons-material": "^5.x.x",
+    "@emotion/react": "^11.x.x",
+    "@emotion/styled": "^11.x.x",
+    "axios": "^x.x.x",
+    "react-datepicker": "^x.x.x",
+    "recharts": "^2.5.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.19.0",
