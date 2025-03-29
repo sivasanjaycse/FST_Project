@@ -1,1 +1,44 @@
-[]
+[
+  {
+    "day": "Monday",
+    "breakfast": "Channa",
+    "lunch": "Rice & Dal",
+    "dinner": "Chapati & Curry"
+  },
+  {
+    "day": "Tuesday",
+    "breakfast": "Poha",
+    "lunch": "Rajma & Rice",
+    "dinner": "Dosa & Chutney"
+  },
+  {
+    "day": "Wednesday",
+    "breakfast": "Upma",
+    "lunch": "Briyani",
+    "dinner": "Noodles"
+  },
+  {
+    "day": "Thursday",
+    "breakfast": "Puri & Bhaji",
+    "lunch": "Bujji",
+    "dinner": "Pav Bhaji"
+  },
+  {
+    "day": "Friday",
+    "breakfast": "Aloo Paratha",
+    "lunch": "KLAtti",
+    "dinner": "Biryani"
+  },
+  {
+    "day": "Saturday",
+    "breakfast": "Uttapam",
+    "lunch": "Veg Thali",
+    "dinner": "Dal Khichdi"
+  },
+  {
+    "day": "Sunday",
+    "breakfast": "Dhokla",
+    "lunch": "Fried Rice",
+    "dinner": "Pasta"
+  }
+]

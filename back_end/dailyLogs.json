@@ -28,5 +28,25 @@
     "date": "2025-03-17",
     "session": "breakfast",
     "studentCount": 23
+  },
+  {
+    "date": "2025-03-29",
+    "session": "lunch",
+    "studentCount": 200
+  },
+  {
+    "date": "2025-03-29",
+    "session": "breakfast",
+    "studentCount": 210
+  },
+  {
+    "date": "2025-03-29",
+    "session": "snacks",
+    "studentCount": 125
+  },
+  {
+    "date": "2025-03-29",
+    "session": "dinner",
+    "studentCount": 250
   }
 ]

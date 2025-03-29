@@ -74,8 +74,6 @@ app.post("/approve-menu-update", (req, res) => {
   res.json({ message: "Menu update approved and applied successfully." });
 });
 
-
-
 /************************FEEDBACK*************************************************************************************/
 
 app.get("/feedback", (req, res) => {
@@ -295,7 +293,6 @@ app.post("/approve-request", (req, res) => {
 
 /***********************Announcements Page ************************************************************************************************* */
 
-
 // Fetch announcements
 app.get("/announcements", (req, res) => {
   fs.readFile(ANNOUNCEMENTS_FILE, "utf8", (err, data) => {
@@ -307,16 +304,22 @@ app.get("/announcements", (req, res) => {
 // Add announcement
 app.post("/add-announcement", (req, res) => {
   const { announcement, viewer } = req.body;
-  if (!announcement) return res.status(400).json({ error: "Empty announcement" });
+  if (!announcement)
+    return res.status(400).json({ error: "Empty announcement" });
 
   fs.readFile(ANNOUNCEMENTS_FILE, "utf8", (err, data) => {
     const announcements = err ? [] : JSON.parse(data);
     announcements.push({ announcement, viewer });
 
-    fs.writeFile(ANNOUNCEMENTS_FILE, JSON.stringify(announcements, null, 2), (err) => {
-      if (err) return res.status(500).json({ error: "Failed to save announcement" });
-      res.json({ message: "Announcement added" });
-    });
+    fs.writeFile(
+      ANNOUNCEMENTS_FILE,
+      JSON.stringify(announcements, null, 2),
+      (err) => {
+        if (err)
+          return res.status(500).json({ error: "Failed to save announcement" });
+        res.json({ message: "Announcement added" });
+      }
+    );
   });
 });
 
@@ -330,11 +333,102 @@ app.post("/delete-announcement", (req, res) => {
     let announcements = JSON.parse(data);
     announcements.splice(index, 1);
 
-    fs.writeFile(ANNOUNCEMENTS_FILE, JSON.stringify(announcements, null, 2), (err) => {
-      if (err) return res.status(500).json({ error: "Failed to delete announcement" });
-      res.json({ message: "Announcement deleted" });
-    });
+    fs.writeFile(
+      ANNOUNCEMENTS_FILE,
+      JSON.stringify(announcements, null, 2),
+      (err) => {
+        if (err)
+          return res
+            .status(500)
+            .json({ error: "Failed to delete announcement" });
+        res.json({ message: "Announcement deleted" });
+      }
+    );
   });
 });
 
 app.listen(5000, () => console.log("Server running on port 5000"));
+
+/********************************Waste Management***********************************************************/
+const calculateWasteScore = (date, session) => {
+  const sessionData = readJSONFile("session_usage.json");
+  const dailyLogs = readJSONFile("dailyLogs.json");
+  const feedbackData = readJSONFile("feedback.json");
+
+  let totalCost = null;
+  let studentCount = null;
+  let overallRating = null;
+
+  // Extract total cost
+  const costEntry = sessionData.find(
+    (entry) =>
+      entry.date === date &&
+      entry.session.toLowerCase() === session.toLowerCase()
+  );
+  if (costEntry) totalCost = parseFloat(costEntry.totalCost);
+
+  // Extract student count
+  const countEntry = dailyLogs.find(
+    (entry) =>
+      entry.date === date &&
+      entry.session.toLowerCase() === session.toLowerCase()
+  );
+  if (countEntry) studentCount = countEntry.studentCount;
+
+  // Extract overall rating
+  const matchingEntries = feedbackData.filter(
+    (entry) =>
+      entry.date === date &&
+      entry.session.toLowerCase() === session.toLowerCase()
+  );
+
+  if (matchingEntries.length > 0) {
+    const totalRating = matchingEntries.reduce(
+      (sum, entry) => sum + entry.overall_rating,
+      0
+    );
+    overallRating = totalRating / matchingEntries.length; // Average rating
+  }
+
+  // If data is missing, use averages
+  if (totalCost === null) {
+    const avgCost =
+      sessionData.reduce((sum, entry) => sum + parseFloat(entry.totalCost), 0) /
+      sessionData.length;
+    totalCost = avgCost || 1500; // Default if no data
+  }
+  if (studentCount === null) {
+    const avgCount =
+      dailyLogs.reduce((sum, entry) => sum + entry.studentCount, 0) /
+      dailyLogs.length;
+    studentCount = avgCount || 80; // Default if no data
+  }
+  if (overallRating === null) {
+    const avgRating =
+      feedbackData.reduce((sum, entry) => sum + entry.overall_rating, 0) /
+      feedbackData.length;
+
+    overallRating = avgRating || 2.97; // Default if no data
+  }
+  // Calculate waste score
+  const costPerStudent = totalCost / studentCount;
+  const gotScore = costPerStudent / overallRating;
+  const minScore = costPerStudent / 5;
+  const maxScore = costPerStudent / 1.9;
+  const wasteScore = (1 - (gotScore - minScore) / (maxScore - minScore)) * 100;
+
+  return {
+    date,
+    session,
+    wasteScore: wasteScore.toFixed(2), // Rounded value
+    totalCost: totalCost.toFixed(2),
+    studentCount: Math.floor(studentCount),
+    overallRating: overallRating.toFixed(2),
+  };
+};
+
+app.get("/waste-score", (req, res) => {
+  const { date, session } = req.query;
+  const result = calculateWasteScore(date, session);
+  res.json(result);
+});

@@ -3,5 +3,25 @@
     "date": "2025-03-26",
     "session": "Breakfast",
     "totalCost": "1550.00"
+  },
+  {
+    "date": "2025-03-29",
+    "session": "Lunch",
+    "totalCost": "4340.75"
+  },
+  {
+    "date": "2025-03-29",
+    "session": "Breakfast",
+    "totalCost": "1394.68"
+  },
+  {
+    "date": "2025-03-29",
+    "session": "Snacks",
+    "totalCost": "2000.00"
+  },
+  {
+    "date": "2025-03-29",
+    "session": "Dinner",
+    "totalCost": "1900.75"
   }
 ]
