@@ -46,7 +46,7 @@ const WasteManagementPage = () => {
       <div className="WM-page">
         <div className="WM-container">
           <div className="waste-management-container">
-            <h2>Waste Management Analysis</h2>
+            <h2 className="section-title">WASTE MANAGEMENT ANALYSIS</h2>
 
             {/* Date Picker */}
             <div className="date-picker-container">

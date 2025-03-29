@@ -28,7 +28,10 @@ const MessAdminAnnouncementsPage = () => {
     const announcementData = { announcement: newAnnouncement, viewer };
 
     try {
-      await axios.post("http://localhost:5000/add-announcement", announcementData);
+      await axios.post(
+        "http://localhost:5000/add-announcement",
+        announcementData
+      );
       setAnnouncements([...announcements, announcementData]);
       setShowModal(false);
       setNewAnnouncement("");
@@ -51,21 +54,30 @@ const MessAdminAnnouncementsPage = () => {
       <AdminNavbar />
       <div className="admin-announcements-page">
         <div className="admin-announcements-container">
-        <h2>Mess Announcements</h2>
-        {announcements.length === 0 ? (
-          <p>No announcements available.</p>
-        ) : (
-          <ul className="announcements-list">
-            {announcements.map((item, index) => (
-              <li key={index} className="announcement-item">
-                <span>{item.announcement} ({item.viewer})</span>
-                <button className="delete-btn" onClick={() => handleDeleteAnnouncement(index)}>Remove</button>
-              </li>
-            ))}
-          </ul>
-        )}
-        <button className="add-btn" onClick={() => setShowModal(true)}>Add Announcement</button>
-  </div>
+          <h2 className="section-title">MESS ANNOUNCEMENTS</h2>
+          {announcements.length === 0 ? (
+            <p>No announcements available.</p>
+          ) : (
+            <ul className="announcements-list">
+              {announcements.map((item, index) => (
+                <li key={index} className="announcement-item">
+                  <span>
+                    {item.announcement} ({item.viewer})
+                  </span>
+                  <button
+                    className="delete-btn"
+                    onClick={() => handleDeleteAnnouncement(index)}
+                  >
+                    Remove
+                  </button>
+                </li>
+              ))}
+            </ul>
+          )}
+          <button className="add-btn" onClick={() => setShowModal(true)}>
+            Add Announcement
+          </button>
+        </div>
         {showModal && (
           <div className="modal">
             <div className="modal-content">
@@ -75,14 +87,22 @@ const MessAdminAnnouncementsPage = () => {
                 value={newAnnouncement}
                 onChange={(e) => setNewAnnouncement(e.target.value)}
               ></textarea>
-              <select value={viewer} onChange={(e) => setViewer(e.target.value)}>
+              <select
+                value={viewer}
+                onChange={(e) => setViewer(e.target.value)}
+              >
                 <option value="students">Students</option>
                 <option value="supervisors">Supervisors</option>
                 <option value="everyone">Everyone</option>
               </select>
               <div className="modal-buttons">
                 <button onClick={handleAddAnnouncement}>Submit</button>
-                <button className="close-btn" onClick={() => setShowModal(false)}>Cancel</button>
+                <button
+                  className="close-btn"
+                  onClick={() => setShowModal(false)}
+                >
+                  Cancel
+                </button>
               </div>
             </div>
           </div>
