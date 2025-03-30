@@ -10,7 +10,7 @@ const StudentNavbar = () => {
       <NavLink to="/Student Announcements" className="nav-item">
         Announcements
       </NavLink>
-      <NavLink to="/" className="nav-item">
+      <NavLink to="/Student Menu" className="nav-item">
       Mess Menu
       </NavLink>
       <NavLink to="/" className="nav-item">

@@ -22,6 +22,7 @@ import WasteManagementPage from "./pages/MessAdministrator-Pages/JSX_Pages/MessA
 import MessAdminGroceryPage from "./pages/MessAdministrator-Pages/JSX_Pages/MessAdminGroceries";
 import MessAdminQualityPage from "./pages/MessAdministrator-Pages/JSX_Pages/MessAdminQuality";
 import MessAdminHelpPage from "./pages/MessAdministrator-Pages/JSX_Pages/MessAdminHelp";
+import StudentMenuPage from "./pages/Student-Pages/JSX-Files/StudentMenu";
 function App() {
   return (
     <div>
@@ -90,6 +91,10 @@ function App() {
           <Route
             path="/Mess Admin Help"
             element={<MessAdminHelpPage />}
+          />
+          <Route
+            path="/Student Menu"
+            element={<StudentMenuPage />}
           />
         </Routes>
       </Router>
