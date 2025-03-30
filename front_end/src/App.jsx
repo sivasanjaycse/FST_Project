@@ -4,11 +4,11 @@ import Header from "./components/Header";
 import "./App.css";
 import Footer from "./components/footer";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import StudentLoginPage from "./pages/StudentLoginPage";
-import StudentDashboard from "./pages/student-dashboard";
+import StudentLoginPage from "./pages/Login-Pages/StudentLoginPage";
+import StudentDashboard from "./pages/Student-Pages/JSX-Files/student-dashboard";
 import IntroPage from "./pages/IntroPage";
-import MessSupervisorLogin from "./pages/MessSupervisorLogin";
-import MessAdminLoginPage from "./pages/MessAdminLogin";
+import MessSupervisorLogin from "./pages/Login-Pages/MessSupervisorLogin";
+import MessAdminLoginPage from "./pages/Login-Pages/MessAdminLogin";
 import MessSupervisorDashboardPage from "./pages/MessSupervisor-Pages/JSX-Pages/MessSupervisorDashboard";
 import MessSupervisorDailyLogPage from "./pages/MessSupervisor-Pages/JSX-Pages/MessSupervisorDailyLog";
 import MessSupervisorHelpPage from "./pages/MessSupervisor-Pages/JSX-Pages/MessSupervisorHelp";
@@ -21,6 +21,7 @@ import StudentAnnouncementsPage from "./pages/Student-Pages/JSX-Files/StudentAnn
 import WasteManagementPage from "./pages/MessAdministrator-Pages/JSX_Pages/MessAdminWM";
 import MessAdminGroceryPage from "./pages/MessAdministrator-Pages/JSX_Pages/MessAdminGroceries";
 import MessAdminQualityPage from "./pages/MessAdministrator-Pages/JSX_Pages/MessAdminQuality";
+import MessAdminHelpPage from "./pages/MessAdministrator-Pages/JSX_Pages/MessAdminHelp";
 function App() {
   return (
     <div>
@@ -85,6 +86,10 @@ function App() {
           <Route
             path="/Mess Admin Quality"
             element={<MessAdminQualityPage />}
+          />
+          <Route
+            path="/Mess Admin Help"
+            element={<MessAdminHelpPage />}
           />
         </Routes>
       </Router>

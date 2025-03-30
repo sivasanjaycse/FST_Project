@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-
+import StudentNavbar from './studentNavbar'; // Import the student navbar component
 const StudentAnnouncementsPage = () => {
   const [announcements, setAnnouncements] = useState([]);
 
@@ -20,6 +20,7 @@ const StudentAnnouncementsPage = () => {
 
   return (
     <>
+     <StudentNavbar />
       <div className="supervisor-dashboard-page">
         <div className="supervisor-announcement-container">
           <h1>Announcements</h1>

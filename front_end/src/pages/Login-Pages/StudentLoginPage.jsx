@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUserGraduate, faLock} from '@fortawesome/free-solid-svg-icons';
-import './StudentLoginPage.css'; // Importing the styles for the login page
+import './LoginPage.css'; // Importing the styles for the login page
 
 const StudentLoginPage = () => {
   const [username, setUsername] = useState('');

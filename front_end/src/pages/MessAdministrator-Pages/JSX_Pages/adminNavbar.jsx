@@ -1,6 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-// import "../Styles/Navbar.css"; // Import the CSS
+
 
 const AdminNavbar = () => {
   return (
@@ -20,7 +20,7 @@ const AdminNavbar = () => {
       <NavLink to="/Mess Admin Quality" className="nav-item">
         Quality Management
       </NavLink>
-      <NavLink to="/Mess Supervisor Help" className="nav-item">
+      <NavLink to="/Mess Admin Help" className="nav-item">
         Help
       </NavLink>
       <NavLink to="/" className="nav-item">

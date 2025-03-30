@@ -1,34 +1,32 @@
-/*.student-dashboard-page{
-  margin-top: 100 px;
+.student-dashboard-page{
   position: relative;
-  height: 100vh;
-  background: url('/src/Images/FOOD-BG.jpg') no-repeat center center fixed;
-  background-size: cover;
+  width: 100%;
+  min-height: 100vh; /* Full-screen height */
   display: flex;
   justify-content: center;
   align-items: center;
-  text-align: center;
-  color: white;
-  font-family: Arial, sans-serif;
-  background-color: #000;
+  background: url("/src/Images/FOOD-BG.jpg") no-repeat center center/cover;
 }
 .student-dashboard-page::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(255, 255, 255, 0.45);
-  z-index: 1;
-}*/
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.65);
+}
 .dashboard-container {
-  color: #000;
-    position: relative;
-    z-index: 2;
-    text-align: center;
-    padding: 20px;
-    font-family: Arial, sans-serif;
+  margin-bottom: 2rem;
+  position: relative;
+  z-index: 2;
+  margin: 12rem auto 20px; /* leave space for header and navbar */
+  max-width: 1000px;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  font-family: "Poppins", sans-serif;
   }
   .blackTxt{
     color:black;
