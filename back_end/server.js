@@ -432,3 +432,40 @@ app.get("/waste-score", (req, res) => {
   const result = calculateWasteScore(date, session);
   res.json(result);
 });
+
+/**************************************Quality Management*****************************************************/
+const calculateQualityScore = (date, session) => {
+  const wasteData = calculateWasteScore(date, session);
+  if (!wasteData) return null;
+
+  const { wasteScore, overallRating } = wasteData;
+  const qualityScore = (parseFloat(wasteScore) + (overallRating * 100) / 5) / 2;
+
+  return {
+    date,
+    session,
+    qualityScore: qualityScore.toFixed(2),
+  };
+};
+
+// API Endpoint to get Quality Scores for the past 4 days
+app.get("/quality-score", (req, res) => {
+  const { date } = req.query; // Get current date
+  const sessions = ["Breakfast", "Lunch", "Snacks", "Dinner"];
+  const pastDates = Array.from({ length: 4 }, (_, i) => {
+    const d = new Date(date);
+    d.setDate(d.getDate() - i);
+    return d.toISOString().split("T")[0];
+  });
+
+  const results = [];
+
+  pastDates.forEach((d) => {
+    sessions.forEach((session) => {
+      const result = calculateQualityScore(d, session);
+      if (result) results.push(result);
+    });
+  });
+
+  res.json(results);
+});

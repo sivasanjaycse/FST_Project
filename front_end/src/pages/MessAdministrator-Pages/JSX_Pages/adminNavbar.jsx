@@ -17,8 +17,8 @@ const AdminNavbar = () => {
       <NavLink to="/Mess Admin Groceries" className="nav-item">
         Groceries
       </NavLink>
-      <NavLink to="/Mess Supervisor Feedback" className="nav-item">
-        Feedbacks
+      <NavLink to="/Mess Admin Quality" className="nav-item">
+        Quality Management
       </NavLink>
       <NavLink to="/Mess Supervisor Help" className="nav-item">
         Help
