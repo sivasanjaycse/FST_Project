@@ -1,11 +1,13 @@
 const express = require("express");
 const cors = require("cors");
 const fs = require("fs");
-
+const db = require;
+const connectToDatabase = require("./dbconnect");
+const bodyParser = require("body-parser");
 const app = express();
 app.use(cors());
 app.use(express.json());
-
+app.use(bodyParser.json());
 const groceriesFilePath = "./groceries.json";
 const menuFilePath = "./menu.json";
 const feedbackFile = "./feedback.json";
@@ -347,8 +349,6 @@ app.post("/delete-announcement", (req, res) => {
   });
 });
 
-app.listen(5000, () => console.log("Server running on port 5000"));
-
 /********************************Waste Management***********************************************************/
 const calculateWasteScore = (date, session) => {
   const sessionData = readJSONFile("session_usage.json");
@@ -469,3 +469,23 @@ app.get("/quality-score", (req, res) => {
 
   res.json(results);
 });
+
+/*********************************************lOGIN PAGE**********************************************************/
+
+app.post("/login", async (req, res) => {
+  const { user, password } = req.body;
+  const db = await connectToDatabase();
+  const collection = db.collection("users");
+
+  const foundUser = await collection.findOne({ user, password });
+  console.log("Trying login for", user, password);
+  console.log("Found user:", foundUser);
+
+  if (foundUser) {
+    res.json({ success: true, role: foundUser.role });
+  } else {
+    res.status(401).json({ success: false, message: "Invalid credentials" });
+  }
+});
+
+app.listen(5000, () => console.log("Server running on port 5000"));

@@ -4,11 +4,9 @@ import Header from "./components/Header";
 import "./App.css";
 import Footer from "./components/footer";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import StudentLoginPage from "./pages/Login-Pages/StudentLoginPage";
+import LoginPage from "./pages/Login-Pages/LoginPage";
 import StudentDashboard from "./pages/Student-Pages/JSX-Files/student-dashboard";
 import IntroPage from "./pages/IntroPage";
-import MessSupervisorLogin from "./pages/Login-Pages/MessSupervisorLogin";
-import MessAdminLoginPage from "./pages/Login-Pages/MessAdminLogin";
 import MessSupervisorDashboardPage from "./pages/MessSupervisor-Pages/JSX-Pages/MessSupervisorDashboard";
 import MessSupervisorDailyLogPage from "./pages/MessSupervisor-Pages/JSX-Pages/MessSupervisorDailyLog";
 import MessSupervisorHelpPage from "./pages/MessSupervisor-Pages/JSX-Pages/MessSupervisorHelp";
@@ -31,16 +29,11 @@ function App() {
         <Routes>
           {/* Route for Intro Page */}
           <Route path="/" element={<IntroPage />} />
-          <Route path="/student-login" element={<StudentLoginPage />} />
+          <Route path="/login/:role" element={<LoginPage />} />
           <Route path="/student-dashboard" element={<StudentDashboard />} />
           <Route
             path="/Student Announcements"
             element={<StudentAnnouncementsPage />}
-          />
-
-          <Route
-            path="/Mess Supervisor login"
-            element={<MessSupervisorLogin />}
           />
           <Route
             path="/Mess Supervisor Dashboard"
@@ -66,11 +59,6 @@ function App() {
             path="/Mess Supervisor Feedback"
             element={<MessSupervisorFeedbackPage />}
           />
-
-          <Route
-            path="/Mess Administrator Login"
-            element={<MessAdminLoginPage />}
-          />
           <Route
             path="/Mess Admin Dashboard"
             element={<MessAdminDashboardPage />}
@@ -88,14 +76,8 @@ function App() {
             path="/Mess Admin Quality"
             element={<MessAdminQualityPage />}
           />
-          <Route
-            path="/Mess Admin Help"
-            element={<MessAdminHelpPage />}
-          />
-          <Route
-            path="/Student Menu"
-            element={<StudentMenuPage />}
-          />
+          <Route path="/Mess Admin Help" element={<MessAdminHelpPage />} />
+          <Route path="/Student Menu" element={<StudentMenuPage />} />
         </Routes>
       </Router>
       <Footer />
