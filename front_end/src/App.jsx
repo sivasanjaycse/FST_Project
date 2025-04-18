@@ -36,7 +36,7 @@ function App() {
             element={<StudentAnnouncementsPage />}
           />
           <Route
-            path="/Mess Supervisor Dashboard"
+            path="/Mess Supervisor Dashboard/:messName"
             element={<MessSupervisorDashboardPage />}
           />
           <Route

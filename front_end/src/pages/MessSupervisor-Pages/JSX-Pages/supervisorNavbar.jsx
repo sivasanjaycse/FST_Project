@@ -1,11 +1,12 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useParams } from "react-router-dom";
 import "../Styles/Navbar.css"; // Import the CSS
 
 const SupervisorNavbar = () => {
+  const {messName} = useParams();
   return (
     <nav className="navbar">
-      <NavLink to="/Mess Supervisor Dashboard" className="nav-item">
+      <NavLink to={"/Mess Supervisor Dashboard/"+messName} className="nav-item">
         Dashboard
       </NavLink>
       <NavLink to="/Mess Supervisor DailyLog" className="nav-item">

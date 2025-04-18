@@ -23,5 +23,15 @@
     "date": "2025-03-29",
     "session": "Dinner",
     "totalCost": "1900.75"
+  },
+  {
+    "date": "2025-04-18",
+    "session": "Breakfast",
+    "totalCost": "1050.00"
+  },
+  {
+    "date": "2025-04-18",
+    "session": "Lunch",
+    "totalCost": "210.00"
   }
 ]

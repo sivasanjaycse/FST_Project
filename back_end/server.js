@@ -154,97 +154,144 @@ app.post("/daily-logs", (req, res) => {
 });
 
 /*************************GROCERIES**************************************************************************************/
-// Fetch groceries
-app.get("/groceries", (req, res) => {
-  res.json(readJSONFile(groceriesFilePath));
+app.get("/groceries", async (req, res) => {
+  try {
+    const db = await connectToDatabase();
+    const groceries = await db.collection("groceries").find().toArray();
+    res.json(groceries);
+  } catch (error) {
+    console.error("Error fetching groceries:", error);
+    res.status(500).json({ error: "Failed to fetch groceries" });
+  }
 });
-
 // Add new product
-app.post("/groceries/add-product", (req, res) => {
-  const groceries = readJSONFile(groceriesFilePath);
+app.post("/groceries/add-product", async (req, res) => {
   const { name, quantity, price } = req.body;
 
   if (!name || isNaN(quantity) || isNaN(price)) {
     return res.status(400).json({ error: "Invalid input" });
   }
 
-  const newProduct = {
-    id: groceries.length + 1,
-    name,
-    quantity_kg_l: quantity,
-    cost_per_unit: price,
-    total_cost: quantity * price,
-  };
+  try {
+    const db = await connectToDatabase();
 
-  groceries.push(newProduct);
-  writeJSONFile(groceriesFilePath, groceries);
+    // Get current count
+    const count = await db.collection("groceries").countDocuments();
 
-  res.json({ message: "Product added successfully", product: newProduct });
+    const newProduct = {
+      id: count + 1, // ✅ Assign ID as count + 1
+      name,
+      quantity_kg_l: quantity,
+      cost_per_unit: price,
+      total_cost: quantity * price,
+    };
+
+    const result = await db.collection("groceries").insertOne(newProduct);
+
+    res.json({
+      message: "Product added successfully",
+      product: { _id: result.insertedId, ...newProduct },
+    });
+  } catch (err) {
+    console.error("Error adding product:", err);
+    res.status(500).json({ error: "Failed to add product" });
+  }
 });
 
-// Remove product
-app.delete("/groceries/:id", (req, res) => {
-  const groceries = readJSONFile(groceriesFilePath);
+app.delete("/groceries/:id", async (req, res) => {
   const productId = parseInt(req.params.id);
-  const productIndex = groceries.findIndex((item) => item.id === productId);
-  if (productIndex === -1) {
-    return res.status(404).json({ error: "Product not found" });
+
+  try {
+    const db = await connectToDatabase();
+    const collection = db.collection("groceries");
+
+    const product = await collection.findOne({ id: productId });
+
+    if (!product) {
+      return res.status(404).json({ error: "Product not found" });
+    }
+
+    await collection.deleteOne({ id: productId });
+
+    return res.json({
+      message: `Product "${product.name}" removed successfully`,
+    });
+  } catch (err) {
+    console.error("Error deleting product:", err);
+    return res.status(500).json({ error: "Failed to delete product" });
   }
-  const product = groceries[productIndex];
-  groceries.splice(productIndex, 1);
-  writeJSONFile(groceriesFilePath, groceries);
-  return res.json({
-    message: `Product "${product.name}" removed successfully`,
-  });
 });
 
-// Update quantity (Add or Take)
-app.post("/groceries/:type", (req, res) => {
-  const groceries = readJSONFile(groceriesFilePath);
+app.post("/groceries/:type", async (req, res) => {
   const { id, quantity, price, session, date } = req.body;
-  const product = groceries.find((item) => item.id === id);
 
-  if (!product) {
-    return res.status(404).json({ error: "Product not found" });
-  }
+  try {
+    const db = await connectToDatabase();
+    const collection = db.collection("groceries");
 
-  if (req.params.type === "add") {
-    const newTotalCost = product.total_cost + quantity * price;
-    product.quantity_kg_l += quantity;
-    product.cost_per_unit = newTotalCost / product.quantity_kg_l;
-    product.total_cost = newTotalCost;
-  } else if (req.params.type === "take") {
-    if (product.quantity_kg_l < quantity) {
-      return res.status(400).json({ message: "Not enough stock" });
+    const product = await collection.findOne({ id: id });
+
+    if (!product) {
+      return res.status(404).json({ error: "Product not found" });
     }
 
-    product.quantity_kg_l -= quantity;
-    product.total_cost = (
-      product.quantity_kg_l * product.cost_per_unit
-    ).toFixed(2);
+    let updatedFields = {};
 
-    // Update session usage
-    let sessionUsage = readSessionUsage();
-    const totalCost = (quantity * product.cost_per_unit).toFixed(2);
+    if (req.params.type === "add") {
+      const newTotalCost = product.total_cost + quantity * price;
+      const newQuantity = product.quantity_kg_l + quantity;
+      const newCostPerUnit = newTotalCost / newQuantity;
 
-    // Check if an entry for the same date and session exists
-    const existingEntry = sessionUsage.find(
-      (entry) => entry.date === date && entry.session === session
-    );
+      updatedFields = {
+        quantity_kg_l: newQuantity,
+        cost_per_unit: newCostPerUnit,
+        total_cost: newTotalCost,
+      };
+    } else if (req.params.type === "take") {
+      if (product.quantity_kg_l < quantity) {
+        return res.status(400).json({ message: "Not enough stock" });
+      }
 
-    if (existingEntry) {
-      existingEntry.totalCost = (
-        parseFloat(existingEntry.totalCost) + parseFloat(totalCost)
-      ).toFixed(2);
+      const newQuantity = product.quantity_kg_l - quantity;
+      const newTotalCost = parseFloat(
+        (newQuantity * product.cost_per_unit).toFixed(2)
+      );
+
+      updatedFields = {
+        quantity_kg_l: newQuantity,
+        total_cost: newTotalCost,
+      };
+      // Update session usage
+      let sessionUsage = readSessionUsage();
+      const totalCost = (quantity * product.cost_per_unit).toFixed(2);
+
+      // Check if an entry for the same date and session exists
+      const existingEntry = sessionUsage.find(
+        (entry) => entry.date === date && entry.session === session
+      );
+
+      if (existingEntry) {
+        existingEntry.totalCost = (
+          parseFloat(existingEntry.totalCost) + parseFloat(totalCost)
+        ).toFixed(2);
+      } else {
+        sessionUsage.push({ date, session, totalCost });
+      }
+
+      writeSessionUsage(sessionUsage);
     } else {
-      sessionUsage.push({ date, session, totalCost });
+      return res.status(400).json({ error: "Invalid type parameter" });
     }
 
-    writeSessionUsage(sessionUsage);
-  }
+    await collection.updateOne({ id: id }, { $set: updatedFields });
 
-  writeJSONFile(groceriesFilePath, groceries);
-  res.json({ message: "Quantity updated", product });
+    const updatedProduct = await collection.findOne({ id: id });
+
+    res.json({ message: "Quantity updated", product: updatedProduct });
+  } catch (err) {
+    console.error("Error updating grocery:", err);
+    res.status(500).json({ error: "Failed to update grocery" });
+  }
 });
 
 const readSessionUsage = () => {
@@ -345,7 +392,6 @@ app.post("/delete-announcement", async (req, res) => {
     res.status(500).json({ error: "Failed to delete announcement" });
   }
 });
-
 
 /********************************Waste Management***********************************************************/
 const calculateWasteScore = (date, session) => {
@@ -478,9 +524,9 @@ app.post("/login", async (req, res) => {
   const foundUser = await collection.findOne({ user, password });
   console.log("Trying login for", user, password);
   console.log("Found user:", foundUser);
-
+  console.log(foundUser.mess);
   if (foundUser) {
-    res.json({ success: true, role: foundUser.role });
+    res.json({ success: true, role: foundUser.role, mess: foundUser.mess });
   } else {
     res.status(401).json({ success: false, message: "Invalid credentials" });
   }

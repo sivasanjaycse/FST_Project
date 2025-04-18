@@ -52,7 +52,7 @@ const LoginPage = () => {
         password: password,
       });
 
-      const { success, role } = response.data;
+      const { success, role, mess } = response.data;
 
       if (success) {
         localStorage.setItem("isLoggedIn", "true");
@@ -62,7 +62,7 @@ const LoginPage = () => {
         if (role === "student") {
           window.location.href = "/student-dashboard";
         } else if (role === "supervisor") {
-          window.location.href = "/Mess Supervisor Dashboard";
+          window.location.href = "/Mess Supervisor Dashboard/"+mess;
         } else if (role === "admin") {
           window.location.href = "/Mess Admin Dashboard";
         }
