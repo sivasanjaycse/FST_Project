@@ -1,7 +1,6 @@
 const express = require("express");
 const cors = require("cors");
 const fs = require("fs");
-const db = require;
 const connectToDatabase = require("./dbconnect");
 const bodyParser = require("body-parser");
 const app = express();
@@ -294,60 +293,59 @@ app.post("/approve-request", (req, res) => {
 });
 
 /***********************Announcements Page ************************************************************************************************* */
+// 🔍 Fetch announcements
+app.get("/announcements", async (req, res) => {
+  try {
+    const db = await connectToDatabase();
+    const collection = db.collection("announcements");
 
-// Fetch announcements
-app.get("/announcements", (req, res) => {
-  fs.readFile(ANNOUNCEMENTS_FILE, "utf8", (err, data) => {
-    if (err) return res.status(500).json({ error: "Failed to read file" });
-    res.json(JSON.parse(data));
-  });
+    const announcements = await collection.find().toArray();
+    res.json(announcements);
+  } catch (err) {
+    res.status(500).json({ error: "Failed to fetch announcements" });
+  }
 });
 
-// Add announcement
-app.post("/add-announcement", (req, res) => {
+// ➕ Add announcement
+app.post("/add-announcement", async (req, res) => {
   const { announcement, viewer } = req.body;
   if (!announcement)
     return res.status(400).json({ error: "Empty announcement" });
 
-  fs.readFile(ANNOUNCEMENTS_FILE, "utf8", (err, data) => {
-    const announcements = err ? [] : JSON.parse(data);
-    announcements.push({ announcement, viewer });
+  try {
+    const db = await connectToDatabase();
+    const collection = db.collection("announcements");
 
-    fs.writeFile(
-      ANNOUNCEMENTS_FILE,
-      JSON.stringify(announcements, null, 2),
-      (err) => {
-        if (err)
-          return res.status(500).json({ error: "Failed to save announcement" });
-        res.json({ message: "Announcement added" });
-      }
-    );
-  });
+    await collection.insertOne({ announcement, viewer });
+    res.json({ message: "Announcement added" });
+  } catch (err) {
+    res.status(500).json({ error: "Failed to add announcement" });
+  }
 });
 
-// Delete announcement
-app.post("/delete-announcement", (req, res) => {
-  const { index } = req.body;
+// ❌ Delete announcement by _id
+app.post("/delete-announcement", async (req, res) => {
+  const { announcement } = req.body;
 
-  fs.readFile(ANNOUNCEMENTS_FILE, "utf8", (err, data) => {
-    if (err) return res.status(500).json({ error: "Failed to read file" });
+  if (!announcement)
+    return res.status(400).json({ error: "Missing announcement text" });
 
-    let announcements = JSON.parse(data);
-    announcements.splice(index, 1);
+  try {
+    const db = await connectToDatabase();
+    const collection = db.collection("announcements");
 
-    fs.writeFile(
-      ANNOUNCEMENTS_FILE,
-      JSON.stringify(announcements, null, 2),
-      (err) => {
-        if (err)
-          return res
-            .status(500)
-            .json({ error: "Failed to delete announcement" });
-        res.json({ message: "Announcement deleted" });
-      }
-    );
-  });
+    const result = await collection.deleteOne({ announcement });
+
+    if (result.deletedCount === 0)
+      return res.status(404).json({ error: "Announcement not found" });
+
+    res.json({ message: "Announcement deleted" });
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: "Failed to delete announcement" });
+  }
 });
+
 
 /********************************Waste Management***********************************************************/
 const calculateWasteScore = (date, session) => {

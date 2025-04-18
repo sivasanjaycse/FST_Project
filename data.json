@@ -1,0 +1,7 @@
+[
+  { "usrid": 3, "user": "siva", "password": "siva", "role": "supervisor" },
+  { "usrid": 4, "user": "gokul", "password": "gokul", "role": "supervisor" },
+  { "usrid": 5, "user": "jawa", "password": "jawa", "role": "student" },
+  { "usrid": 6, "user": "shanmu", "password": "shanmu", "role": "student" },
+  { "usrid": 7, "user": "raju", "password": "raju", "role": "student" }
+]

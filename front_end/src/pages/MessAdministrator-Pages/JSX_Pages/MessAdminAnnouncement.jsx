@@ -41,8 +41,13 @@ const MessAdminAnnouncementsPage = () => {
   };
 
   const handleDeleteAnnouncement = async (index) => {
+    const announcementToDelete = announcements[index].announcement;
+
     try {
-      await axios.post("http://localhost:5000/delete-announcement", { index });
+      await axios.post("http://localhost:5000/delete-announcement", {
+        announcement: announcementToDelete,
+      });
+
       setAnnouncements(announcements.filter((_, i) => i !== index));
     } catch (error) {
       console.error("Error deleting announcement:", error);
