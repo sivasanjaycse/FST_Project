@@ -6,7 +6,7 @@ import { useParams } from "react-router-dom";
 const RatingCircle = ({ title, rating, delay }) => {
   const numericRating = parseFloat(rating);
   const safeRating = !isNaN(numericRating) ? numericRating.toFixed(1) : "N/A";
-const {messName} = useParams();
+
   return (
     <div className="rating-container" style={{ animationDelay: `${delay}s` }}>
       <h3 className="rating-title">{title}</h3>
@@ -36,6 +36,7 @@ const {messName} = useParams();
 
 const MessSupervisorFeedbackPage = () => {
   const [feedbackData, setFeedbackData] = useState(null);
+  const { messName } = useParams();
   const [selectedDate, setSelectedDate] = useState(
     new Date().toISOString().split("T")[0]
   );
@@ -44,7 +45,7 @@ const MessSupervisorFeedbackPage = () => {
   const fetchFeedback = () => {
     axios
       .get(
-        `http://localhost:5000/feedback?date=${selectedDate}&session=${selectedSession}`
+        `http://localhost:5000/feedback?date=${selectedDate}&session=${selectedSession}&messName=${messName}`
       )
       .then((response) => setFeedbackData(response.data))
       .catch((error) => console.error("Error fetching feedback:", error));

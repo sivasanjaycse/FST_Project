@@ -76,47 +76,59 @@ app.post("/approve-menu-update", (req, res) => {
 
 /************************FEEDBACK*************************************************************************************/
 
-app.get("/feedback", (req, res) => {
-  const { date, session } = req.query;
-  const feedback = readFeedback().filter(
-    (item) => item.date === date && item.session === session
-  );
+app.get("/feedback", async (req, res) => {
+  const { date, session,messName } = req.query;
 
-  if (feedback.length === 0) {
-    return res.status(200).json({ message: "No feedback available" });
+  if (!date || !session) {
+    return res.status(400).json({ error: "Date and session required" });
   }
 
-  const totalMainDish = feedback.reduce(
-    (sum, item) => sum + item.main_dish_rating,
-    0
-  );
-  const totalSideDish = feedback.reduce(
-    (sum, item) => sum + item.side_dish_rating,
-    0
-  );
-  const totalOverall = feedback.reduce(
-    (sum, item) => sum + item.overall_rating,
-    0
-  );
+  try {
+    const db = await connectToDatabase();
+    const feedback = await db
+      .collection("feedback")
+      .find({ date, session,"mess":messName })
+      .toArray();
 
-  const averageMainDish = (totalMainDish / feedback.length).toFixed(2);
-  const averageSideDish = (totalSideDish / feedback.length).toFixed(2);
-  const averageOverall = (totalOverall / feedback.length).toFixed(2);
+    if (feedback.length === 0) {
+      return res.status(200).json({ message: "No feedback available" });
+    }
 
-  const bestReview = feedback.reduce((a, b) =>
-    a.review.length > b.review.length ? a : b
-  );
-  const worstReview = feedback.reduce((a, b) =>
-    a.review.length < b.review.length ? a : b
-  );
+    const totalMainDish = feedback.reduce(
+      (sum, item) => sum + item.main_dish_rating,
+      0
+    );
+    const totalSideDish = feedback.reduce(
+      (sum, item) => sum + item.side_dish_rating,
+      0
+    );
+    const totalOverall = feedback.reduce(
+      (sum, item) => sum + item.overall_rating,
+      0
+    );
 
-  res.json({
-    averageMainDish,
-    averageSideDish,
-    averageOverall,
-    bestReview: bestReview.review,
-    worstReview: worstReview.review,
-  });
+    const averageMainDish = (totalMainDish / feedback.length).toFixed(2);
+    const averageSideDish = (totalSideDish / feedback.length).toFixed(2);
+    const averageOverall = (totalOverall / feedback.length).toFixed(2);
+
+    const bestReview = feedback.reduce((a, b) =>
+      a.review.length > b.review.length ? a : b
+    );
+    const worstReview = feedback.reduce((a, b) =>
+      a.review.length < b.review.length ? a : b
+    );
+
+    res.json({
+      averageMainDish,
+      averageSideDish,
+      averageOverall,
+      bestReview: bestReview.review,
+      worstReview: worstReview.review,
+    });
+  } catch (error) {
+    console.error("❌ Error fetching feedback:", error.message);
+    res.status(500).json({ error: "Failed to fetch feedback" });
+  }
 });
 
 /************************DAILY LOGS****************************************************************************************/
@@ -128,7 +140,7 @@ app.get("/daily-logs/:messName", async (req, res) => {
     const db = await connectToDatabase();
     const logs = await db
       .collection("dailyLogs")
-      .find({"mess":messName})
+      .find({ mess: messName })
       .sort({ date: -1 })
       .toArray();
     res.json(logs);
