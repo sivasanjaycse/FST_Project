@@ -470,16 +470,16 @@ app.post("/delete-announcement", async (req, res) => {
 });
 
 /********************************Waste Management***********************************************************/
-const calculateWasteScore = (date, session) => {
+const calculateWasteScore = async (date, session, db) => {
+  const dailyLogs = await db.collection("dailyLogs").find().toArray();
+  const feedbackData = await db.collection("feedback").find().toArray();
   const sessionData = readJSONFile("session_usage.json");
-  const dailyLogs = readJSONFile("dailyLogs.json");
-  const feedbackData = readJSONFile("feedback.json");
 
   let totalCost = null;
   let studentCount = null;
   let overallRating = null;
 
-  // Extract total cost
+  // Extract total cost from file
   const costEntry = sessionData.find(
     (entry) =>
       entry.date === date &&
@@ -487,7 +487,7 @@ const calculateWasteScore = (date, session) => {
   );
   if (costEntry) totalCost = parseFloat(costEntry.totalCost);
 
-  // Extract student count
+  // Extract student count from DB
   const countEntry = dailyLogs.find(
     (entry) =>
       entry.date === date &&
@@ -495,7 +495,7 @@ const calculateWasteScore = (date, session) => {
   );
   if (countEntry) studentCount = countEntry.studentCount;
 
-  // Extract overall rating
+  // Extract overall rating from DB
   const matchingEntries = feedbackData.filter(
     (entry) =>
       entry.date === date &&
@@ -507,30 +507,32 @@ const calculateWasteScore = (date, session) => {
       (sum, entry) => sum + entry.overall_rating,
       0
     );
-    overallRating = totalRating / matchingEntries.length; // Average rating
+    overallRating = totalRating / matchingEntries.length;
   }
 
-  // If data is missing, use averages
+  // Handle missing data
   if (totalCost === null) {
     const avgCost =
       sessionData.reduce((sum, entry) => sum + parseFloat(entry.totalCost), 0) /
       sessionData.length;
-    totalCost = avgCost || 1500; // Default if no data
+    totalCost = avgCost || 1500;
   }
+
   if (studentCount === null) {
     const avgCount =
       dailyLogs.reduce((sum, entry) => sum + entry.studentCount, 0) /
       dailyLogs.length;
-    studentCount = avgCount || 80; // Default if no data
+    studentCount = avgCount || 80;
   }
+
   if (overallRating === null) {
     const avgRating =
       feedbackData.reduce((sum, entry) => sum + entry.overall_rating, 0) /
       feedbackData.length;
-
-    overallRating = avgRating || 2.97; // Default if no data
+    overallRating = avgRating || 2.97;
   }
-  // Calculate waste score
+
+  // Waste Score calculation
   const costPerStudent = totalCost / studentCount;
   const gotScore = costPerStudent / overallRating;
   const minScore = costPerStudent / 5;
@@ -540,22 +542,28 @@ const calculateWasteScore = (date, session) => {
   return {
     date,
     session,
-    wasteScore: wasteScore.toFixed(2), // Rounded value
+    wasteScore: wasteScore.toFixed(2),
     totalCost: totalCost.toFixed(2),
     studentCount: Math.floor(studentCount),
     overallRating: overallRating.toFixed(2),
   };
 };
 
-app.get("/waste-score", (req, res) => {
-  const { date, session } = req.query;
-  const result = calculateWasteScore(date, session);
-  res.json(result);
+app.get("/waste-score", async (req, res) => {
+  try {
+    const { date, session } = req.query;
+    const db = await connectToDatabase();
+
+    const result = await calculateWasteScore(date, session, db);
+    res.json(result);
+  } catch (err) {
+    res.status(500).json({ error: "Error calculating waste score" });
+  }
 });
 
 /**************************************Quality Management*****************************************************/
-const calculateQualityScore = (date, session) => {
-  const wasteData = calculateWasteScore(date, session);
+const calculateQualityScore = async (date, session, db) => {
+  const wasteData = await calculateWasteScore(date, session, db);
   if (!wasteData) return null;
 
   const { wasteScore, overallRating } = wasteData;
@@ -568,26 +576,31 @@ const calculateQualityScore = (date, session) => {
   };
 };
 
-// API Endpoint to get Quality Scores for the past 4 days
-app.get("/quality-score", (req, res) => {
-  const { date } = req.query; // Get current date
-  const sessions = ["Breakfast", "Lunch", "Snacks", "Dinner"];
-  const pastDates = Array.from({ length: 4 }, (_, i) => {
-    const d = new Date(date);
-    d.setDate(d.getDate() - i);
-    return d.toISOString().split("T")[0];
-  });
+app.get("/quality-score", async (req, res) => {
+  try {
+    const { date } = req.query;
+    const db = await connectToDatabase();
 
-  const results = [];
-
-  pastDates.forEach((d) => {
-    sessions.forEach((session) => {
-      const result = calculateQualityScore(d, session);
-      if (result) results.push(result);
+    const sessions = ["Breakfast", "Lunch", "Snacks", "Dinner"];
+    const pastDates = Array.from({ length: 4 }, (_, i) => {
+      const d = new Date(date);
+      d.setDate(d.getDate() - i);
+      return d.toISOString().split("T")[0];
     });
-  });
 
-  res.json(results);
+    const results = [];
+
+    for (const d of pastDates) {
+      for (const session of sessions) {
+        const result = await calculateQualityScore(d, session, db);
+        if (result) results.push(result);
+      }
+    }
+
+    res.json(results);
+  } catch (err) {
+    res.status(500).json({ error: "Error calculating quality scores" });
+  }
 });
 
 /*********************************************lOGIN PAGE**********************************************************/
