@@ -8,10 +8,10 @@ const MessSupervisorMenuPage = () => {
   const [editMode, setEditMode] = useState(false);
   const [updatedMenu, setUpdatedMenu] = useState([]);
   const [showConfirmation, setShowConfirmation] = useState(false); // Overlay State
-const {messName} = useParams();
+  const { messName } = useParams();
   useEffect(() => {
     axios
-      .get("http://localhost:5000/menu")
+      .get("http://localhost:5000/menu/" + messName)
       .then((response) => {
         setMenu(response.data);
         setUpdatedMenu(response.data);
@@ -36,7 +36,6 @@ const {messName} = useParams();
         setMenu(updatedMenu);
         setEditMode(false);
         setShowConfirmation(true); // Show confirmation overlay
-
       })
       .catch((error) => console.error("Error updating menu:", error));
   };
@@ -119,7 +118,13 @@ const {messName} = useParams();
         <div className="overlay">
           <div className="overlay-box">
             <p>Menu has been submitted for approval!</p>
-            <button className="close-btn" onClick={() => {setShowConfirmation(false);window.location.reload();}}>
+            <button
+              className="close-btn"
+              onClick={() => {
+                setShowConfirmation(false);
+                window.location.reload();
+              }}
+            >
               Close
             </button>
           </div>

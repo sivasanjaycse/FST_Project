@@ -41,43 +41,77 @@ const readFeedback = () => {
 
 /************************SUPERVISOR FEATURES****************************************************************************** */
 /************************MENU****************************************************************************************** */
-// **1️⃣ Fetch Current Menu**
-app.get("/menu", (req, res) => {
-  const menuData = readJSONFile(menuFilePath);
-  res.json(menuData);
-});
-
-// **2️⃣ Submit Menu Change Request (Stores in Pending Approval)**
-app.post("/update-menu", (req, res) => {
-  const newData = req.body;
-  writeJSONFile(menuApprovalFilePath, newData);
-  res.json({ message: "Menu update request submitted for approval." });
-});
-
-// **3️⃣ Fetch Pending Menu Changes**
-app.get("/pending-menu-updates", (req, res) => {
-  const pendingUpdates = readJSONFile(menuApprovalFilePath);
-  res.json(pendingUpdates);
-});
-
-// **4️⃣ Approve Menu Update**
-app.post("/approve-menu-update", (req, res) => {
-  const approvedData = readJSONFile(menuApprovalFilePath);
-
-  if (approvedData.length === 0) {
-    return res.status(404).json({ message: "No pending menu updates." });
+// 1️⃣ Fetch Current Menu
+app.get("/menu/:messName", async (req, res) => {
+  const messName = req.params.messName;
+  try {
+    const db = await connectToDatabase();
+    const menu = await db.collection("menu").find({ mess: messName }).toArray();
+    res.json(menu);
+  } catch (err) {
+    res.status(500).json({ error: "Failed to fetch menu" });
   }
-
-  writeJSONFile(menuFilePath, approvedData); // Update the main menu file
-  writeJSONFile(menuApprovalFilePath, []); // Clear pending approvals
-
-  res.json({ message: "Menu update approved and applied successfully." });
 });
 
+// 2️⃣ Submit Menu Change Request (Stores in Pending Approval)
+app.post("/update-menu", async (req, res) => {
+  try {
+    const db = await connectToDatabase();
+    const newData = req.body;
+
+    if (!Array.isArray(newData)) {
+      return res.status(400).json({ error: "Menu data must be an array" });
+    }
+
+    await db.collection("menu_pending_approval").deleteMany({});
+    await db.collection("menu_pending_approval").insertMany(newData);
+
+    res.json({ message: "Menu update request submitted for approval." });
+  } catch (err) {
+    res.status(500).json({ error: "Failed to submit menu update" });
+  }
+});
+
+// 3️⃣ Fetch Pending Menu Changes
+app.get("/pending-menu-updates", async (req, res) => {
+  try {
+    const db = await connectToDatabase();
+    const pending = await db
+      .collection("menu_pending_approval")
+      .find()
+      .toArray();
+    res.json(pending);
+  } catch (err) {
+    res.status(500).json({ error: "Failed to fetch pending menu updates" });
+  }
+});
+
+// 4️⃣ Approve Menu Update
+app.post("/approve-menu-update", async (req, res) => {
+  try {
+    const db = await connectToDatabase();
+    const approvedData = await db
+      .collection("menu_pending_approval")
+      .find()
+      .toArray();
+
+    if (approvedData.length === 0) {
+      return res.status(404).json({ message: "No pending menu updates." });
+    }
+
+    await db.collection("menu").deleteMany({});
+    await db.collection("menu").insertMany(approvedData);
+    await db.collection("menu_pending_approval").deleteMany({});
+
+    res.json({ message: "Menu update approved and applied successfully." });
+  } catch (err) {
+    res.status(500).json({ error: "Failed to approve menu update" });
+  }
+});
 /************************FEEDBACK*************************************************************************************/
 
 app.get("/feedback", async (req, res) => {
-  const { date, session,messName } = req.query;
+  const { date, session, messName } = req.query;
 
   if (!date || !session) {
     return res.status(400).json({ error: "Date and session required" });
@@ -87,7 +121,7 @@ app.get("/feedback", async (req, res) => {
     const db = await connectToDatabase();
     const feedback = await db
       .collection("feedback")
-      .find({ date, session,"mess":messName })
+      .find({ date, session, mess: messName })
       .toArray();
 
     if (feedback.length === 0) {

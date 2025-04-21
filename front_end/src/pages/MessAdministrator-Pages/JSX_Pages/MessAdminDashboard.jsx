@@ -106,7 +106,7 @@ const MessAdminDashboardPage = () => {
         {showMenuModal && pendingMenu && (
           <div className="menu-modal">
             <div className="menu-modal-content">
-              <h2>Pending Menu Update</h2>
+              <h2>Pending Menu Update {pendingMenu.mess}</h2>
               <table className="menu-table">
                 <thead>
                   <tr>
