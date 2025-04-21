@@ -12,21 +12,23 @@ const MessAdminDashboardPage = () => {
     fetchPendingApprovals();
     fetchPendingMenuUpdates();
   }, []);
-  
+
   const fetchPendingMenuUpdates = async () => {
     try {
-      const response = await axios.get("http://localhost:5000/pending-menu-updates");
+      const response = await axios.get(
+        "http://localhost:5000/pending-menu-updates"
+      );
       setPendingMenu(response.data.length > 0 ? response.data : null); // Only set if data exists
     } catch (error) {
       console.error("Error fetching pending menu updates:", error);
     }
   };
-  
-  
 
   const fetchPendingApprovals = async () => {
     try {
-      const response = await axios.get("http://localhost:5000/pending-approvals");
+      const response = await axios.get(
+        "http://localhost:5000/pending-approvals"
+      );
       setPendingApprovals(response.data);
     } catch (error) {
       console.error("Error fetching pending approvals:", error);
@@ -36,15 +38,20 @@ const MessAdminDashboardPage = () => {
   const handleApprove = async (rollno) => {
     try {
       await axios.post("http://localhost:5000/approve-request", { rollno });
-      setPendingApprovals((prev) => prev.filter((student) => student.rollno !== rollno));
+      setPendingApprovals((prev) =>
+        prev.filter((student) => student.rollno !== rollno)
+      );
     } catch (error) {
       console.error("Error approving request:", error);
     }
+    window.location.reload();
   };
 
   const handleApproveMenu = async () => {
     try {
-      const response = await axios.post("http://localhost:5000/approve-menu-update");
+      const response = await axios.post(
+        "http://localhost:5000/approve-menu-update"
+      );
       alert(response.data.message);
       setPendingMenu(null); // Remove pending updates from UI
       setShowMenuModal(false); // Close modal
@@ -55,7 +62,9 @@ const MessAdminDashboardPage = () => {
 
   return (
     <>
-      <AdminNavbar onTabChange={(tabIndex) => console.log("Active Tab:", tabIndex)} />
+      <AdminNavbar
+        onTabChange={(tabIndex) => console.log("Active Tab:", tabIndex)}
+      />
       <div className="admin-dashboard-page">
         {/* Pending Mess Preference Approvals */}
         <div className="admin-dashboard-content-container">
@@ -81,7 +90,10 @@ const MessAdminDashboardPage = () => {
                     <td>{student.current_mess}</td>
                     <td>{student.changing_mess}</td>
                     <td>
-                      <button className="approve-btn" onClick={() => handleApprove(student.rollno)}>
+                      <button
+                        className="approve-btn"
+                        onClick={() => handleApprove(student.rollno)}
+                      >
                         Approve
                       </button>
                     </td>
@@ -95,8 +107,13 @@ const MessAdminDashboardPage = () => {
         {/* Pending Menu Approvals Notification */}
         {pendingMenu && (
           <div className="admin-dashboard-content-container">
-            <h2 className="approval-title">Pending Mess Preference Approvals</h2>
-            <button className="view-menu-btn" onClick={() => setShowMenuModal(true)}>
+            <h2 className="approval-title">
+              Pending Mess Preference Approvals
+            </h2>
+            <button
+              className="view-menu-btn"
+              onClick={() => setShowMenuModal(true)}
+            >
               Click Here to view
             </button>
           </div>
@@ -130,7 +147,10 @@ const MessAdminDashboardPage = () => {
               <button className="approve-btn" onClick={handleApproveMenu}>
                 Approve Menu
               </button>
-              <button className="close-btn" onClick={() => setShowMenuModal(false)}>
+              <button
+                className="close-btn"
+                onClick={() => setShowMenuModal(false)}
+              >
                 Close
               </button>
             </div>

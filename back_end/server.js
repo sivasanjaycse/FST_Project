@@ -388,31 +388,44 @@ function writeSessionUsage(data) {
 /**************************DASHBOARD***************************************************************************** */
 
 // **Fetch Pending Approvals**
-app.get("/pending-approvals", (req, res) => {
-  const data = readJSONFile(preferenceFilePath);
-  const pendingApprovals = data.filter(
-    (student) => student.status === "Approval Pending"
-  );
-  res.json(pendingApprovals);
+app.get("/pending-approvals", async (req, res) => {
+  try {
+    const db = await connectToDatabase();
+    const collection = db.collection("student_preference_update");
+
+    const pendingApprovals = await collection
+      .find({ status: "Approval Pending" })
+      .toArray();
+
+    res.json(pendingApprovals);
+  } catch (err) {
+    res.status(500).json({ error: "Failed to fetch pending approvals" });
+  }
 });
 
-// **Approve Student Request**
-app.post("/approve-request", (req, res) => {
-  const { rollno } = req.body;
-  let data = readJSONFile(preferenceFilePath);
+app.post("/approve-request", async (req, res) => {
+  try {
+    const { rollno } = req.body;
+    const db = await connectToDatabase();
+    const collection = db.collection("student_preference_update");
 
-  const studentIndex = data.findIndex((student) => student.rollno === rollno);
-  if (studentIndex === -1) {
-    return res.status(404).json({ message: "Student not found" });
+    const result = await collection.findOneAndUpdate(
+      { rollno },
+      { $set: { status: "Approved" } },
+      { returnDocument: "after" }
+    );
+
+    if (!result.value) {
+      return res.status(404).json({ message: "Student not found" });
+    }
+
+    res.json({
+      message: "Request approved successfully",
+      student: result.value,
+    });
+  } catch (err) {
+    res.status(500).json({ error: "Failed to approve request" });
   }
-
-  data[studentIndex].status = "Approved";
-  writeJSONFile(preferenceFilePath, data);
-
-  res.json({
-    message: "Request approved successfully",
-    student: data[studentIndex],
-  });
 });
 
 /***********************Announcements Page ************************************************************************************************* */
