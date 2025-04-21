@@ -2,10 +2,12 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "../Styles/groceries.css";
 import SupervisorNavbar from "./supervisorNavbar";
+import { useParams } from "react-router-dom";
 
 const sessions = ["Breakfast", "Lunch", "Snacks", "Dinner"];
 
 const MessSupervisorGroceryPage = () => {
+  const { messName } = useParams();
   const [groceries, setGroceries] = useState([]);
   const [filteredGroceries, setFilteredGroceries] = useState([]);
   const [searchQuery, setSearchQuery] = useState("");
@@ -21,7 +23,7 @@ const MessSupervisorGroceryPage = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/groceries")
+      .get("http://localhost:5000/groceries/" + messName)
       .then((response) => {
         const sortedData = response.data.sort((a, b) =>
           a.name.localeCompare(b.name)
@@ -71,6 +73,7 @@ const MessSupervisorGroceryPage = () => {
       price: parseFloat(price),
       date: todayDate,
       session,
+      mess: messName,
     };
 
     const endpoint =

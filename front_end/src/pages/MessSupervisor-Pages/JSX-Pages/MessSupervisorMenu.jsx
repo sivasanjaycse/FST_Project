@@ -2,13 +2,13 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "../Styles/messmenu.css";
 import SupervisorNavbar from "./supervisorNavbar";
-
+import { useParams } from "react-router-dom";
 const MessSupervisorMenuPage = () => {
   const [menu, setMenu] = useState([]);
   const [editMode, setEditMode] = useState(false);
   const [updatedMenu, setUpdatedMenu] = useState([]);
   const [showConfirmation, setShowConfirmation] = useState(false); // Overlay State
-
+const {messName} = useParams();
   useEffect(() => {
     axios
       .get("http://localhost:5000/menu")

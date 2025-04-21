@@ -7,7 +7,6 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 app.use(bodyParser.json());
-const groceriesFilePath = "./groceries.json";
 const menuFilePath = "./menu.json";
 const feedbackFile = "./feedback.json";
 const DATA_FILE = "dailyLogs.json";
@@ -154,7 +153,22 @@ app.post("/daily-logs", (req, res) => {
 });
 
 /*************************GROCERIES**************************************************************************************/
+app.get("/groceries/:messName", async (req, res) => {
+  const messName = req.params.messName;
+  try {
+    const db = await connectToDatabase();
+    const groceries = await db
+      .collection("groceries")
+      .find({ mess: messName })
+      .toArray();
+    res.json(groceries);
+  } catch (error) {
+    console.error("Error fetching groceries:", error);
+    res.status(500).json({ error: "Failed to fetch groceries" });
+  }
+});
 app.get("/groceries", async (req, res) => {
+  const messName = req.params.messName;
   try {
     const db = await connectToDatabase();
     const groceries = await db.collection("groceries").find().toArray();
@@ -166,9 +180,9 @@ app.get("/groceries", async (req, res) => {
 });
 // Add new product
 app.post("/groceries/add-product", async (req, res) => {
-  const { name, quantity, price } = req.body;
+  const { name, quantity, price, mess } = req.body;
 
-  if (!name || isNaN(quantity) || isNaN(price)) {
+  if (!name || isNaN(quantity) || isNaN(price) || !mess) {
     return res.status(400).json({ error: "Invalid input" });
   }
 
@@ -184,6 +198,7 @@ app.post("/groceries/add-product", async (req, res) => {
       quantity_kg_l: quantity,
       cost_per_unit: price,
       total_cost: quantity * price,
+      mess,
     };
 
     const result = await db.collection("groceries").insertOne(newProduct);

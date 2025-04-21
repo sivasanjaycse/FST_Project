@@ -1,11 +1,12 @@
 import "../Styles/dashboard.css";
 import React, { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 import axios from "axios";
 import SupervisorNavbar from "./supervisorNavbar";
 
 const MessSupervisorDashboardPage = () => {
   const [announcements, setAnnouncements] = useState([]);
-
+  const {messName} = useParams();
   useEffect(() => {
     axios
       .get("http://localhost:5000/announcements")
@@ -13,7 +14,8 @@ const MessSupervisorDashboardPage = () => {
         // Filter announcements for Supervisor or Everyone
         const filteredAnnouncements = response.data.filter(
           (announcement) =>
-            announcement.viewer === "supervisors" || announcement.viewer === "everyone"
+            announcement.viewer === "supervisors" ||
+            announcement.viewer === "everyone"
         );
         setAnnouncements(filteredAnnouncements);
       })
@@ -22,12 +24,14 @@ const MessSupervisorDashboardPage = () => {
 
   return (
     <>
-      <SupervisorNavbar onTabChange={(tabIndex) => console.log("Active Tab:", tabIndex)} />
+      <SupervisorNavbar
+        onTabChange={(tabIndex) => console.log("Active Tab:", tabIndex)}
+      />
       <div className="supervisor-dashboard-page">
         <div className="supervisor-announcement-container">
           <h1>Announcements</h1>
           <article className="supervisor-announcement-list">
-          {announcements.length > 0 ? (
+            {announcements.length > 0 ? (
               announcements.map((announcement, index) => (
                 <section key={index}>{announcement.announcement}</section>
               ))

@@ -2,11 +2,13 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import SupervisorNavbar from "./supervisorNavbar";
 import "../Styles/dailylog.css";
+import { useParams } from "react-router-dom";
 
 const MessSupervisorDailyLogPage = () => {
   const [logs, setLogs] = useState([]);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [newStudentCount, setNewStudentCount] = useState("");
+  const { messName } = useParams();
   const [selectedDate, setSelectedDate] = useState(
     new Date().toISOString().split("T")[0]
   );

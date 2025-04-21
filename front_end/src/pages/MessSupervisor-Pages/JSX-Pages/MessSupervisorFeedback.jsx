@@ -2,11 +2,11 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "../Styles/feedback.css";
 import SupervisorNavbar from "./supervisorNavbar";
-
+import { useParams } from "react-router-dom";
 const RatingCircle = ({ title, rating, delay }) => {
   const numericRating = parseFloat(rating);
   const safeRating = !isNaN(numericRating) ? numericRating.toFixed(1) : "N/A";
-
+const {messName} = useParams();
   return (
     <div className="rating-container" style={{ animationDelay: `${delay}s` }}>
       <h3 className="rating-title">{title}</h3>

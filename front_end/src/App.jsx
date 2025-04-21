@@ -40,23 +40,23 @@ function App() {
             element={<MessSupervisorDashboardPage />}
           />
           <Route
-            path="/Mess Supervisor DailyLog"
+            path="/Mess Supervisor DailyLog/:messName"
             element={<MessSupervisorDailyLogPage />}
           />
           <Route
-            path="/Mess Supervisor Help"
+            path="/Mess Supervisor Help/:messName"
             element={<MessSupervisorHelpPage />}
           />
           <Route
-            path="/Mess Supervisor Groceries"
+            path="/Mess Supervisor Groceries/:messName"
             element={<MessSupervisorGroceriesPage />}
           />
           <Route
-            path="/Mess Supervisor Menu"
+            path="/Mess Supervisor Menu/:messName"
             element={<MessSupervisorMenuPage />}
           />
           <Route
-            path="/Mess Supervisor Feedback"
+            path="/Mess Supervisor Feedback/:messName"
             element={<MessSupervisorFeedbackPage />}
           />
           <Route
