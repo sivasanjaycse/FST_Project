@@ -17,7 +17,7 @@ const MessSupervisorDailyLogPage = () => {
   // Fetch logs from backend
   useEffect(() => {
     axios
-      .get("http://localhost:5000/daily-logs")
+      .get("http://localhost:5000/daily-logs/" + messName)
       .then((response) => setLogs(response.data))
       .catch((error) => console.error("Error fetching logs:", error));
   }, []);
@@ -41,7 +41,7 @@ const MessSupervisorDailyLogPage = () => {
 
     // Proceed with submitting data if no duplicate
     axios
-      .post("http://localhost:5000/daily-logs", {
+      .post("http://localhost:5000/daily-logs/" + messName, {
         date: selectedDate,
         session: selectedSession,
         studentCount: parseInt(newStudentCount, 10),
@@ -53,6 +53,7 @@ const MessSupervisorDailyLogPage = () => {
         setSelectedSession("");
       })
       .catch((error) => console.error("Error adding log:", error));
+    window.location.reload();
   };
 
   return (

@@ -122,34 +122,49 @@ app.get("/feedback", (req, res) => {
 /************************DAILY LOGS****************************************************************************************/
 
 // Read daily logs
-app.get("/daily-logs", (req, res) => {
-  fs.readFile(DATA_FILE, "utf8", (err, data) => {
-    if (err) return res.status(500).json({ error: "Error reading data" });
-    res.json(JSON.parse(data));
-  });
+app.get("/daily-logs/:messName", async (req, res) => {
+  const messName = req.params.messName;
+  try {
+    const db = await connectToDatabase();
+    const logs = await db
+      .collection("dailyLogs")
+      .find({"mess":messName})
+      .sort({ date: -1 })
+      .toArray();
+    res.json(logs);
+  } catch (error) {
+    console.error("❌ Error fetching daily logs:", error.message);
+    res.status(500).json({ error: "Error fetching data from database" });
+  }
 });
 
 // Add a new log entry
-app.post("/daily-logs", (req, res) => {
+app.post("/daily-logs/:messName", async (req, res) => {
   const { date, session, studentCount } = req.body;
-
+  const messName = req.params.messName;
   if (!date || !session || !studentCount) {
     return res
       .status(400)
       .json({ error: "Date, session, and student count required" });
   }
 
-  fs.readFile(DATA_FILE, "utf8", (err, data) => {
-    if (err) return res.status(500).json({ error: "Error reading data" });
-
-    let logs = JSON.parse(data);
-    logs.push({ date, session, studentCount });
-
-    fs.writeFile(DATA_FILE, JSON.stringify(logs, null, 2), (writeErr) => {
-      if (writeErr) return res.status(500).json({ error: "Error saving data" });
-      res.json({ message: "Log added successfully", logs });
+  try {
+    const db = await connectToDatabase();
+    const result = await db.collection("dailyLogs").insertOne({
+      date,
+      session,
+      studentCount,
+      mess: messName,
     });
-  });
+
+    res.json({
+      message: "Log added successfully",
+      log: result.ops?.[0] || { date, session, studentCount },
+    });
+  } catch (error) {
+    console.error("❌ Error saving daily log:", error.message);
+    res.status(500).json({ error: "Error saving data to database" });
+  }
 });
 
 /*************************GROCERIES**************************************************************************************/
