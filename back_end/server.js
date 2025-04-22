@@ -672,4 +672,45 @@ app.post("/login", async (req, res) => {
   }
 });
 
+const validRoles = ["student", "supervisor"];
+const validMess = ["Veg Mess", "PG Mess", "NV Mess"];
+app.post("/users", async (req, res) => {
+  const { usrid, user, password, role, mess } = req.body;
+  const db = await connectToDatabase();
+  if (!validRoles.includes(role) || !validMess.includes(mess)) {
+    return res.status(400).json({ error: "Invalid role or mess" });
+  }
+
+  try {
+    await db
+      .collection("users")
+      .insertOne({ usrid, user, password, role, mess });
+    res.json({ message: "User added successfully" });
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+// Delete user by usrid
+app.delete("/users/:usrid", async (req, res) => {
+  const db = await connectToDatabase();
+  const usrid = parseInt(req.params.usrid);
+  try {
+    await db.collection("users").deleteOne({ usrid });
+    res.json({ message: "User deleted successfully" });
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+app.get("/users", async (req, res) => {
+  const db = await connectToDatabase();
+  try {
+    const users = await db.collection("users").find({}).toArray();
+    res.json(users);
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
 app.listen(5000, () => console.log("Server running on port 5000"));

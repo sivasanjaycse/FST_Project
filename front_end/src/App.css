@@ -1,11 +1,32 @@
 .header {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 1000;
-  }
-.footer{
-  position:static;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+.footer {
+  position: static;
   bottom: 0;
-  width:100%;
+  width: 100%;
+}
+select {
+  background-color: #f0f4f2; /* soft grey-green background */
+  border: 1px solid #a0b9a0; /* muted green border */
+  color: #2c3e2c; /* dark green text */
+  padding: 0.6rem 1rem;
+  font-size: 1rem;
+  border-radius: 6px;
+  font-family: "Segoe UI", sans-serif;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+select:focus {
+  border-color: #4caf50; /* brighter green when focused */
+  box-shadow: 0 0 4px rgba(76, 175, 80, 0.3);
+}
+
+option {
+  background-color: #f0f4f2;
+  color: #2c3e2c;
 }

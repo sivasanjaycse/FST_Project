@@ -9,7 +9,6 @@ import StudentDashboard from "./pages/Student-Pages/JSX-Files/student-dashboard"
 import IntroPage from "./pages/IntroPage";
 import MessSupervisorDashboardPage from "./pages/MessSupervisor-Pages/JSX-Pages/MessSupervisorDashboard";
 import MessSupervisorDailyLogPage from "./pages/MessSupervisor-Pages/JSX-Pages/MessSupervisorDailyLog";
-import MessSupervisorHelpPage from "./pages/MessSupervisor-Pages/JSX-Pages/MessSupervisorHelp";
 import MessSupervisorGroceriesPage from "./pages/MessSupervisor-Pages/JSX-Pages/MessSupervisorGroceries";
 import MessSupervisorMenuPage from "./pages/MessSupervisor-Pages/JSX-Pages/MessSupervisorMenu";
 import MessSupervisorFeedbackPage from "./pages/MessSupervisor-Pages/JSX-Pages/MessSupervisorFeedback";
@@ -19,9 +18,9 @@ import StudentAnnouncementsPage from "./pages/Student-Pages/JSX-Files/StudentAnn
 import WasteManagementPage from "./pages/MessAdministrator-Pages/JSX_Pages/MessAdminWM";
 import MessAdminGroceryPage from "./pages/MessAdministrator-Pages/JSX_Pages/MessAdminGroceries";
 import MessAdminQualityPage from "./pages/MessAdministrator-Pages/JSX_Pages/MessAdminQuality";
-import MessAdminHelpPage from "./pages/MessAdministrator-Pages/JSX_Pages/MessAdminHelp";
 import StudentMenuPage from "./pages/Student-Pages/JSX-Files/StudentMenu";
 import SupWasteManagementPage from "./pages/MessSupervisor-Pages/JSX-Pages/MessSupervisorWM";
+import UserManagement from "./pages/MessAdministrator-Pages/JSX_Pages/UserManagement";
 function App() {
   return (
     <div>
@@ -47,10 +46,6 @@ function App() {
           <Route
             path="/Mess Supervisor DailyLog/:messName"
             element={<MessSupervisorDailyLogPage />}
-          />
-          <Route
-            path="/Mess Supervisor Help/:messName"
-            element={<MessSupervisorHelpPage />}
           />
           <Route
             path="/Mess Supervisor Groceries/:messName"
@@ -81,7 +76,7 @@ function App() {
             path="/Mess Admin Quality"
             element={<MessAdminQualityPage />}
           />
-          <Route path="/Mess Admin Help" element={<MessAdminHelpPage />} />
+          <Route path="/Mess Admin usr" element={<UserManagement />} />
           <Route path="/Student Menu" element={<StudentMenuPage />} />
         </Routes>
       </Router>
