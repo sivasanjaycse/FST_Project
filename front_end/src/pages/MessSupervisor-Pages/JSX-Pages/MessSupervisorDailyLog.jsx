@@ -99,15 +99,6 @@ const MessSupervisorDailyLogPage = () => {
               </tbody>
             </table>
           </section>
-
-          <hr />
-
-          {/* Section 3: Download Waste Management PDF */}
-          <section className="waste-management">
-            <h2 className="section-title">Download Waste Management Report</h2>
-            <input type="date" className="date-picker" />
-            <button className="download-btn">Download PDF</button>
-          </section>
         </div>
       </div>
 

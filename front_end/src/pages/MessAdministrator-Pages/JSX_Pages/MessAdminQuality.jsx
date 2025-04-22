@@ -14,6 +14,7 @@ import "../Styles/qualityManagement.css"; // Add styles
 
 const MessAdminQualityPage = () => {
   const [qualityData, setQualityData] = useState([]);
+  const [messType, setMessType] = useState("PG Mess"); // Default mess type
   const today = new Date().toISOString().split("T")[0]; // Get current date
 
   useEffect(() => {
@@ -21,7 +22,7 @@ const MessAdminQualityPage = () => {
       try {
         const response = await axios.get(
           "http://localhost:5000/quality-score",
-          { params: { date: today } }
+          { params: { date: today, messType } } // Pass messType to backend
         );
 
         // Ensure data formatting
@@ -39,7 +40,7 @@ const MessAdminQualityPage = () => {
     };
 
     fetchQualityScores();
-  }, []);
+  }, [messType, today]); // Re-fetch data when messType or date changes
 
   return (
     <>
@@ -47,6 +48,19 @@ const MessAdminQualityPage = () => {
       <div className="quality-management-page">
         <div className="quality-management-container">
           <h2>Quality Management Analysis (Past 4 Days)</h2>
+
+          {/* Mess Type Selector */}
+          <div className="dropdown-container">
+            <label>Select Mess Type:</label>
+            <select
+              value={messType}
+              onChange={(e) => setMessType(e.target.value)}
+            >
+              <option>PG Mess</option>
+              <option>NV Mess</option>
+              <option>Veg Mess</option>
+            </select>
+          </div>
 
           {qualityData.length > 0 ? (
             <ResponsiveContainer width="100%" height={450}>

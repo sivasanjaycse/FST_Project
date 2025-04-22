@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import DatePicker from "react-datepicker";
-import AdminNavbar from "./adminNavbar";
+import AdminNavbar from "./supervisorNavbar";
 import "react-datepicker/dist/react-datepicker.css";
+import { useParams } from "react-router-dom";
 import {
   BarChart,
   Bar,
@@ -12,14 +13,13 @@ import {
   Legend,
   ResponsiveContainer,
 } from "recharts";
-import "../Styles/wasteManagement.css";
 
-const WasteManagementPage = () => {
+const SupWasteManagementPage = () => {
   const [wasteData, setWasteData] = useState([]);
   const [selectedDate, setSelectedDate] = useState(new Date());
   const [messType, setMessType] = useState("PG Mess"); // default
   const sessions = ["Breakfast", "Lunch", "Snacks", "Dinner"];
-
+  const { messName } = useParams;
   const fetchWasteScores = async (date) => {
     const formattedDate = date.toISOString().split("T")[0];
     const sessionData = [];
@@ -27,7 +27,7 @@ const WasteManagementPage = () => {
     for (const session of sessions) {
       try {
         const response = await axios.get(`http://localhost:5000/waste-score`, {
-          params: { date: formattedDate, session, messType },
+          params: { date: formattedDate, session, messType: messName },
         });
         sessionData.push(response.data);
       } catch (error) {
@@ -48,19 +48,6 @@ const WasteManagementPage = () => {
         <div className="WM-container">
           <div className="waste-management-container">
             <h2 className="section-title">WASTE MANAGEMENT ANALYSIS</h2>
-
-            {/* Mess Type Selector */}
-            <div className="dropdown-container">
-              <label>Select Mess Type:</label>
-              <select
-                value={messType}
-                onChange={(e) => setMessType(e.target.value)}
-              >
-                <option>PG Mess</option>
-                <option>NV Mess</option>
-                <option>Veg Mess</option>
-              </select>
-            </div>
 
             {/* Date Picker */}
             <div className="date-picker-container">
@@ -133,4 +120,4 @@ const WasteManagementPage = () => {
   );
 };
 
-export default WasteManagementPage;
+export default SupWasteManagementPage;

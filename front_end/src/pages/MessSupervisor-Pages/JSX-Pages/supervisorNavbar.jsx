@@ -32,8 +32,8 @@ const SupervisorNavbar = () => {
       >
         Feedbacks
       </NavLink>
-      <NavLink to={"/Mess Supervisor Help/" + messName} className="nav-item">
-        Help
+      <NavLink to={"/Mess Supervisor WM/" + messName} className="nav-item">
+        Waste Management
       </NavLink>
       <NavLink to="/" className="nav-item">
         Logout

@@ -94,12 +94,11 @@ app.post("/approve-menu-update", async (req, res) => {
       .collection("menu_pending_approval")
       .find()
       .toArray();
-
     if (approvedData.length === 0) {
       return res.status(404).json({ message: "No pending menu updates." });
     }
 
-    await db.collection("menu").deleteMany({});
+    await db.collection("menu").deleteMany({ mess: approvedData[0].mess });
     await db.collection("menu").insertMany(approvedData);
     await db.collection("menu_pending_approval").deleteMany({});
 
@@ -338,23 +337,33 @@ app.post("/groceries/:type", async (req, res) => {
         total_cost: newTotalCost,
       };
       // Update session usage
-      let sessionUsage = readSessionUsage();
       const totalCost = (quantity * product.cost_per_unit).toFixed(2);
 
-      // Check if an entry for the same date and session exists
-      const existingEntry = sessionUsage.find(
-        (entry) => entry.date === date && entry.session === session
-      );
+      const usageCollection = db.collection("session_usage");
+
+      const existingEntry = await usageCollection.findOne({
+        date,
+        session,
+        mess: product.mess,
+      });
 
       if (existingEntry) {
-        existingEntry.totalCost = (
+        const updatedCost = (
           parseFloat(existingEntry.totalCost) + parseFloat(totalCost)
         ).toFixed(2);
-      } else {
-        sessionUsage.push({ date, session, totalCost });
-      }
 
-      writeSessionUsage(sessionUsage);
+        await usageCollection.updateOne(
+          { date, session, mess: product.mess },
+          { $set: { totalCost: updatedCost } }
+        );
+      } else {
+        await usageCollection.insertOne({
+          date,
+          session,
+          totalCost,
+          mess: product.mess,
+        });
+      }
     } else {
       return res.status(400).json({ error: "Invalid type parameter" });
     }
@@ -362,7 +371,7 @@ app.post("/groceries/:type", async (req, res) => {
     await collection.updateOne({ id: id }, { $set: updatedFields });
 
     const updatedProduct = await collection.findOne({ id: id });
-
+    console.log(updatedProduct);
     res.json({ message: "Quantity updated", product: updatedProduct });
   } catch (err) {
     console.error("Error updating grocery:", err);
@@ -483,10 +492,19 @@ app.post("/delete-announcement", async (req, res) => {
 });
 
 /********************************Waste Management***********************************************************/
-const calculateWasteScore = async (date, session, db) => {
-  const dailyLogs = await db.collection("dailyLogs").find().toArray();
-  const feedbackData = await db.collection("feedback").find().toArray();
-  const sessionData = readJSONFile("session_usage.json");
+const calculateWasteScore = async (date, session, db, messType) => {
+  const dailyLogs = await db
+    .collection("dailyLogs")
+    .find({ mess: messType })
+    .toArray();
+  const feedbackData = await db
+    .collection("feedback")
+    .find({ mess: messType })
+    .toArray();
+  const sessionData = await db
+    .collection("session_usage")
+    .find({ mess: messType })
+    .toArray(); // <-- updated!
 
   let totalCost = null;
   let studentCount = null;
@@ -545,17 +563,37 @@ const calculateWasteScore = async (date, session, db) => {
     overallRating = avgRating || 2.97;
   }
 
-  // Waste Score calculation
-  const costPerStudent = totalCost / studentCount;
-  const gotScore = costPerStudent / overallRating;
-  const minScore = costPerStudent / 5;
-  const maxScore = costPerStudent / 1.9;
-  const wasteScore = (1 - (gotScore - minScore) / (maxScore - minScore)) * 100;
+  // Set the range of expected values for cost and student count for normalization
+  const maxCost = 2000; // Adjust based on realistic values for cost
+  const minCost = 500; // Adjust based on realistic values for cost
+  const maxStudents = 500; // Adjust based on realistic student count
+  const minStudents = 50; // Adjust based on realistic student count
+
+  // Normalize total cost (lower cost means less waste, so we reverse it)
+  const normalizedCost = (maxCost - totalCost) / (maxCost - minCost);
+
+  // Normalize student count (more students means less waste)
+  const normalizedStudentCount =
+    (studentCount - minStudents) / (maxStudents - minStudents);
+
+  // Normalize overall rating (higher rating means less waste)
+  const normalizedRating = overallRating / 5; // Assuming rating is out of 5
+
+  // Calculate the waste score by weighting the factors equally (33% each)
+  const wasteScore =
+    (0.33 * normalizedCost +
+      0.33 * normalizedStudentCount +
+      0.33 * normalizedRating) *
+      90 +
+    10;
+
+  // Ensure waste score is within the 10 to 100 range
+  const finalWasteScore = Math.max(10, Math.min(100, wasteScore));
 
   return {
     date,
     session,
-    wasteScore: wasteScore.toFixed(2),
+    wasteScore: finalWasteScore.toFixed(2),
     totalCost: totalCost.toFixed(2),
     studentCount: Math.floor(studentCount),
     overallRating: overallRating.toFixed(2),
@@ -564,10 +602,10 @@ const calculateWasteScore = async (date, session, db) => {
 
 app.get("/waste-score", async (req, res) => {
   try {
-    const { date, session } = req.query;
+    const { date, session, messType } = req.query;
     const db = await connectToDatabase();
 
-    const result = await calculateWasteScore(date, session, db);
+    const result = await calculateWasteScore(date, session, db, messType);
     res.json(result);
   } catch (err) {
     res.status(500).json({ error: "Error calculating waste score" });
@@ -575,8 +613,8 @@ app.get("/waste-score", async (req, res) => {
 });
 
 /**************************************Quality Management*****************************************************/
-const calculateQualityScore = async (date, session, db) => {
-  const wasteData = await calculateWasteScore(date, session, db);
+const calculateQualityScore = async (date, session, db, messType) => {
+  const wasteData = await calculateWasteScore(date, session, db, messType);
   if (!wasteData) return null;
 
   const { wasteScore, overallRating } = wasteData;
@@ -591,7 +629,7 @@ const calculateQualityScore = async (date, session, db) => {
 
 app.get("/quality-score", async (req, res) => {
   try {
-    const { date } = req.query;
+    const { date, messType } = req.query;
     const db = await connectToDatabase();
 
     const sessions = ["Breakfast", "Lunch", "Snacks", "Dinner"];
@@ -605,7 +643,7 @@ app.get("/quality-score", async (req, res) => {
 
     for (const d of pastDates) {
       for (const session of sessions) {
-        const result = await calculateQualityScore(d, session, db);
+        const result = await calculateQualityScore(d, session, db, messType);
         if (result) results.push(result);
       }
     }
