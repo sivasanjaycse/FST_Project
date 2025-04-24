@@ -414,25 +414,30 @@ app.get("/pending-approvals", async (req, res) => {
 
 app.post("/approve-request", async (req, res) => {
   try {
-    const { rollno } = req.body;
+    const { rollno, changing_mess } = req.body;
     const db = await connectToDatabase();
     const collection = db.collection("student_preference_update");
+    const userCollection = db.collection("users");
 
-    const result = await collection.findOneAndUpdate(
-      { rollno },
-      { $set: { status: "Approved" } },
-      { returnDocument: "after" }
-    );
-
-    if (!result.value) {
+    // Step 1: Delete request
+    const deleteResult = await collection.findOneAndDelete({ rollno });
+    console.log(deleteResult.changing_mess);
+    // Step 2: If not found
+    if (!deleteResult) {
       return res.status(404).json({ message: "Student not found" });
     }
 
+    // Step 3: Update mess in users collection
+    const updateResult = await userCollection.updateOne(
+      { usrid: parseInt(rollno) },
+      { $set: { mess: deleteResult.changing_mess } }
+    );
+
     res.json({
-      message: "Request approved successfully",
-      student: result.value,
+      message: "Request approved and mess updated successfully",
     });
   } catch (err) {
+    console.error("Error approving request:", err);
     res.status(500).json({ error: "Failed to approve request" });
   }
 });
@@ -708,6 +713,38 @@ app.get("/users", async (req, res) => {
   try {
     const users = await db.collection("users").find({}).toArray();
     res.json(users);
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+// Mess Change Request API
+app.post("/mess-change-request", async (req, res) => {
+  const db = await connectToDatabase();
+  const { rollno, current_mess, changing_mess } = req.body;
+
+  if (!rollno || !current_mess || !changing_mess) {
+    return res.status(400).json({ error: "Missing required fields" });
+  }
+
+  try {
+    // Get user name from user collection based on rollno
+    const user = await db
+      .collection("users")
+      .findOne({ usrid: parseInt(rollno) });
+    if (!user) return res.status(404).json({ error: "Roll number not found" });
+
+    const name = user.user; // assuming username = name here
+
+    await db.collection("student_preference_update").insertOne({
+      rollno,
+      name,
+      current_mess,
+      changing_mess,
+      status: "Approval Pending",
+    });
+
+    res.json({ message: "Request sent successfully" });
   } catch (err) {
     res.status(500).json({ error: err.message });
   }

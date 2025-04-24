@@ -14,14 +14,11 @@ const StudentNavbar = () => {
       <NavLink to={"/Student Menu/"+messName} className="nav-item">
         Mess Menu
       </NavLink>
-      <NavLink to="/" className="nav-item">
-        Mess Bill
+      <NavLink to={"/Student Mess Change/"+messName} className="nav-item">
+        Change Preference
       </NavLink>
       <NavLink to="/" className="nav-item">
         Feedback
-      </NavLink>
-      <NavLink to="/" className="nav-item">
-        Feature
       </NavLink>
       <NavLink to="/" className="nav-item">
         Logout

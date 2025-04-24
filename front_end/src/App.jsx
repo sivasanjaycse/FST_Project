@@ -21,6 +21,7 @@ import MessAdminQualityPage from "./pages/MessAdministrator-Pages/JSX_Pages/Mess
 import StudentMenuPage from "./pages/Student-Pages/JSX-Files/StudentMenu";
 import SupWasteManagementPage from "./pages/MessSupervisor-Pages/JSX-Pages/MessSupervisorWM";
 import UserManagement from "./pages/MessAdministrator-Pages/JSX_Pages/UserManagement";
+import MessChangeForm from "./pages/Student-Pages/JSX-Files/MessChangeForm";
 function App() {
   return (
     <div>
@@ -37,6 +38,10 @@ function App() {
           <Route
             path="/Student Announcements/:messName"
             element={<StudentAnnouncementsPage />}
+          />
+          <Route
+            path="/Student Mess Change/:messName"
+            element={<MessChangeForm />}
           />
           <Route
             path="/Mess Supervisor Dashboard/:messName"
