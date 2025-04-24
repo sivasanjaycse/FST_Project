@@ -1,16 +1,17 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import StudentNavbar from "./studentNavbar";
+import { useParams } from "react-router-dom";
 
 const StudentMenuPage = () => {
   const [menu, setMenu] = useState([]);
   const [editMode, setEditMode] = useState(false);
   const [updatedMenu, setUpdatedMenu] = useState([]);
   const [showConfirmation, setShowConfirmation] = useState(false); // Overlay State
-
+  const { messName } = useParams();
   useEffect(() => {
     axios
-      .get("http://localhost:5000/menu")
+      .get("http://localhost:5000/menu/" + messName)
       .then((response) => {
         setMenu(response.data);
         setUpdatedMenu(response.data);
@@ -35,7 +36,6 @@ const StudentMenuPage = () => {
         setMenu(updatedMenu);
         setEditMode(false);
         setShowConfirmation(true); // Show confirmation overlay
-
       })
       .catch((error) => console.error("Error updating menu:", error));
   };

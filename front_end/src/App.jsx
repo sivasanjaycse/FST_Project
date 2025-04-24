@@ -30,9 +30,12 @@ function App() {
           {/* Route for Intro Page */}
           <Route path="/" element={<IntroPage />} />
           <Route path="/login/:role" element={<LoginPage />} />
-          <Route path="/student-dashboard" element={<StudentDashboard />} />
           <Route
-            path="/Student Announcements"
+            path="/student-dashboard/:messName"
+            element={<StudentDashboard />}
+          />
+          <Route
+            path="/Student Announcements/:messName"
             element={<StudentAnnouncementsPage />}
           />
           <Route
@@ -77,7 +80,7 @@ function App() {
             element={<MessAdminQualityPage />}
           />
           <Route path="/Mess Admin usr" element={<UserManagement />} />
-          <Route path="/Student Menu" element={<StudentMenuPage />} />
+          <Route path="/Student Menu/:messName" element={<StudentMenuPage />} />
         </Routes>
       </Router>
       <Footer />

@@ -60,9 +60,9 @@ const LoginPage = () => {
         alert("Login successful!");
 
         if (role === "student") {
-          window.location.href = "/student-dashboard";
+          window.location.href = "/student-dashboard/" + mess;
         } else if (role === "supervisor") {
-          window.location.href = "/Mess Supervisor Dashboard/"+mess;
+          window.location.href = "/Mess Supervisor Dashboard/" + mess;
         } else if (role === "admin") {
           window.location.href = "/Mess Admin Dashboard";
         }

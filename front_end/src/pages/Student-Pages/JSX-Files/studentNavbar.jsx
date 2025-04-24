@@ -1,26 +1,27 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useParams } from "react-router-dom";
 
 const StudentNavbar = () => {
+  const { messName } = useParams();
   return (
     <nav className="navbar">
-      <NavLink to="/student-dashboard" className="nav-item">
+      <NavLink to={"/student-dashboard/"+messName} className="nav-item">
         Dashboard
       </NavLink>
-      <NavLink to="/Student Announcements" className="nav-item">
+      <NavLink to={"/Student Announcements/"+messName} className="nav-item">
         Announcements
       </NavLink>
-      <NavLink to="/Student Menu" className="nav-item">
-      Mess Menu
+      <NavLink to={"/Student Menu/"+messName} className="nav-item">
+        Mess Menu
       </NavLink>
       <NavLink to="/" className="nav-item">
-      Mess Bill
+        Mess Bill
       </NavLink>
       <NavLink to="/" className="nav-item">
-      Feedback
+        Feedback
       </NavLink>
       <NavLink to="/" className="nav-item">
-      Feature
+        Feature
       </NavLink>
       <NavLink to="/" className="nav-item">
         Logout
