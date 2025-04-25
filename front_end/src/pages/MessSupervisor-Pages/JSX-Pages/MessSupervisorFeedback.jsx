@@ -102,17 +102,10 @@ const MessSupervisorFeedbackPage = () => {
                 />
               </div>
 
-              <div className="reviews">
-                <div className="worst-review">
-                  <h3>Bad Review</h3>
-                  <p>{feedbackData.worstReview}</p>
-                </div>
-
                 <div className="best-review">
-                  <h3>Good Review</h3>
+                  <h3>Top Review</h3>
                   <p>{feedbackData.bestReview}</p>
                 </div>
-              </div>
             </>
           ) : (
             <p>Loading feedback...</p>

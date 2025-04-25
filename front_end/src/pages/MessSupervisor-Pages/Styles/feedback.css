@@ -104,9 +104,10 @@
 
 .best-review,
 .worst-review {
-  width: 48%;
+  width: 80%;
   padding: 15px;
   border-radius: 8px;
+  align-self: center;
 }
 
 .best-review {

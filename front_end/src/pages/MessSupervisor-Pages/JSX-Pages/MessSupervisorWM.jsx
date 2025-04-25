@@ -19,7 +19,7 @@ const SupWasteManagementPage = () => {
   const [selectedDate, setSelectedDate] = useState(new Date());
   const [messType, setMessType] = useState("PG Mess"); // default
   const sessions = ["Breakfast", "Lunch", "Snacks", "Dinner"];
-  const { messName } = useParams;
+  const { messName } = useParams();
   const fetchWasteScores = async (date) => {
     const formattedDate = date.toISOString().split("T")[0];
     const sessionData = [];

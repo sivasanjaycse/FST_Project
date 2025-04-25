@@ -22,6 +22,7 @@ import StudentMenuPage from "./pages/Student-Pages/JSX-Files/StudentMenu";
 import SupWasteManagementPage from "./pages/MessSupervisor-Pages/JSX-Pages/MessSupervisorWM";
 import UserManagement from "./pages/MessAdministrator-Pages/JSX_Pages/UserManagement";
 import MessChangeForm from "./pages/Student-Pages/JSX-Files/MessChangeForm";
+import StudentFeedback from "./pages/Student-Pages/JSX-Files/StudentFeedBack";
 function App() {
   return (
     <div>
@@ -86,6 +87,10 @@ function App() {
           />
           <Route path="/Mess Admin usr" element={<UserManagement />} />
           <Route path="/Student Menu/:messName" element={<StudentMenuPage />} />
+          <Route
+            path="/Student Feedback/:messName"
+            element={<StudentFeedback />}
+          />
         </Routes>
       </Router>
       <Footer />

@@ -7,37 +7,6 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 app.use(bodyParser.json());
-const menuFilePath = "./menu.json";
-const feedbackFile = "./feedback.json";
-const DATA_FILE = "dailyLogs.json";
-const preferenceFilePath = "./student_preferences_update.json";
-const menuApprovalFilePath = "./menu_pending_approval.json";
-const ANNOUNCEMENTS_FILE = "./announcements.json";
-
-// Read JSON file utility function
-const readJSONFile = (filePath) => {
-  try {
-    const data = fs.readFileSync(filePath, "utf8");
-    return JSON.parse(data);
-  } catch (error) {
-    console.error(`Error reading ${filePath}:`, error);
-    return [];
-  }
-};
-
-// Write JSON file utility function
-const writeJSONFile = (filePath, data) => {
-  try {
-    fs.writeFileSync(filePath, JSON.stringify(data, null, 2));
-  } catch (error) {
-    console.error(`Error writing ${filePath}:`, error);
-  }
-};
-
-const readFeedback = () => {
-  const data = fs.readFileSync(feedbackFile);
-  return JSON.parse(data);
-};
 
 /************************SUPERVISOR FEATURES****************************************************************************** */
 /************************MENU****************************************************************************************** */
@@ -747,6 +716,21 @@ app.post("/mess-change-request", async (req, res) => {
     res.json({ message: "Request sent successfully" });
   } catch (err) {
     res.status(500).json({ error: err.message });
+  }
+});
+
+app.post("/submit-feedback", async (req, res) => {
+  try {
+    const db = await connectToDatabase();
+    var feedback100 = req.body;
+    feedback100.main_dish_rating = parseInt(feedback100.main_dish_rating);
+    feedback100.side_dish_rating = parseInt(feedback100.side_dish_rating);
+    feedback100.overall_rating = parseInt(feedback100.overall_rating);
+    await db.collection("feedback").insertOne(feedback100);
+    res.json({ message: "Feedback submitted successfully" });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json({ error: "Failed to submit feedback" });
   }
 });
 

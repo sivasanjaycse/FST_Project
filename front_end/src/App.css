@@ -30,3 +30,7 @@ option {
   background-color: #f0f4f2;
   color: #2c3e2c;
 }
+
+#stu-feedback-container {
+  width: 50%;
+}
