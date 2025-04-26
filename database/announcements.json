@@ -1,0 +1,21 @@
+[{
+  "_id": {
+    "$oid": "680249c56e0e9da9fb93adf6"
+  },
+  "announcement": "All the Students Must Wear ID Cards While coming to mess",
+  "viewer": "everyone"
+},
+{
+  "_id": {
+    "$oid": "680249c56e0e9da9fb93adf7"
+  },
+  "announcement": "All the Supervisors are requested to assemble on LA Hall at today 4.45pm",
+  "viewer": "supervisors"
+},
+{
+  "_id": {
+    "$oid": "6807e5e1b1b2ab0bc472f59d"
+  },
+  "announcement": "The mess Deposit For upcoming Semester is 20000 Rs. All students are asked to pay it on Hostel office on or before 5 June without fail.",
+  "viewer": "students"
+}]

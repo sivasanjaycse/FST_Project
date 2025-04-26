@@ -1,0 +1,2616 @@
+[{
+  "_id": {
+    "$oid": "6807cd8a4985a541cd32b20d"
+  },
+  "date": "2025-03-11",
+  "session": "Dinner",
+  "main_dish_rating": 2,
+  "side_dish_rating": 4,
+  "overall_rating": 4,
+  "review": "Average meal, nothing special.",
+  "mess": "Veg Mess"
+},
+{
+  "_id": {
+    "$oid": "680b6cc117bd5cae90e11b8f"
+  },
+  "session": "Breakfast",
+  "main_dish_rating": 1,
+  "side_dish_rating": 1,
+  "overall_rating": 1,
+  "review": "",
+  "mess": "Veg Mess",
+  "date": "2025-04-25"
+},
+{
+  "_id": {
+    "$oid": "680b6cee17bd5cae90e11b90"
+  },
+  "session": "Breakfast",
+  "main_dish_rating": 1,
+  "side_dish_rating": 1,
+  "overall_rating": 1,
+  "review": "",
+  "mess": "Veg Mess",
+  "date": "2025-04-25"
+},
+{
+  "_id": {
+    "$oid": "680b6cf817bd5cae90e11b91"
+  },
+  "session": "Breakfast",
+  "main_dish_rating": 1,
+  "side_dish_rating": 1,
+  "overall_rating": 1,
+  "review": "",
+  "mess": "Veg Mess",
+  "date": "2025-04-25"
+},
+{
+  "_id": {
+    "$oid": "680b6d7917bd5cae90e11b92"
+  },
+  "session": "Lunch",
+  "main_dish_rating": 5,
+  "side_dish_rating": 3,
+  "overall_rating": 3,
+  "review": "",
+  "mess": "Veg Mess",
+  "date": "2025-04-25"
+},
+{
+  "_id": {
+    "$oid": "680b7b6c628559401a811f88"
+  },
+  "session": "Breakfast",
+  "main_dish_rating": 3,
+  "side_dish_rating": 4,
+  "overall_rating": 4,
+  "review": "Pretty decent!",
+  "mess": "Veg Mess",
+  "date": "2025-04-25"
+},
+{
+  "_id": {
+    "$oid": "680b7b6c628559401a811f89"
+  },
+  "session": "Breakfast",
+  "main_dish_rating": 2,
+  "side_dish_rating": 3,
+  "overall_rating": 3,
+  "review": "Could be warmer",
+  "mess": "Veg Mess",
+  "date": "2025-04-25"
+},
+{
+  "_id": {
+    "$oid": "680b7b6c628559401a811f8a"
+  },
+  "session": "Breakfast",
+  "main_dish_rating": 4,
+  "side_dish_rating": 4,
+  "overall_rating": 4,
+  "review": "Nice idlis today",
+  "mess": "Veg Mess",
+  "date": "2025-04-25"
+},
+{
+  "_id": {
+    "$oid": "680b7b6c628559401a811f8b"
+  },
+  "session": "Breakfast",
+  "main_dish_rating": 5,
+  "side_dish_rating": 4,
+  "overall_rating": 5,
+  "review": "Loved it!",
+  "mess": "Veg Mess",
+  "date": "2025-04-25"
+},
+{
+  "_id": {
+    "$oid": "680b7b6c628559401a811f8c"
+  },
+  "session": "Breakfast",
+  "main_dish_rating": 3,
+  "side_dish_rating": 2,
+  "overall_rating": 3,
+  "review": "Okay-ish",
+  "mess": "Veg Mess",
+  "date": "2025-04-25"
+},
+{
+  "_id": {
+    "$oid": "680b7b6c628559401a811f8d"
+  },
+  "session": "Breakfast",
+  "main_dish_rating": 1,
+  "side_dish_rating": 1,
+  "overall_rating": 1,
+  "review": "Terrible dosa",
+  "mess": "Veg Mess",
+  "date": "2025-04-25"
+},
+{
+  "_id": {
+    "$oid": "680b7b6c628559401a811f8e"
+  },
+  "session": "Breakfast",
+  "main_dish_rating": 4,
+  "side_dish_rating": 5,
+  "overall_rating": 5,
+  "review": "Side dish was yum!",
+  "mess": "Veg Mess",
+  "date": "2025-04-25"
+},
+{
+  "_id": {
+    "$oid": "680b7b6c628559401a811f8f"
+  },
+  "session": "Breakfast",
+  "main_dish_rating": 2,
+  "side_dish_rating": 3,
+  "overall_rating": 2,
+  "review": "Too oily",
+  "mess": "Veg Mess",
+  "date": "2025-04-25"
+},
+{
+  "_id": {
+    "$oid": "680b7b6c628559401a811f90"
+  },
+  "session": "Breakfast",
+  "main_dish_rating": 5,
+  "side_dish_rating": 5,
+  "overall_rating": 5,
+  "review": "Perfect start to the day!",
+  "mess": "Veg Mess",
+  "date": "2025-04-25"
+},
+{
+  "_id": {
+    "$oid": "680b7b6c628559401a811f91"
+  },
+  "session": "Breakfast",
+  "main_dish_rating": 3,
+  "side_dish_rating": 3,
+  "overall_rating": 3,
+  "review": "Average",
+  "mess": "Veg Mess",
+  "date": "2025-04-25"
+},
+{
+  "_id": {
+    "$oid": "680b7b6c628559401a811f92"
+  },
+  "session": "Lunch",
+  "main_dish_rating": 4,
+  "side_dish_rating": 3,
+  "overall_rating": 4,
+  "review": "Good meals",
+  "mess": "Veg Mess",
+  "date": "2025-04-25"
+},
+{
+  "_id": {
+    "$oid": "680b7b6c628559401a811f93"
+  },
+  "session": "Lunch",
+  "main_dish_rating": 2,
+  "side_dish_rating": 2,
+  "overall_rating": 2,
+  "review": "Too salty",
+  "mess": "Veg Mess",
+  "date": "2025-04-25"
+},
+{
+  "_id": {
+    "$oid": "680b7b6c628559401a811f94"
+  },
+  "session": "Lunch",
+  "main_dish_rating": 5,
+  "side_dish_rating": 4,
+  "overall_rating": 5,
+  "review": "Paneer was fire 🔥",
+  "mess": "Veg Mess",
+  "date": "2025-04-25"
+},
+{
+  "_id": {
+    "$oid": "680b7b6c628559401a811f95"
+  },
+  "session": "Lunch",
+  "main_dish_rating": 1,
+  "side_dish_rating": 1,
+  "overall_rating": 1,
+  "review": "Worst sambhar ever",
+  "mess": "Veg Mess",
+  "date": "2025-04-25"
+},
+{
+  "_id": {
+    "$oid": "680b7b6c628559401a811f96"
+  },
+  "session": "Lunch",
+  "main_dish_rating": 3,
+  "side_dish_rating": 3,
+  "overall_rating": 3,
+  "review": "Okay for mess standards",
+  "mess": "Veg Mess",
+  "date": "2025-04-25"
+},
+{
+  "_id": {
+    "$oid": "680b7b6c628559401a811f97"
+  },
+  "session": "Lunch",
+  "main_dish_rating": 5,
+  "side_dish_rating": 5,
+  "overall_rating": 5,
+  "review": "Chef deserves a raise!",
+  "mess": "Veg Mess",
+  "date": "2025-04-25"
+},
+{
+  "_id": {
+    "$oid": "680b7b6c628559401a811f98"
+  },
+  "session": "Lunch",
+  "main_dish_rating": 2,
+  "side_dish_rating": 2,
+  "overall_rating": 2,
+  "review": "Rice was dry",
+  "mess": "Veg Mess",
+  "date": "2025-04-25"
+},
+{
+  "_id": {
+    "$oid": "680b7b6c628559401a811f99"
+  },
+  "session": "Lunch",
+  "main_dish_rating": 4,
+  "side_dish_rating": 4,
+  "overall_rating": 4,
+  "review": "Nice mix of flavors",
+  "mess": "Veg Mess",
+  "date": "2025-04-25"
+},
+{
+  "_id": {
+    "$oid": "680b7b6c628559401a811f9a"
+  },
+  "session": "Lunch",
+  "main_dish_rating": 3,
+  "side_dish_rating": 2,
+  "overall_rating": 3,
+  "review": "Decent",
+  "mess": "Veg Mess",
+  "date": "2025-04-25"
+},
+{
+  "_id": {
+    "$oid": "680b7b6c628559401a811f9b"
+  },
+  "session": "Lunch",
+  "main_dish_rating": 1,
+  "side_dish_rating": 1,
+  "overall_rating": 1,
+  "review": "Sad plate 😞",
+  "mess": "Veg Mess",
+  "date": "2025-04-25"
+},
+{
+  "_id": {
+    "$oid": "680b7b6c628559401a811f9c"
+  },
+  "session": "Snacks",
+  "main_dish_rating": 4,
+  "side_dish_rating": 3,
+  "overall_rating": 4,
+  "review": "Samosa was crunchy!",
+  "mess": "Veg Mess",
+  "date": "2025-04-25"
+},
+{
+  "_id": {
+    "$oid": "680b7b6c628559401a811f9d"
+  },
+  "session": "Snacks",
+  "main_dish_rating": 2,
+  "side_dish_rating": 2,
+  "overall_rating": 2,
+  "review": "Not fresh",
+  "mess": "Veg Mess",
+  "date": "2025-04-25"
+},
+{
+  "_id": {
+    "$oid": "680b7b6c628559401a811f9e"
+  },
+  "session": "Snacks",
+  "main_dish_rating": 5,
+  "side_dish_rating": 5,
+  "overall_rating": 5,
+  "review": "Tea + bajji combo = ❤️",
+  "mess": "Veg Mess",
+  "date": "2025-04-25"
+},
+{
+  "_id": {
+    "$oid": "680b7b6c628559401a811f9f"
+  },
+  "session": "Snacks",
+  "main_dish_rating": 1,
+  "side_dish_rating": 1,
+  "overall_rating": 1,
+  "review": "Waste of calories",
+  "mess": "Veg Mess",
+  "date": "2025-04-25"
+},
+{
+  "_id": {
+    "$oid": "680b7b6c628559401a811fa0"
+  },
+  "session": "Snacks",
+  "main_dish_rating": 3,
+  "side_dish_rating": 2,
+  "overall_rating": 3,
+  "review": "Chutney missing!",
+  "mess": "Veg Mess",
+  "date": "2025-04-25"
+},
+{
+  "_id": {
+    "$oid": "680b7b6c628559401a811fa1"
+  },
+  "session": "Snacks",
+  "main_dish_rating": 4,
+  "side_dish_rating": 4,
+  "overall_rating": 4,
+  "review": "Tasty and crispy",
+  "mess": "Veg Mess",
+  "date": "2025-04-25"
+},
+{
+  "_id": {
+    "$oid": "680b7b6c628559401a811fa2"
+  },
+  "session": "Snacks",
+  "main_dish_rating": 2,
+  "side_dish_rating": 2,
+  "overall_rating": 2,
+  "review": "Not hot enough",
+  "mess": "Veg Mess",
+  "date": "2025-04-25"
+},
+{
+  "_id": {
+    "$oid": "680b7b6c628559401a811fa3"
+  },
+  "session": "Snacks",
+  "main_dish_rating": 3,
+  "side_dish_rating": 3,
+  "overall_rating": 3,
+  "review": "Fine, nothing wow",
+  "mess": "Veg Mess",
+  "date": "2025-04-25"
+},
+{
+  "_id": {
+    "$oid": "680b7b6c628559401a811fa4"
+  },
+  "session": "Snacks",
+  "main_dish_rating": 5,
+  "side_dish_rating": 5,
+  "overall_rating": 5,
+  "review": "Perfectly balanced tea!",
+  "mess": "Veg Mess",
+  "date": "2025-04-25"
+},
+{
+  "_id": {
+    "$oid": "680b7b6c628559401a811fa5"
+  },
+  "session": "Snacks",
+  "main_dish_rating": 1,
+  "side_dish_rating": 2,
+  "overall_rating": 1,
+  "review": "Too greasy!",
+  "mess": "Veg Mess",
+  "date": "2025-04-25"
+},
+{
+  "_id": {
+    "$oid": "680b7b6c628559401a811fa6"
+  },
+  "session": "Dinner",
+  "main_dish_rating": 4,
+  "side_dish_rating": 5,
+  "overall_rating": 5,
+  "review": "Chapathi and kurma 🔥",
+  "mess": "Veg Mess",
+  "date": "2025-04-25"
+},
+{
+  "_id": {
+    "$oid": "680b7b6c628559401a811fa7"
+  },
+  "session": "Dinner",
+  "main_dish_rating": 2,
+  "side_dish_rating": 2,
+  "overall_rating": 2,
+  "review": "Dal was bland",
+  "mess": "Veg Mess",
+  "date": "2025-04-25"
+},
+{
+  "_id": {
+    "$oid": "680b7b6c628559401a811fa8"
+  },
+  "session": "Dinner",
+  "main_dish_rating": 3,
+  "side_dish_rating": 3,
+  "overall_rating": 3,
+  "review": "Not bad",
+  "mess": "Veg Mess",
+  "date": "2025-04-25"
+},
+{
+  "_id": {
+    "$oid": "680b7b6c628559401a811fa9"
+  },
+  "session": "Dinner",
+  "main_dish_rating": 5,
+  "side_dish_rating": 4,
+  "overall_rating": 5,
+  "review": "Parotta day = Happy day",
+  "mess": "Veg Mess",
+  "date": "2025-04-25"
+},
+{
+  "_id": {
+    "$oid": "680b7b6c628559401a811faa"
+  },
+  "session": "Dinner",
+  "main_dish_rating": 1,
+  "side_dish_rating": 1,
+  "overall_rating": 1,
+  "review": "Cold food again 😤",
+  "mess": "Veg Mess",
+  "date": "2025-04-25"
+},
+{
+  "_id": {
+    "$oid": "680b7b6c628559401a811fab"
+  },
+  "session": "Dinner",
+  "main_dish_rating": 3,
+  "side_dish_rating": 3,
+  "overall_rating": 3,
+  "review": "Average meal",
+  "mess": "Veg Mess",
+  "date": "2025-04-25"
+},
+{
+  "_id": {
+    "$oid": "680b7b6c628559401a811fac"
+  },
+  "session": "Dinner",
+  "main_dish_rating": 2,
+  "side_dish_rating": 1,
+  "overall_rating": 2,
+  "review": "Chapathi like paper",
+  "mess": "Veg Mess",
+  "date": "2025-04-25"
+},
+{
+  "_id": {
+    "$oid": "680b7b6c628559401a811fad"
+  },
+  "session": "Dinner",
+  "main_dish_rating": 4,
+  "side_dish_rating": 3,
+  "overall_rating": 4,
+  "review": "Yummy gravy",
+  "mess": "Veg Mess",
+  "date": "2025-04-25"
+},
+{
+  "_id": {
+    "$oid": "680b7b6c628559401a811fae"
+  },
+  "session": "Dinner",
+  "main_dish_rating": 5,
+  "side_dish_rating": 5,
+  "overall_rating": 5,
+  "review": "Best dinner of the week!",
+  "mess": "Veg Mess",
+  "date": "2025-04-25"
+},
+{
+  "_id": {
+    "$oid": "680b7b6c628559401a811faf"
+  },
+  "session": "Dinner",
+  "main_dish_rating": 2,
+  "side_dish_rating": 2,
+  "overall_rating": 2,
+  "review": "Repetitive menu again",
+  "mess": "Veg Mess",
+  "date": "2025-04-25"
+},
+{
+  "_id": {
+    "$oid": "680b7baa628559401a811fb1"
+  },
+  "session": "Breakfast",
+  "main_dish_rating": 2,
+  "side_dish_rating": 3,
+  "overall_rating": 3,
+  "review": "Could be better",
+  "mess": "PG Mess",
+  "date": "2025-04-25"
+},
+{
+  "_id": {
+    "$oid": "680b7baa628559401a811fb2"
+  },
+  "session": "Breakfast",
+  "main_dish_rating": 4,
+  "side_dish_rating": 4,
+  "overall_rating": 4,
+  "review": "Tasty start!",
+  "mess": "PG Mess",
+  "date": "2025-04-25"
+},
+{
+  "_id": {
+    "$oid": "680b7baa628559401a811fb3"
+  },
+  "session": "Breakfast",
+  "main_dish_rating": 5,
+  "side_dish_rating": 4,
+  "overall_rating": 5,
+  "review": "Loved it!",
+  "mess": "PG Mess",
+  "date": "2025-04-25"
+},
+{
+  "_id": {
+    "$oid": "680b7baa628559401a811fb4"
+  },
+  "session": "Breakfast",
+  "main_dish_rating": 3,
+  "side_dish_rating": 2,
+  "overall_rating": 3,
+  "review": "Not bad",
+  "mess": "PG Mess",
+  "date": "2025-04-25"
+},
+{
+  "_id": {
+    "$oid": "680b7baa628559401a811fb5"
+  },
+  "session": "Breakfast",
+  "main_dish_rating": 1,
+  "side_dish_rating": 2,
+  "overall_rating": 2,
+  "review": "Needs improvement",
+  "mess": "PG Mess",
+  "date": "2025-04-25"
+},
+{
+  "_id": {
+    "$oid": "680b7baa628559401a811fb6"
+  },
+  "session": "Breakfast",
+  "main_dish_rating": 4,
+  "side_dish_rating": 5,
+  "overall_rating": 5,
+  "review": "Great start!",
+  "mess": "PG Mess",
+  "date": "2025-04-25"
+},
+{
+  "_id": {
+    "$oid": "680b7baa628559401a811fb7"
+  },
+  "session": "Breakfast",
+  "main_dish_rating": 3,
+  "side_dish_rating": 3,
+  "overall_rating": 3,
+  "review": "Okayish",
+  "mess": "PG Mess",
+  "date": "2025-04-25"
+},
+{
+  "_id": {
+    "$oid": "680b7baa628559401a811fb8"
+  },
+  "session": "Breakfast",
+  "main_dish_rating": 2,
+  "side_dish_rating": 1,
+  "overall_rating": 2,
+  "review": "Meh",
+  "mess": "PG Mess",
+  "date": "2025-04-25"
+},
+{
+  "_id": {
+    "$oid": "680b7baa628559401a811fb9"
+  },
+  "session": "Breakfast",
+  "main_dish_rating": 5,
+  "side_dish_rating": 5,
+  "overall_rating": 5,
+  "review": "Amazing breakfast!",
+  "mess": "PG Mess",
+  "date": "2025-04-25"
+},
+{
+  "_id": {
+    "$oid": "680b7baa628559401a811fba"
+  },
+  "session": "Breakfast",
+  "main_dish_rating": 3,
+  "side_dish_rating": 4,
+  "overall_rating": 4,
+  "review": "Good enough",
+  "mess": "PG Mess",
+  "date": "2025-04-25"
+},
+{
+  "_id": {
+    "$oid": "680b7baa628559401a811fbb"
+  },
+  "session": "Lunch",
+  "main_dish_rating": 4,
+  "side_dish_rating": 3,
+  "overall_rating": 4,
+  "review": "Pretty filling",
+  "mess": "PG Mess",
+  "date": "2025-04-25"
+},
+{
+  "_id": {
+    "$oid": "680b7baa628559401a811fbc"
+  },
+  "session": "Lunch",
+  "main_dish_rating": 5,
+  "side_dish_rating": 5,
+  "overall_rating": 5,
+  "review": "Lunch was amazing",
+  "mess": "PG Mess",
+  "date": "2025-04-25"
+},
+{
+  "_id": {
+    "$oid": "680b7baa628559401a811fbd"
+  },
+  "session": "Lunch",
+  "main_dish_rating": 3,
+  "side_dish_rating": 2,
+  "overall_rating": 3,
+  "review": "Not too shabby",
+  "mess": "PG Mess",
+  "date": "2025-04-25"
+},
+{
+  "_id": {
+    "$oid": "680b7baa628559401a811fbe"
+  },
+  "session": "Lunch",
+  "main_dish_rating": 1,
+  "side_dish_rating": 1,
+  "overall_rating": 1,
+  "review": "Worst lunch ever",
+  "mess": "PG Mess",
+  "date": "2025-04-25"
+},
+{
+  "_id": {
+    "$oid": "680b7baa628559401a811fbf"
+  },
+  "session": "Lunch",
+  "main_dish_rating": 4,
+  "side_dish_rating": 5,
+  "overall_rating": 5,
+  "review": "Delicious!",
+  "mess": "PG Mess",
+  "date": "2025-04-25"
+},
+{
+  "_id": {
+    "$oid": "680b7baa628559401a811fc0"
+  },
+  "session": "Lunch",
+  "main_dish_rating": 2,
+  "side_dish_rating": 3,
+  "overall_rating": 3,
+  "review": "Could improve",
+  "mess": "PG Mess",
+  "date": "2025-04-25"
+},
+{
+  "_id": {
+    "$oid": "680b7bab628559401a811fc1"
+  },
+  "session": "Lunch",
+  "main_dish_rating": 5,
+  "side_dish_rating": 4,
+  "overall_rating": 5,
+  "review": "Good variety",
+  "mess": "PG Mess",
+  "date": "2025-04-25"
+},
+{
+  "_id": {
+    "$oid": "680b7bab628559401a811fc2"
+  },
+  "session": "Lunch",
+  "main_dish_rating": 3,
+  "side_dish_rating": 2,
+  "overall_rating": 3,
+  "review": "Decent enough",
+  "mess": "PG Mess",
+  "date": "2025-04-25"
+},
+{
+  "_id": {
+    "$oid": "680b7bab628559401a811fc3"
+  },
+  "session": "Lunch",
+  "main_dish_rating": 4,
+  "side_dish_rating": 3,
+  "overall_rating": 4,
+  "review": "Satisfied",
+  "mess": "PG Mess",
+  "date": "2025-04-25"
+},
+{
+  "_id": {
+    "$oid": "680b7bab628559401a811fc4"
+  },
+  "session": "Lunch",
+  "main_dish_rating": 2,
+  "side_dish_rating": 2,
+  "overall_rating": 2,
+  "review": "Bleh...",
+  "mess": "PG Mess",
+  "date": "2025-04-25"
+},
+{
+  "_id": {
+    "$oid": "680b7bab628559401a811fc5"
+  },
+  "session": "Snacks",
+  "main_dish_rating": 3,
+  "side_dish_rating": 3,
+  "overall_rating": 3,
+  "review": "Crispy and okay",
+  "mess": "PG Mess",
+  "date": "2025-04-25"
+},
+{
+  "_id": {
+    "$oid": "680b7bab628559401a811fc6"
+  },
+  "session": "Snacks",
+  "main_dish_rating": 5,
+  "side_dish_rating": 4,
+  "overall_rating": 5,
+  "review": "Loved the samosas",
+  "mess": "PG Mess",
+  "date": "2025-04-25"
+},
+{
+  "_id": {
+    "$oid": "680b7bab628559401a811fc7"
+  },
+  "session": "Snacks",
+  "main_dish_rating": 1,
+  "side_dish_rating": 1,
+  "overall_rating": 1,
+  "review": "Oil bath",
+  "mess": "PG Mess",
+  "date": "2025-04-25"
+},
+{
+  "_id": {
+    "$oid": "680b7bab628559401a811fc8"
+  },
+  "session": "Snacks",
+  "main_dish_rating": 3,
+  "side_dish_rating": 2,
+  "overall_rating": 3,
+  "review": "Not crunchy enough",
+  "mess": "PG Mess",
+  "date": "2025-04-25"
+},
+{
+  "_id": {
+    "$oid": "680b7bab628559401a811fc9"
+  },
+  "session": "Snacks",
+  "main_dish_rating": 4,
+  "side_dish_rating": 5,
+  "overall_rating": 5,
+  "review": "Perfect snack time",
+  "mess": "PG Mess",
+  "date": "2025-04-25"
+},
+{
+  "_id": {
+    "$oid": "680b7bab628559401a811fca"
+  },
+  "session": "Snacks",
+  "main_dish_rating": 2,
+  "side_dish_rating": 2,
+  "overall_rating": 2,
+  "review": "Could be hot",
+  "mess": "PG Mess",
+  "date": "2025-04-25"
+},
+{
+  "_id": {
+    "$oid": "680b7bab628559401a811fcb"
+  },
+  "session": "Snacks",
+  "main_dish_rating": 3,
+  "side_dish_rating": 4,
+  "overall_rating": 4,
+  "review": "Pretty good",
+  "mess": "PG Mess",
+  "date": "2025-04-25"
+},
+{
+  "_id": {
+    "$oid": "680b7bab628559401a811fcc"
+  },
+  "session": "Snacks",
+  "main_dish_rating": 5,
+  "side_dish_rating": 5,
+  "overall_rating": 5,
+  "review": "Heavenly snacks",
+  "mess": "PG Mess",
+  "date": "2025-04-25"
+},
+{
+  "_id": {
+    "$oid": "680b7bab628559401a811fcd"
+  },
+  "session": "Snacks",
+  "main_dish_rating": 2,
+  "side_dish_rating": 1,
+  "overall_rating": 2,
+  "review": "Soggy and sad",
+  "mess": "PG Mess",
+  "date": "2025-04-25"
+},
+{
+  "_id": {
+    "$oid": "680b7bab628559401a811fce"
+  },
+  "session": "Snacks",
+  "main_dish_rating": 4,
+  "side_dish_rating": 3,
+  "overall_rating": 4,
+  "review": "Good munchies",
+  "mess": "PG Mess",
+  "date": "2025-04-25"
+},
+{
+  "_id": {
+    "$oid": "680b7bab628559401a811fcf"
+  },
+  "session": "Dinner",
+  "main_dish_rating": 5,
+  "side_dish_rating": 4,
+  "overall_rating": 5,
+  "review": "Perfect end to the day",
+  "mess": "PG Mess",
+  "date": "2025-04-25"
+},
+{
+  "_id": {
+    "$oid": "680b7bab628559401a811fd0"
+  },
+  "session": "Dinner",
+  "main_dish_rating": 3,
+  "side_dish_rating": 3,
+  "overall_rating": 3,
+  "review": "Normal dinner",
+  "mess": "PG Mess",
+  "date": "2025-04-25"
+},
+{
+  "_id": {
+    "$oid": "680b7bab628559401a811fd1"
+  },
+  "session": "Dinner",
+  "main_dish_rating": 1,
+  "side_dish_rating": 2,
+  "overall_rating": 2,
+  "review": "Too spicy",
+  "mess": "PG Mess",
+  "date": "2025-04-25"
+},
+{
+  "_id": {
+    "$oid": "680b7bab628559401a811fd2"
+  },
+  "session": "Dinner",
+  "main_dish_rating": 4,
+  "side_dish_rating": 4,
+  "overall_rating": 4,
+  "review": "Tummy full",
+  "mess": "PG Mess",
+  "date": "2025-04-25"
+},
+{
+  "_id": {
+    "$oid": "680b7bab628559401a811fd3"
+  },
+  "session": "Dinner",
+  "main_dish_rating": 2,
+  "side_dish_rating": 1,
+  "overall_rating": 2,
+  "review": "Not warm enough",
+  "mess": "PG Mess",
+  "date": "2025-04-25"
+},
+{
+  "_id": {
+    "$oid": "680b7bab628559401a811fd4"
+  },
+  "session": "Dinner",
+  "main_dish_rating": 5,
+  "side_dish_rating": 5,
+  "overall_rating": 5,
+  "review": "Superb!",
+  "mess": "PG Mess",
+  "date": "2025-04-25"
+},
+{
+  "_id": {
+    "$oid": "680b7bab628559401a811fd5"
+  },
+  "session": "Dinner",
+  "main_dish_rating": 4,
+  "side_dish_rating": 3,
+  "overall_rating": 4,
+  "review": "Really liked it",
+  "mess": "PG Mess",
+  "date": "2025-04-25"
+},
+{
+  "_id": {
+    "$oid": "680b7bab628559401a811fd6"
+  },
+  "session": "Dinner",
+  "main_dish_rating": 2,
+  "side_dish_rating": 2,
+  "overall_rating": 2,
+  "review": "Meh dinner",
+  "mess": "PG Mess",
+  "date": "2025-04-25"
+},
+{
+  "_id": {
+    "$oid": "680b7bab628559401a811fd7"
+  },
+  "session": "Dinner",
+  "main_dish_rating": 3,
+  "side_dish_rating": 4,
+  "overall_rating": 4,
+  "review": "Decent food",
+  "mess": "PG Mess",
+  "date": "2025-04-25"
+},
+{
+  "_id": {
+    "$oid": "680b7bab628559401a811fd8"
+  },
+  "session": "Dinner",
+  "main_dish_rating": 1,
+  "side_dish_rating": 1,
+  "overall_rating": 1,
+  "review": "Disappointed",
+  "mess": "PG Mess",
+  "date": "2025-04-25"
+},
+{
+  "_id": {
+    "$oid": "680b7c71628559401a811fda"
+  },
+  "session": "Breakfast",
+  "main_dish_rating": 4,
+  "side_dish_rating": 4,
+  "overall_rating": 4,
+  "review": "Egg-cellent breakfast!",
+  "mess": "NV Mess",
+  "date": "2025-04-25"
+},
+{
+  "_id": {
+    "$oid": "680b7c71628559401a811fdb"
+  },
+  "session": "Breakfast",
+  "main_dish_rating": 2,
+  "side_dish_rating": 3,
+  "overall_rating": 3,
+  "review": "Decent start",
+  "mess": "NV Mess",
+  "date": "2025-04-25"
+},
+{
+  "_id": {
+    "$oid": "680b7c71628559401a811fdc"
+  },
+  "session": "Breakfast",
+  "main_dish_rating": 5,
+  "side_dish_rating": 5,
+  "overall_rating": 5,
+  "review": "Superb taste!",
+  "mess": "NV Mess",
+  "date": "2025-04-25"
+},
+{
+  "_id": {
+    "$oid": "680b7c71628559401a811fdd"
+  },
+  "session": "Breakfast",
+  "main_dish_rating": 3,
+  "side_dish_rating": 3,
+  "overall_rating": 3,
+  "review": "Nothing special",
+  "mess": "NV Mess",
+  "date": "2025-04-25"
+},
+{
+  "_id": {
+    "$oid": "680b7c71628559401a811fde"
+  },
+  "session": "Breakfast",
+  "main_dish_rating": 1,
+  "side_dish_rating": 1,
+  "overall_rating": 1,
+  "review": "Cold food :(",
+  "mess": "NV Mess",
+  "date": "2025-04-25"
+},
+{
+  "_id": {
+    "$oid": "680b7c71628559401a811fdf"
+  },
+  "session": "Breakfast",
+  "main_dish_rating": 4,
+  "side_dish_rating": 4,
+  "overall_rating": 4,
+  "review": "Healthy and tasty",
+  "mess": "NV Mess",
+  "date": "2025-04-25"
+},
+{
+  "_id": {
+    "$oid": "680b7c71628559401a811fe0"
+  },
+  "session": "Breakfast",
+  "main_dish_rating": 2,
+  "side_dish_rating": 2,
+  "overall_rating": 2,
+  "review": "Not filling",
+  "mess": "NV Mess",
+  "date": "2025-04-25"
+},
+{
+  "_id": {
+    "$oid": "680b7c71628559401a811fe1"
+  },
+  "session": "Breakfast",
+  "main_dish_rating": 5,
+  "side_dish_rating": 4,
+  "overall_rating": 5,
+  "review": "Loved it!",
+  "mess": "NV Mess",
+  "date": "2025-04-25"
+},
+{
+  "_id": {
+    "$oid": "680b7c71628559401a811fe2"
+  },
+  "session": "Breakfast",
+  "main_dish_rating": 3,
+  "side_dish_rating": 3,
+  "overall_rating": 3,
+  "review": "Average",
+  "mess": "NV Mess",
+  "date": "2025-04-25"
+},
+{
+  "_id": {
+    "$oid": "680b7c71628559401a811fe3"
+  },
+  "session": "Breakfast",
+  "main_dish_rating": 4,
+  "side_dish_rating": 5,
+  "overall_rating": 5,
+  "review": "Yummy eggs!",
+  "mess": "NV Mess",
+  "date": "2025-04-25"
+},
+{
+  "_id": {
+    "$oid": "680b7c71628559401a811fe4"
+  },
+  "session": "Lunch",
+  "main_dish_rating": 5,
+  "side_dish_rating": 5,
+  "overall_rating": 5,
+  "review": "Chicken was 🔥",
+  "mess": "NV Mess",
+  "date": "2025-04-25"
+},
+{
+  "_id": {
+    "$oid": "680b7c71628559401a811fe5"
+  },
+  "session": "Lunch",
+  "main_dish_rating": 4,
+  "side_dish_rating": 3,
+  "overall_rating": 4,
+  "review": "Tasty biryani",
+  "mess": "NV Mess",
+  "date": "2025-04-25"
+},
+{
+  "_id": {
+    "$oid": "680b7c71628559401a811fe6"
+  },
+  "session": "Lunch",
+  "main_dish_rating": 2,
+  "side_dish_rating": 2,
+  "overall_rating": 2,
+  "review": "Too oily",
+  "mess": "NV Mess",
+  "date": "2025-04-25"
+},
+{
+  "_id": {
+    "$oid": "680b7c71628559401a811fe7"
+  },
+  "session": "Lunch",
+  "main_dish_rating": 3,
+  "side_dish_rating": 3,
+  "overall_rating": 3,
+  "review": "Okayish",
+  "mess": "NV Mess",
+  "date": "2025-04-25"
+},
+{
+  "_id": {
+    "$oid": "680b7c71628559401a811fe8"
+  },
+  "session": "Lunch",
+  "main_dish_rating": 4,
+  "side_dish_rating": 5,
+  "overall_rating": 5,
+  "review": "Loved the gravy",
+  "mess": "NV Mess",
+  "date": "2025-04-25"
+},
+{
+  "_id": {
+    "$oid": "680b7c71628559401a811fe9"
+  },
+  "session": "Lunch",
+  "main_dish_rating": 1,
+  "side_dish_rating": 2,
+  "overall_rating": 2,
+  "review": "Disappointing",
+  "mess": "NV Mess",
+  "date": "2025-04-25"
+},
+{
+  "_id": {
+    "$oid": "680b7c71628559401a811fea"
+  },
+  "session": "Lunch",
+  "main_dish_rating": 3,
+  "side_dish_rating": 4,
+  "overall_rating": 4,
+  "review": "Good meal",
+  "mess": "NV Mess",
+  "date": "2025-04-25"
+},
+{
+  "_id": {
+    "$oid": "680b7c71628559401a811feb"
+  },
+  "session": "Lunch",
+  "main_dish_rating": 5,
+  "side_dish_rating": 5,
+  "overall_rating": 5,
+  "review": "Top class",
+  "mess": "NV Mess",
+  "date": "2025-04-25"
+},
+{
+  "_id": {
+    "$oid": "680b7c71628559401a811fec"
+  },
+  "session": "Lunch",
+  "main_dish_rating": 3,
+  "side_dish_rating": 2,
+  "overall_rating": 3,
+  "review": "Needs salt",
+  "mess": "NV Mess",
+  "date": "2025-04-25"
+},
+{
+  "_id": {
+    "$oid": "680b7c71628559401a811fed"
+  },
+  "session": "Lunch",
+  "main_dish_rating": 4,
+  "side_dish_rating": 3,
+  "overall_rating": 4,
+  "review": "Decent enough",
+  "mess": "NV Mess",
+  "date": "2025-04-25"
+},
+{
+  "_id": {
+    "$oid": "680b7c71628559401a811fee"
+  },
+  "session": "Snacks",
+  "main_dish_rating": 3,
+  "side_dish_rating": 4,
+  "overall_rating": 4,
+  "review": "Tasty cutlets",
+  "mess": "NV Mess",
+  "date": "2025-04-25"
+},
+{
+  "_id": {
+    "$oid": "680b7c71628559401a811fef"
+  },
+  "session": "Snacks",
+  "main_dish_rating": 2,
+  "side_dish_rating": 2,
+  "overall_rating": 2,
+  "review": "Soggy rolls",
+  "mess": "NV Mess",
+  "date": "2025-04-25"
+},
+{
+  "_id": {
+    "$oid": "680b7c71628559401a811ff0"
+  },
+  "session": "Snacks",
+  "main_dish_rating": 5,
+  "side_dish_rating": 5,
+  "overall_rating": 5,
+  "review": "Chicken puffs 😍",
+  "mess": "NV Mess",
+  "date": "2025-04-25"
+},
+{
+  "_id": {
+    "$oid": "680b7c71628559401a811ff1"
+  },
+  "session": "Snacks",
+  "main_dish_rating": 4,
+  "side_dish_rating": 3,
+  "overall_rating": 4,
+  "review": "Crunchy and warm",
+  "mess": "NV Mess",
+  "date": "2025-04-25"
+},
+{
+  "_id": {
+    "$oid": "680b7c71628559401a811ff2"
+  },
+  "session": "Snacks",
+  "main_dish_rating": 1,
+  "side_dish_rating": 2,
+  "overall_rating": 2,
+  "review": "Not fresh",
+  "mess": "NV Mess",
+  "date": "2025-04-25"
+},
+{
+  "_id": {
+    "$oid": "680b7c71628559401a811ff3"
+  },
+  "session": "Snacks",
+  "main_dish_rating": 4,
+  "side_dish_rating": 4,
+  "overall_rating": 4,
+  "review": "Nice evening snack",
+  "mess": "NV Mess",
+  "date": "2025-04-25"
+},
+{
+  "_id": {
+    "$oid": "680b7c71628559401a811ff4"
+  },
+  "session": "Snacks",
+  "main_dish_rating": 2,
+  "side_dish_rating": 2,
+  "overall_rating": 2,
+  "review": "Oil overload",
+  "mess": "NV Mess",
+  "date": "2025-04-25"
+},
+{
+  "_id": {
+    "$oid": "680b7c71628559401a811ff5"
+  },
+  "session": "Snacks",
+  "main_dish_rating": 5,
+  "side_dish_rating": 4,
+  "overall_rating": 5,
+  "review": "Loved it",
+  "mess": "NV Mess",
+  "date": "2025-04-25"
+},
+{
+  "_id": {
+    "$oid": "680b7c71628559401a811ff6"
+  },
+  "session": "Snacks",
+  "main_dish_rating": 3,
+  "side_dish_rating": 3,
+  "overall_rating": 3,
+  "review": "Just okay",
+  "mess": "NV Mess",
+  "date": "2025-04-25"
+},
+{
+  "_id": {
+    "$oid": "680b7c71628559401a811ff7"
+  },
+  "session": "Snacks",
+  "main_dish_rating": 4,
+  "side_dish_rating": 5,
+  "overall_rating": 5,
+  "review": "Loved the spice",
+  "mess": "NV Mess",
+  "date": "2025-04-25"
+},
+{
+  "_id": {
+    "$oid": "680b7c71628559401a811ff8"
+  },
+  "session": "Dinner",
+  "main_dish_rating": 5,
+  "side_dish_rating": 4,
+  "overall_rating": 5,
+  "review": "Chicken curry 🔥",
+  "mess": "NV Mess",
+  "date": "2025-04-25"
+},
+{
+  "_id": {
+    "$oid": "680b7c71628559401a811ff9"
+  },
+  "session": "Dinner",
+  "main_dish_rating": 3,
+  "side_dish_rating": 3,
+  "overall_rating": 3,
+  "review": "Good enough",
+  "mess": "NV Mess",
+  "date": "2025-04-25"
+},
+{
+  "_id": {
+    "$oid": "680b7c71628559401a811ffa"
+  },
+  "session": "Dinner",
+  "main_dish_rating": 2,
+  "side_dish_rating": 1,
+  "overall_rating": 2,
+  "review": "Dry meat",
+  "mess": "NV Mess",
+  "date": "2025-04-25"
+},
+{
+  "_id": {
+    "$oid": "680b7c71628559401a811ffb"
+  },
+  "session": "Dinner",
+  "main_dish_rating": 4,
+  "side_dish_rating": 5,
+  "overall_rating": 5,
+  "review": "Perfect combo!",
+  "mess": "NV Mess",
+  "date": "2025-04-25"
+},
+{
+  "_id": {
+    "$oid": "680b7c71628559401a811ffc"
+  },
+  "session": "Dinner",
+  "main_dish_rating": 3,
+  "side_dish_rating": 2,
+  "overall_rating": 3,
+  "review": "Could improve",
+  "mess": "NV Mess",
+  "date": "2025-04-25"
+},
+{
+  "_id": {
+    "$oid": "680b7c71628559401a811ffd"
+  },
+  "session": "Dinner",
+  "main_dish_rating": 5,
+  "side_dish_rating": 5,
+  "overall_rating": 5,
+  "review": "Just wow",
+  "mess": "NV Mess",
+  "date": "2025-04-25"
+},
+{
+  "_id": {
+    "$oid": "680b7c71628559401a811ffe"
+  },
+  "session": "Dinner",
+  "main_dish_rating": 1,
+  "side_dish_rating": 2,
+  "overall_rating": 2,
+  "review": "Too salty",
+  "mess": "NV Mess",
+  "date": "2025-04-25"
+},
+{
+  "_id": {
+    "$oid": "680b7c71628559401a811fff"
+  },
+  "session": "Dinner",
+  "main_dish_rating": 4,
+  "side_dish_rating": 4,
+  "overall_rating": 4,
+  "review": "Nice and hot",
+  "mess": "NV Mess",
+  "date": "2025-04-25"
+},
+{
+  "_id": {
+    "$oid": "680b7c71628559401a812000"
+  },
+  "session": "Dinner",
+  "main_dish_rating": 2,
+  "side_dish_rating": 3,
+  "overall_rating": 3,
+  "review": "Expected better",
+  "mess": "NV Mess",
+  "date": "2025-04-25"
+},
+{
+  "_id": {
+    "$oid": "680b7c71628559401a812001"
+  },
+  "session": "Dinner",
+  "main_dish_rating": 5,
+  "side_dish_rating": 5,
+  "overall_rating": 5,
+  "review": "Chef's delight",
+  "mess": "NV Mess",
+  "date": "2025-04-25"
+},
+{
+  "_id": {
+    "$oid": "680b7cc1628559401a812003"
+  },
+  "session": "Breakfast",
+  "main_dish_rating": 4,
+  "side_dish_rating": 4,
+  "overall_rating": 4,
+  "review": "Egg-cellent breakfast!",
+  "mess": "Veg Mess",
+  "date": "2025-04-26"
+},
+{
+  "_id": {
+    "$oid": "680b7cc1628559401a812004"
+  },
+  "session": "Breakfast",
+  "main_dish_rating": 2,
+  "side_dish_rating": 3,
+  "overall_rating": 3,
+  "review": "Decent start",
+  "mess": "Veg Mess",
+  "date": "2025-04-26"
+},
+{
+  "_id": {
+    "$oid": "680b7cc1628559401a812005"
+  },
+  "session": "Breakfast",
+  "main_dish_rating": 5,
+  "side_dish_rating": 5,
+  "overall_rating": 5,
+  "review": "Superb taste!",
+  "mess": "Veg Mess",
+  "date": "2025-04-26"
+},
+{
+  "_id": {
+    "$oid": "680b7cc1628559401a812006"
+  },
+  "session": "Breakfast",
+  "main_dish_rating": 3,
+  "side_dish_rating": 3,
+  "overall_rating": 3,
+  "review": "Nothing special",
+  "mess": "Veg Mess",
+  "date": "2025-04-26"
+},
+{
+  "_id": {
+    "$oid": "680b7cc1628559401a812007"
+  },
+  "session": "Breakfast",
+  "main_dish_rating": 1,
+  "side_dish_rating": 1,
+  "overall_rating": 1,
+  "review": "Cold food :(",
+  "mess": "Veg Mess",
+  "date": "2025-04-26"
+},
+{
+  "_id": {
+    "$oid": "680b7cc1628559401a812008"
+  },
+  "session": "Breakfast",
+  "main_dish_rating": 4,
+  "side_dish_rating": 4,
+  "overall_rating": 4,
+  "review": "Healthy and tasty",
+  "mess": "Veg Mess",
+  "date": "2025-04-26"
+},
+{
+  "_id": {
+    "$oid": "680b7cc1628559401a812009"
+  },
+  "session": "Breakfast",
+  "main_dish_rating": 2,
+  "side_dish_rating": 2,
+  "overall_rating": 2,
+  "review": "Not filling",
+  "mess": "Veg Mess",
+  "date": "2025-04-26"
+},
+{
+  "_id": {
+    "$oid": "680b7cc1628559401a81200a"
+  },
+  "session": "Breakfast",
+  "main_dish_rating": 5,
+  "side_dish_rating": 4,
+  "overall_rating": 5,
+  "review": "Loved it!",
+  "mess": "Veg Mess",
+  "date": "2025-04-26"
+},
+{
+  "_id": {
+    "$oid": "680b7cc1628559401a81200b"
+  },
+  "session": "Breakfast",
+  "main_dish_rating": 3,
+  "side_dish_rating": 3,
+  "overall_rating": 3,
+  "review": "Average",
+  "mess": "Veg Mess",
+  "date": "2025-04-26"
+},
+{
+  "_id": {
+    "$oid": "680b7cc1628559401a81200c"
+  },
+  "session": "Breakfast",
+  "main_dish_rating": 4,
+  "side_dish_rating": 5,
+  "overall_rating": 5,
+  "review": "Yummy eggs!",
+  "mess": "Veg Mess",
+  "date": "2025-04-26"
+},
+{
+  "_id": {
+    "$oid": "680b7cc1628559401a81200d"
+  },
+  "session": "Lunch",
+  "main_dish_rating": 5,
+  "side_dish_rating": 5,
+  "overall_rating": 5,
+  "review": "Chicken was 🔥",
+  "mess": "Veg Mess",
+  "date": "2025-04-26"
+},
+{
+  "_id": {
+    "$oid": "680b7cc1628559401a81200e"
+  },
+  "session": "Lunch",
+  "main_dish_rating": 4,
+  "side_dish_rating": 3,
+  "overall_rating": 4,
+  "review": "Tasty biryani",
+  "mess": "Veg Mess",
+  "date": "2025-04-26"
+},
+{
+  "_id": {
+    "$oid": "680b7cc1628559401a81200f"
+  },
+  "session": "Lunch",
+  "main_dish_rating": 2,
+  "side_dish_rating": 2,
+  "overall_rating": 2,
+  "review": "Too oily",
+  "mess": "Veg Mess",
+  "date": "2025-04-26"
+},
+{
+  "_id": {
+    "$oid": "680b7cc1628559401a812010"
+  },
+  "session": "Lunch",
+  "main_dish_rating": 3,
+  "side_dish_rating": 3,
+  "overall_rating": 3,
+  "review": "Okayish",
+  "mess": "Veg Mess",
+  "date": "2025-04-26"
+},
+{
+  "_id": {
+    "$oid": "680b7cc1628559401a812011"
+  },
+  "session": "Lunch",
+  "main_dish_rating": 4,
+  "side_dish_rating": 5,
+  "overall_rating": 5,
+  "review": "Loved the gravy",
+  "mess": "Veg Mess",
+  "date": "2025-04-26"
+},
+{
+  "_id": {
+    "$oid": "680b7cc1628559401a812012"
+  },
+  "session": "Lunch",
+  "main_dish_rating": 1,
+  "side_dish_rating": 2,
+  "overall_rating": 2,
+  "review": "Disappointing",
+  "mess": "Veg Mess",
+  "date": "2025-04-26"
+},
+{
+  "_id": {
+    "$oid": "680b7cc1628559401a812013"
+  },
+  "session": "Lunch",
+  "main_dish_rating": 3,
+  "side_dish_rating": 4,
+  "overall_rating": 4,
+  "review": "Good meal",
+  "mess": "Veg Mess",
+  "date": "2025-04-26"
+},
+{
+  "_id": {
+    "$oid": "680b7cc1628559401a812014"
+  },
+  "session": "Lunch",
+  "main_dish_rating": 5,
+  "side_dish_rating": 5,
+  "overall_rating": 5,
+  "review": "Top class",
+  "mess": "Veg Mess",
+  "date": "2025-04-26"
+},
+{
+  "_id": {
+    "$oid": "680b7cc1628559401a812015"
+  },
+  "session": "Lunch",
+  "main_dish_rating": 3,
+  "side_dish_rating": 2,
+  "overall_rating": 3,
+  "review": "Needs salt",
+  "mess": "Veg Mess",
+  "date": "2025-04-26"
+},
+{
+  "_id": {
+    "$oid": "680b7cc1628559401a812016"
+  },
+  "session": "Lunch",
+  "main_dish_rating": 4,
+  "side_dish_rating": 3,
+  "overall_rating": 4,
+  "review": "Decent enough",
+  "mess": "Veg Mess",
+  "date": "2025-04-26"
+},
+{
+  "_id": {
+    "$oid": "680b7cc1628559401a812017"
+  },
+  "session": "Snacks",
+  "main_dish_rating": 3,
+  "side_dish_rating": 4,
+  "overall_rating": 4,
+  "review": "Tasty cutlets",
+  "mess": "Veg Mess",
+  "date": "2025-04-26"
+},
+{
+  "_id": {
+    "$oid": "680b7cc1628559401a812018"
+  },
+  "session": "Snacks",
+  "main_dish_rating": 2,
+  "side_dish_rating": 2,
+  "overall_rating": 2,
+  "review": "Soggy rolls",
+  "mess": "Veg Mess",
+  "date": "2025-04-26"
+},
+{
+  "_id": {
+    "$oid": "680b7cc1628559401a812019"
+  },
+  "session": "Snacks",
+  "main_dish_rating": 5,
+  "side_dish_rating": 5,
+  "overall_rating": 5,
+  "review": "Chicken puffs 😍",
+  "mess": "Veg Mess",
+  "date": "2025-04-26"
+},
+{
+  "_id": {
+    "$oid": "680b7cc1628559401a81201a"
+  },
+  "session": "Snacks",
+  "main_dish_rating": 4,
+  "side_dish_rating": 3,
+  "overall_rating": 4,
+  "review": "Crunchy and warm",
+  "mess": "Veg Mess",
+  "date": "2025-04-26"
+},
+{
+  "_id": {
+    "$oid": "680b7cc1628559401a81201b"
+  },
+  "session": "Snacks",
+  "main_dish_rating": 1,
+  "side_dish_rating": 2,
+  "overall_rating": 2,
+  "review": "Not fresh",
+  "mess": "Veg Mess",
+  "date": "2025-04-26"
+},
+{
+  "_id": {
+    "$oid": "680b7cc1628559401a81201c"
+  },
+  "session": "Snacks",
+  "main_dish_rating": 4,
+  "side_dish_rating": 4,
+  "overall_rating": 4,
+  "review": "Nice evening snack",
+  "mess": "Veg Mess",
+  "date": "2025-04-26"
+},
+{
+  "_id": {
+    "$oid": "680b7cc1628559401a81201d"
+  },
+  "session": "Snacks",
+  "main_dish_rating": 2,
+  "side_dish_rating": 2,
+  "overall_rating": 2,
+  "review": "Oil overload",
+  "mess": "Veg Mess",
+  "date": "2025-04-26"
+},
+{
+  "_id": {
+    "$oid": "680b7cc1628559401a81201e"
+  },
+  "session": "Snacks",
+  "main_dish_rating": 5,
+  "side_dish_rating": 4,
+  "overall_rating": 5,
+  "review": "Loved it",
+  "mess": "Veg Mess",
+  "date": "2025-04-26"
+},
+{
+  "_id": {
+    "$oid": "680b7cc1628559401a81201f"
+  },
+  "session": "Snacks",
+  "main_dish_rating": 3,
+  "side_dish_rating": 3,
+  "overall_rating": 3,
+  "review": "Just okay",
+  "mess": "Veg Mess",
+  "date": "2025-04-26"
+},
+{
+  "_id": {
+    "$oid": "680b7cc1628559401a812020"
+  },
+  "session": "Snacks",
+  "main_dish_rating": 4,
+  "side_dish_rating": 5,
+  "overall_rating": 5,
+  "review": "Loved the spice",
+  "mess": "Veg Mess",
+  "date": "2025-04-26"
+},
+{
+  "_id": {
+    "$oid": "680b7cc1628559401a812021"
+  },
+  "session": "Dinner",
+  "main_dish_rating": 5,
+  "side_dish_rating": 4,
+  "overall_rating": 5,
+  "review": "Chicken curry 🔥",
+  "mess": "Veg Mess",
+  "date": "2025-04-26"
+},
+{
+  "_id": {
+    "$oid": "680b7cc1628559401a812022"
+  },
+  "session": "Dinner",
+  "main_dish_rating": 3,
+  "side_dish_rating": 3,
+  "overall_rating": 3,
+  "review": "Standard meal",
+  "mess": "Veg Mess",
+  "date": "2025-04-26"
+},
+{
+  "_id": {
+    "$oid": "680b7cc1628559401a812023"
+  },
+  "session": "Dinner",
+  "main_dish_rating": 5,
+  "side_dish_rating": 5,
+  "overall_rating": 5,
+  "review": "Delicious!",
+  "mess": "Veg Mess",
+  "date": "2025-04-26"
+},
+{
+  "_id": {
+    "$oid": "680b7cc1628559401a812024"
+  },
+  "session": "Dinner",
+  "main_dish_rating": 2,
+  "side_dish_rating": 3,
+  "overall_rating": 2,
+  "review": "Not hot",
+  "mess": "Veg Mess",
+  "date": "2025-04-26"
+},
+{
+  "_id": {
+    "$oid": "680b7cc1628559401a812025"
+  },
+  "session": "Dinner",
+  "main_dish_rating": 4,
+  "side_dish_rating": 3,
+  "overall_rating": 4,
+  "review": "Good curry",
+  "mess": "Veg Mess",
+  "date": "2025-04-26"
+},
+{
+  "_id": {
+    "$oid": "680b7cc1628559401a812026"
+  },
+  "session": "Dinner",
+  "main_dish_rating": 3,
+  "side_dish_rating": 2,
+  "overall_rating": 3,
+  "review": "Okay",
+  "mess": "Veg Mess",
+  "date": "2025-04-26"
+},
+{
+  "_id": {
+    "$oid": "680b7cc1628559401a812027"
+  },
+  "session": "Dinner",
+  "main_dish_rating": 4,
+  "side_dish_rating": 4,
+  "overall_rating": 5,
+  "review": "Fantastic!",
+  "mess": "Veg Mess",
+  "date": "2025-04-26"
+},
+{
+  "_id": {
+    "$oid": "680b7cc1628559401a812028"
+  },
+  "session": "Dinner",
+  "main_dish_rating": 2,
+  "side_dish_rating": 2,
+  "overall_rating": 2,
+  "review": "Bland",
+  "mess": "Veg Mess",
+  "date": "2025-04-26"
+},
+{
+  "_id": {
+    "$oid": "680b7cc1628559401a812029"
+  },
+  "session": "Dinner",
+  "main_dish_rating": 3,
+  "side_dish_rating": 3,
+  "overall_rating": 3,
+  "review": "Average meal",
+  "mess": "Veg Mess",
+  "date": "2025-04-26"
+},
+{
+  "_id": {
+    "$oid": "680b7cc1628559401a81202a"
+  },
+  "session": "Dinner",
+  "main_dish_rating": 5,
+  "side_dish_rating": 5,
+  "overall_rating": 5,
+  "review": "Delicious meal!",
+  "mess": "Veg Mess",
+  "date": "2025-04-26"
+},
+{
+  "_id": {
+    "$oid": "680b7cf3628559401a81202c"
+  },
+  "session": "Breakfast",
+  "main_dish_rating": 4,
+  "side_dish_rating": 4,
+  "overall_rating": 4,
+  "review": "The breakfast served was quite satisfying. The main dish was flavorful, and the side dish complemented the meal perfectly. The food was fresh, and the temperature was just right, making for an enjoyable start to the day. Although I feel the portion could be a little larger, the overall experience was positive.",
+  "mess": "NV Mess",
+  "date": "2025-04-26"
+},
+{
+  "_id": {
+    "$oid": "680b7cf3628559401a81202d"
+  },
+  "session": "Breakfast",
+  "main_dish_rating": 3,
+  "side_dish_rating": 3,
+  "overall_rating": 3,
+  "review": "While the breakfast items were adequately prepared, I felt the meal lacked the necessary seasoning to enhance its flavor. The main dish was average, and the side dish did not stand out. The meal served its purpose, but it did not leave a lasting impression. The quality was acceptable, but improvements could be made to the seasoning and presentation.",
+  "mess": "NV Mess",
+  "date": "2025-04-26"
+},
+{
+  "_id": {
+    "$oid": "680b7cf3628559401a81202e"
+  },
+  "session": "Breakfast",
+  "main_dish_rating": 5,
+  "side_dish_rating": 5,
+  "overall_rating": 5,
+  "review": "I thoroughly enjoyed the breakfast this morning. The main dish was prepared to perfection, and the flavors were well balanced. The side dish was equally satisfying, with a delightful texture and taste. The presentation of the meal was aesthetically pleasing, and it was evident that a lot of care went into the preparation. This breakfast exceeded my expectations, and I would gladly have it again.",
+  "mess": "NV Mess",
+  "date": "2025-04-26"
+},
+{
+  "_id": {
+    "$oid": "680b7cf3628559401a81202f"
+  },
+  "session": "Breakfast",
+  "main_dish_rating": 2,
+  "side_dish_rating": 2,
+  "overall_rating": 2,
+  "review": "Unfortunately, I was disappointed with the breakfast today. The main dish lacked flavor, and the side dish was underwhelming. The food felt bland and did not meet my expectations for the first meal of the day. The temperature of the food was acceptable, but it failed to excite the taste buds. I would recommend some adjustments to the seasoning and variety to enhance the overall dining experience.",
+  "mess": "NV Mess",
+  "date": "2025-04-26"
+},
+{
+  "_id": {
+    "$oid": "680b7cf3628559401a812030"
+  },
+  "session": "Breakfast",
+  "main_dish_rating": 3,
+  "side_dish_rating": 4,
+  "overall_rating": 4,
+  "review": "The breakfast meal was quite good overall. The main dish was decent but could have used a little more spice. However, the side dish was excellent, with great flavor and texture. I enjoyed the combination of the two, though I would suggest improving the variety of dishes offered for breakfast to provide a more diverse selection. The meal was filling and satisfying, but some improvements in flavor would elevate the experience further.",
+  "mess": "NV Mess",
+  "date": "2025-04-26"
+},
+{
+  "_id": {
+    "$oid": "680b7cf3628559401a812031"
+  },
+  "session": "Breakfast",
+  "main_dish_rating": 5,
+  "side_dish_rating": 5,
+  "overall_rating": 5,
+  "review": "This breakfast was an absolute delight. The main dish was expertly crafted, offering a delightful mix of flavors that were perfectly balanced. The side dish was equally impressive, with a freshness and flavor profile that complemented the main dish beautifully. The temperature was ideal, and the presentation was aesthetically pleasing. I truly enjoyed the meal, and it was an excellent way to start the day. I would highly recommend this breakfast to others.",
+  "mess": "NV Mess",
+  "date": "2025-04-26"
+},
+{
+  "_id": {
+    "$oid": "680b7cf3628559401a812032"
+  },
+  "session": "Breakfast",
+  "main_dish_rating": 3,
+  "side_dish_rating": 3,
+  "overall_rating": 3,
+  "review": "The breakfast was decent but did not stand out. The main dish was okay, but I found it to be a bit bland. The side dish was better, offering a bit more flavor, but it still left me wanting more. Overall, it was a satisfactory breakfast but nothing remarkable. With a bit more attention to seasoning and diversity, I believe it could be greatly improved.",
+  "mess": "NV Mess",
+  "date": "2025-04-26"
+},
+{
+  "_id": {
+    "$oid": "680b7cf3628559401a812033"
+  },
+  "session": "Breakfast",
+  "main_dish_rating": 4,
+  "side_dish_rating": 4,
+  "overall_rating": 4,
+  "review": "This breakfast exceeded my expectations. The main dish was flavorful and well-prepared, with the right level of seasoning. The side dish was a nice complement, providing a refreshing balance to the meal. Although the portion size was slightly smaller than I anticipated, the food was tasty and fresh, and it made for a fulfilling breakfast. I look forward to having a similar experience in the future.",
+  "mess": "NV Mess",
+  "date": "2025-04-26"
+},
+{
+  "_id": {
+    "$oid": "680b7cf3628559401a812034"
+  },
+  "session": "Breakfast",
+  "main_dish_rating": 2,
+  "side_dish_rating": 1,
+  "overall_rating": 2,
+  "review": "The breakfast meal was a letdown. The main dish lacked seasoning, and the side dish was overcooked, leaving a dry and unpleasant texture. The flavors were unbalanced, and the meal did not provide a satisfying experience. I was hoping for a better breakfast, especially in terms of variety and flavor. I suggest improving the preparation and quality of both the main and side dishes for a more enjoyable breakfast.",
+  "mess": "NV Mess",
+  "date": "2025-04-26"
+},
+{
+  "_id": {
+    "$oid": "680b7cf3628559401a812035"
+  },
+  "session": "Breakfast",
+  "main_dish_rating": 3,
+  "side_dish_rating": 3,
+  "overall_rating": 3,
+  "review": "The breakfast was adequate but lacked the excitement I was hoping for. The main dish was good, though it could have used a little more seasoning, and the side dish was decent as well. However, the overall flavor profile didn’t quite come together in a way that would make me crave it again. It was a fulfilling meal, but it didn’t offer anything exceptional. A little more creativity in the flavors would make this meal stand out more.",
+  "mess": "NV Mess",
+  "date": "2025-04-26"
+},
+{
+  "_id": {
+    "$oid": "680b7cf3628559401a812036"
+  },
+  "session": "Lunch",
+  "main_dish_rating": 5,
+  "side_dish_rating": 5,
+  "overall_rating": 5,
+  "review": "The lunch served today was exceptional. The main dish was flavorful, well-seasoned, and cooked to perfection, while the side dish added a delightful contrast in texture and flavor. The portions were generous, and the temperature was just right. I appreciate the balance of flavors and the effort put into preparing such a well-rounded meal. I would highly recommend this lunch to anyone.",
+  "mess": "NV Mess",
+  "date": "2025-04-26"
+},
+{
+  "_id": {
+    "$oid": "680b7cf3628559401a812037"
+  },
+  "session": "Lunch",
+  "main_dish_rating": 4,
+  "side_dish_rating": 3,
+  "overall_rating": 4,
+  "review": "Lunch was quite enjoyable. The main dish had great flavor, and the side dish was decent, although a bit too salty for my taste. Overall, the meal was satisfying and fulfilling. I felt the balance between the two components could have been improved, but it was still a good lunch. I would like to see more variety in the sides next time.",
+  "mess": "NV Mess",
+  "date": "2025-04-26"
+},
+{
+  "_id": {
+    "$oid": "680b7cf3628559401a812038"
+  },
+  "session": "Lunch",
+  "main_dish_rating": 3,
+  "side_dish_rating": 2,
+  "overall_rating": 2,
+  "review": "Lunch did not meet my expectations today. The main dish was rather bland, and the side dish did not have much flavor either. The meal felt somewhat heavy, and I would have appreciated more seasoning and variety. I would suggest a better balance of spices and a more diverse menu in the future to make the meal more enjoyable.",
+  "mess": "NV Mess",
+  "date": "2025-04-26"
+},
+{
+  "_id": {
+    "$oid": "680b7cf3628559401a812039"
+  },
+  "session": "Lunch",
+  "main_dish_rating": 5,
+  "side_dish_rating": 5,
+  "overall_rating": 5,
+  "review": "I thoroughly enjoyed the lunch today. The main dish was full of rich flavors and was perfectly balanced. The side dish was equally excellent, with a unique flavor profile that complemented the main dish beautifully. The meal was served at an ideal temperature, and the portion size was generous. Overall, it was a delightful lunch that I would happily have again.",
+  "mess": "NV Mess",
+  "date": "2025-04-26"
+},
+{
+  "_id": {
+    "$oid": "680b7cf3628559401a81203a"
+  },
+  "session": "Lunch",
+  "main_dish_rating": 4,
+  "side_dish_rating": 4,
+  "overall_rating": 4,
+  "review": "Lunch today was good, but there is still room for improvement. The main dish was delicious and flavorful, and the side dish was well-prepared, though a little less seasoning would have been perfect. Overall, the meal was satisfying and fulfilling, but I think more attention to the seasoning in the sides could elevate the experience.",
+  "mess": "NV Mess",
+  "date": "2025-04-26"
+},
+{
+  "_id": {
+    "$oid": "680b7cf3628559401a81203b"
+  },
+  "session": "Lunch",
+  "main_dish_rating": 2,
+  "side_dish_rating": 2,
+  "overall_rating": 2,
+  "review": "Unfortunately, the lunch was quite disappointing. The main dish lacked flavor and was overcooked, while the side dish was bland and tasteless. The overall meal felt heavy and lacked the necessary balance. The food quality needs significant improvement, as the lunch was neither satisfying nor enjoyable. I suggest working on the seasoning and preparation for better meals in the future.",
+  "mess": "NV Mess",
+  "date": "2025-04-26"
+},
+{
+  "_id": {
+    "$oid": "680b7cf3628559401a81203c"
+  },
+  "session": "Lunch",
+  "main_dish_rating": 3,
+  "side_dish_rating": 4,
+  "overall_rating": 3,
+  "review": "The lunch meal was adequate, though I feel it could use some improvement. The main dish was decent but lacked a bit of flavor. The side dish, however, was quite tasty and provided a good contrast to the main dish. The meal could benefit from more seasoning, and the portions could be a bit larger. Overall, it was a good lunch, but there is potential for improvement.",
+  "mess": "NV Mess",
+  "date": "2025-04-26"
+},
+{
+  "_id": {
+    "$oid": "680b7cf3628559401a81203d"
+  },
+  "session": "Lunch",
+  "main_dish_rating": 4,
+  "side_dish_rating": 3,
+  "overall_rating": 4,
+  "review": "I found lunch to be quite enjoyable today. The main dish had a pleasant flavor, and the side dish was tasty, though I felt it could have been a little more creative. The meal was well-balanced overall, and the portions were generous. The food was served at a good temperature and was satisfying. I would love to see a little more innovation in the sides next time.",
+  "mess": "NV Mess",
+  "date": "2025-04-26"
+},
+{
+  "_id": {
+    "$oid": "680b7d57628559401a81203f"
+  },
+  "session": "Breakfast",
+  "main_dish_rating": 4,
+  "side_dish_rating": 4,
+  "overall_rating": 4,
+  "review": "The breakfast provided today was quite enjoyable. The main dish was flavorful and well-prepared, although it could have benefitted from a touch more seasoning. The side dish offered a nice balance in terms of texture and flavor. Overall, it was a satisfying meal that left me feeling ready to take on the day. A bit more variety in the offerings would make it even better.",
+  "mess": "PG Mess",
+  "date": "2025-04-26"
+},
+{
+  "_id": {
+    "$oid": "680b7d57628559401a812040"
+  },
+  "session": "Breakfast",
+  "main_dish_rating": 3,
+  "side_dish_rating": 3,
+  "overall_rating": 3,
+  "review": "The breakfast was fairly average today. While the main dish was decent, it lacked the robust flavor I was hoping for. The side dish, while okay, was not particularly memorable. It was a satisfactory meal to start the day, but nothing exceptional. I believe a little more seasoning and better presentation would elevate this breakfast.",
+  "mess": "PG Mess",
+  "date": "2025-04-26"
+},
+{
+  "_id": {
+    "$oid": "680b7d57628559401a812041"
+  },
+  "session": "Breakfast",
+  "main_dish_rating": 5,
+  "side_dish_rating": 5,
+  "overall_rating": 5,
+  "review": "Today's breakfast was nothing short of excellent. The main dish was beautifully prepared, with a well-balanced mix of flavors that were both bold and comforting. The side dish was equally outstanding, adding the perfect texture and taste to the meal. The meal was fresh, served at the right temperature, and left me thoroughly satisfied. I highly recommend it.",
+  "mess": "PG Mess",
+  "date": "2025-04-26"
+},
+{
+  "_id": {
+    "$oid": "680b7d57628559401a812042"
+  },
+  "session": "Breakfast",
+  "main_dish_rating": 2,
+  "side_dish_rating": 2,
+  "overall_rating": 2,
+  "review": "Unfortunately, I was not impressed with the breakfast today. The main dish was bland and underseasoned, and the side dish did not provide much in terms of flavor. The overall experience was disappointing, as the food did not excite the taste buds. A more flavorful and creative approach would greatly improve the breakfast offerings.",
+  "mess": "PG Mess",
+  "date": "2025-04-26"
+},
+{
+  "_id": {
+    "$oid": "680b7d57628559401a812043"
+  },
+  "session": "Breakfast",
+  "main_dish_rating": 4,
+  "side_dish_rating": 4,
+  "overall_rating": 4,
+  "review": "I found the breakfast quite enjoyable today. The main dish was flavorful and satisfying, although it could have used a bit more spice. The side dish was a nice addition, with great flavor and texture. I appreciated the effort put into preparing the meal, and the presentation was well done. With a little more seasoning and variety, it could be even better.",
+  "mess": "PG Mess",
+  "date": "2025-04-26"
+},
+{
+  "_id": {
+    "$oid": "680b7d57628559401a812044"
+  },
+  "session": "Breakfast",
+  "main_dish_rating": 5,
+  "side_dish_rating": 5,
+  "overall_rating": 5,
+  "review": "The breakfast served today was absolutely fantastic. The main dish was rich in flavor and perfectly cooked, while the side dish provided a wonderful contrast in both flavor and texture. The meal was fresh, well-balanced, and exceeded my expectations. The portion size was perfect, and I felt satisfied without being overly full. This was an excellent start to the day.",
+  "mess": "PG Mess",
+  "date": "2025-04-26"
+},
+{
+  "_id": {
+    "$oid": "680b7d57628559401a812045"
+  },
+  "session": "Breakfast",
+  "main_dish_rating": 3,
+  "side_dish_rating": 3,
+  "overall_rating": 3,
+  "review": "The breakfast meal was adequate but could use some improvement. The main dish was decent, though I felt it lacked flavor. The side dish was good, but it was a bit too salty for my taste. While the meal was filling, I think the overall flavor profile could be enhanced with more careful seasoning and variety.",
+  "mess": "PG Mess",
+  "date": "2025-04-26"
+},
+{
+  "_id": {
+    "$oid": "680b7d57628559401a812046"
+  },
+  "session": "Breakfast",
+  "main_dish_rating": 2,
+  "side_dish_rating": 3,
+  "overall_rating": 2,
+  "review": "Breakfast was quite disappointing today. The main dish was undercooked and lacked seasoning, which made it quite unappealing. The side dish, while better, still didn't provide the satisfaction I was hoping for. The meal lacked balance and left me feeling unsatisfied. I would recommend revisiting the preparation and seasoning to enhance the quality.",
+  "mess": "PG Mess",
+  "date": "2025-04-26"
+},
+{
+  "_id": {
+    "$oid": "680b7d57628559401a812047"
+  },
+  "session": "Breakfast",
+  "main_dish_rating": 4,
+  "side_dish_rating": 4,
+  "overall_rating": 4,
+  "review": "The breakfast was generally enjoyable, with the main dish being flavorful and the side dish providing a nice balance in flavor and texture. It was clear that attention was paid to preparation, and the meal was served fresh. While I enjoyed it overall, I think adding more variety or seasonal options could elevate the experience even further.",
+  "mess": "PG Mess",
+  "date": "2025-04-26"
+},
+{
+  "_id": {
+    "$oid": "680b7d57628559401a812048"
+  },
+  "session": "Breakfast",
+  "main_dish_rating": 3,
+  "side_dish_rating": 3,
+  "overall_rating": 3,
+  "review": "The breakfast today was fine, but it did not stand out. The main dish was decent but lacked seasoning and flavor. The side dish was a little better, providing some variety to the meal. However, both items could use more creativity and flavor to make the breakfast more exciting and enjoyable. It was a decent start to the day, but not a memorable one.",
+  "mess": "PG Mess",
+  "date": "2025-04-26"
+},
+{
+  "_id": {
+    "$oid": "680b7d57628559401a812049"
+  },
+  "session": "Lunch",
+  "main_dish_rating": 5,
+  "side_dish_rating": 5,
+  "overall_rating": 5,
+  "review": "Lunch today was a delightful experience. The main dish was expertly seasoned, with a perfect balance of flavors that made every bite enjoyable. The side dish was equally excellent, offering a satisfying contrast. The portion sizes were generous, and the meal was fresh and served at the right temperature. I thoroughly enjoyed every aspect of this lunch.",
+  "mess": "PG Mess",
+  "date": "2025-04-26"
+},
+{
+  "_id": {
+    "$oid": "680b7d57628559401a81204a"
+  },
+  "session": "Lunch",
+  "main_dish_rating": 4,
+  "side_dish_rating": 3,
+  "overall_rating": 4,
+  "review": "The lunch was satisfying, though it could have been more flavorful. The main dish had good seasoning, but I felt it could have been enhanced with a bit more depth. The side dish was decent, though not as flavorful as I would have liked. Overall, it was a fulfilling meal, but I would recommend improving the variety of sides to complement the main dish better.",
+  "mess": "PG Mess",
+  "date": "2025-04-26"
+},
+{
+  "_id": {
+    "$oid": "680b7d57628559401a81204b"
+  },
+  "session": "Lunch",
+  "main_dish_rating": 3,
+  "side_dish_rating": 2,
+  "overall_rating": 3,
+  "review": "While the lunch was adequate, it did not meet my expectations. The main dish lacked a strong flavor, and the side dish was too bland. The meal felt heavy and not particularly satisfying. I would suggest improving the seasoning and offering more flavorful side options to enhance the overall lunch experience.",
+  "mess": "PG Mess",
+  "date": "2025-04-26"
+},
+{
+  "_id": {
+    "$oid": "680b7d57628559401a81204c"
+  },
+  "session": "Lunch",
+  "main_dish_rating": 5,
+  "side_dish_rating": 5,
+  "overall_rating": 5,
+  "review": "Lunch today was absolutely delicious. The main dish was perfectly seasoned and cooked to perfection, while the side dish added a delightful contrast in flavor. The meal was fresh and served at an ideal temperature. The balance of flavors and textures made this one of the best lunches I’ve had in a while. Highly recommended.",
+  "mess": "PG Mess",
+  "date": "2025-04-26"
+},
+{
+  "_id": {
+    "$oid": "680b7d57628559401a81204d"
+  },
+  "session": "Lunch",
+  "main_dish_rating": 4,
+  "side_dish_rating": 4,
+  "overall_rating": 4,
+  "review": "I enjoyed lunch today, but it could be improved with a bit more variety. The main dish was flavorful and satisfying, while the side dish was well-prepared and nicely complemented the main dish. However, I felt the meal could have been more creative in terms of flavor combinations. Overall, a great meal, but some more experimentation could take it to the next level.",
+  "mess": "PG Mess",
+  "date": "2025-04-26"
+},
+{
+  "_id": {
+    "$oid": "680b7d57628559401a81204e"
+  },
+  "session": "Lunch",
+  "main_dish_rating": 2,
+  "side_dish_rating": 3,
+  "overall_rating": 2,
+  "review": "Lunch was underwhelming today. The main dish lacked flavor, and the side dish, while better, still didn’t provide the excitement I was hoping for. The meal was not as satisfying as I expected, and it felt a bit bland. I would recommend improving the seasoning and perhaps offering more variety in the menu to make it more enjoyable.",
+  "mess": "PG Mess",
+  "date": "2025-04-26"
+},
+{
+  "_id": {
+    "$oid": "680b7d57628559401a81204f"
+  },
+  "session": "Lunch",
+  "main_dish_rating": 3,
+  "side_dish_rating": 3,
+  "overall_rating": 3,
+  "review": "The lunch was decent but didn’t stand out. The main dish was okay but lacked strong flavors, and the side dish was not as memorable as I would have liked. The meal was filling, but I think there is room for improvement in terms of flavor and variety. Overall, it was a satisfactory meal, but I expected a bit more.",
+  "mess": "PG Mess",
+  "date": "2025-04-26"
+},
+{
+  "_id": {
+    "$oid": "680b7d57628559401a812050"
+  },
+  "session": "Lunch",
+  "main_dish_rating": 4,
+  "side_dish_rating": 4,
+  "overall_rating": 4,
+  "review": "Lunch today was quite enjoyable. The main dish was flavorful and well-prepared, and the side dish complemented it nicely. The portion size was generous, and the meal was satisfying overall. While the meal was good, there is room for more variety in the sides to enhance the overall experience.",
+  "mess": "PG Mess",
+  "date": "2025-04-26"
+},
+{
+  "_id": {
+    "$oid": "680b7dab628559401a812052"
+  },
+  "session": "Snacks",
+  "main_dish_rating": 4,
+  "side_dish_rating": 4,
+  "overall_rating": 4,
+  "review": "The snacks today were very satisfying. The main dish was delicious, with a nice balance of flavors that weren't overwhelming. The side dish, while simple, complemented the main dish well. I appreciated the fresh ingredients and how the meal was presented. A little more variety in the snacks would enhance the experience, but overall, it was a great option to bridge the gap between meals.",
+  "mess": "PG Mess",
+  "date": "2025-04-26"
+},
+{
+  "_id": {
+    "$oid": "680b7dab628559401a812053"
+  },
+  "session": "Snacks",
+  "main_dish_rating": 3,
+  "side_dish_rating": 3,
+  "overall_rating": 3,
+  "review": "The snacks were decent but lacked the impact I was hoping for. The main dish was acceptable but could use a bit more seasoning or creativity. The side dish, while fine, didn’t offer much in terms of flavor contrast. The snacks provided a filling option, but I believe they could be enhanced with a bit more variety and more robust flavors.",
+  "mess": "PG Mess",
+  "date": "2025-04-26"
+},
+{
+  "_id": {
+    "$oid": "680b7dab628559401a812054"
+  },
+  "session": "Snacks",
+  "main_dish_rating": 5,
+  "side_dish_rating": 5,
+  "overall_rating": 5,
+  "review": "Today's snacks were absolutely fantastic. The main dish was full of flavor, well-cooked, and packed with all the right spices. The side dish provided the perfect contrast, both in texture and taste. The overall balance of flavors was excellent, and the meal was perfectly satisfying. I would definitely recommend these snacks to anyone looking for a delightful and filling treat.",
+  "mess": "PG Mess",
+  "date": "2025-04-26"
+},
+{
+  "_id": {
+    "$oid": "680b7dab628559401a812055"
+  },
+  "session": "Snacks",
+  "main_dish_rating": 2,
+  "side_dish_rating": 3,
+  "overall_rating": 2,
+  "review": "Unfortunately, the snacks today didn’t meet expectations. The main dish was rather bland and lacked seasoning, which made it less enjoyable. The side dish, while better, still didn’t do much to elevate the overall meal. It was a very basic offering that didn’t provide much satisfaction. I would suggest improving the seasoning and perhaps adding some variety to the snack options.",
+  "mess": "PG Mess",
+  "date": "2025-04-26"
+},
+{
+  "_id": {
+    "$oid": "680b7dab628559401a812056"
+  },
+  "session": "Snacks",
+  "main_dish_rating": 3,
+  "side_dish_rating": 4,
+  "overall_rating": 3,
+  "review": "The snacks were fairly good, though not spectacular. The main dish had potential but was a little too simple in terms of flavor. The side dish was excellent, providing a nice balance to the main dish. The snack overall was satisfying, but I think adding more creativity and variety to the options would improve the experience.",
+  "mess": "PG Mess",
+  "date": "2025-04-26"
+},
+{
+  "_id": {
+    "$oid": "680b7dab628559401a812057"
+  },
+  "session": "Snacks",
+  "main_dish_rating": 4,
+  "side_dish_rating": 4,
+  "overall_rating": 4,
+  "review": "The snacks were enjoyable, and the main dish was tasty, though it could have been a bit more inventive. The side dish was delicious and complemented the main dish perfectly. Overall, it was a solid snack experience, and I’d love to see more variety in the upcoming snack options to keep it interesting.",
+  "mess": "PG Mess",
+  "date": "2025-04-26"
+},
+{
+  "_id": {
+    "$oid": "680b7dab628559401a812058"
+  },
+  "session": "Snacks",
+  "main_dish_rating": 5,
+  "side_dish_rating": 5,
+  "overall_rating": 5,
+  "review": "I thoroughly enjoyed today's snacks. The main dish was perfectly seasoned, and every bite was full of flavor. The side dish was a great accompaniment, providing a different texture and flavor profile that enhanced the overall meal. Everything was fresh and satisfying, and it made for a delightful snack. I hope to see more of this in the future!",
+  "mess": "PG Mess",
+  "date": "2025-04-26"
+},
+{
+  "_id": {
+    "$oid": "680b7dab628559401a812059"
+  },
+  "session": "Snacks",
+  "main_dish_rating": 2,
+  "side_dish_rating": 3,
+  "overall_rating": 2,
+  "review": "The snacks were not up to par today. The main dish was bland, and there wasn’t much flavor to make it stand out. The side dish was better but still didn’t add enough to make the meal enjoyable. I think a little more seasoning and creative flair would improve the overall experience.",
+  "mess": "PG Mess",
+  "date": "2025-04-26"
+},
+{
+  "_id": {
+    "$oid": "680b7dab628559401a81205a"
+  },
+  "session": "Snacks",
+  "main_dish_rating": 3,
+  "side_dish_rating": 3,
+  "overall_rating": 3,
+  "review": "The snacks were decent, but nothing special. The main dish had a good base but lacked seasoning, and the side dish, while fine, didn’t add much in terms of excitement. The meal served its purpose but didn’t offer anything particularly noteworthy. I think more variety and a bolder flavor profile could elevate the snack experience.",
+  "mess": "PG Mess",
+  "date": "2025-04-26"
+},
+{
+  "_id": {
+    "$oid": "680b7dab628559401a81205b"
+  },
+  "session": "Snacks",
+  "main_dish_rating": 4,
+  "side_dish_rating": 4,
+  "overall_rating": 4,
+  "review": "The snacks today were quite tasty. The main dish had a pleasant flavor and was cooked just right, though it could have used a bit more seasoning. The side dish was fresh and provided a nice contrast in flavor. It was a solid snack overall, but a little more variety would make it even better.",
+  "mess": "PG Mess",
+  "date": "2025-04-26"
+},
+{
+  "_id": {
+    "$oid": "680b7dab628559401a81205c"
+  },
+  "session": "Dinner",
+  "main_dish_rating": 5,
+  "side_dish_rating": 5,
+  "overall_rating": 5,
+  "review": "Dinner was a superb experience today. The main dish was perfectly cooked, with rich and balanced flavors that made every bite enjoyable. The side dish added an interesting contrast, both in flavor and texture. The portion sizes were generous, and the food was served at the ideal temperature. It was a satisfying end to the day, and I would definitely recommend this dinner.",
+  "mess": "PG Mess",
+  "date": "2025-04-26"
+},
+{
+  "_id": {
+    "$oid": "680b7dab628559401a81205d"
+  },
+  "session": "Dinner",
+  "main_dish_rating": 4,
+  "side_dish_rating": 4,
+  "overall_rating": 4,
+  "review": "The dinner was satisfying, though not perfect. The main dish was flavorful, but I felt it could have been a little more innovative. The side dish was well-prepared and complemented the main dish, but it was slightly lacking in terms of variety. Overall, it was a good dinner, but I would love to see more creativity in the side dishes for a more exciting meal.",
+  "mess": "PG Mess",
+  "date": "2025-04-26"
+},
+{
+  "_id": {
+    "$oid": "680b7dab628559401a81205e"
+  },
+  "session": "Dinner",
+  "main_dish_rating": 3,
+  "side_dish_rating": 3,
+  "overall_rating": 3,
+  "review": "Dinner was average today. The main dish was decent but lacked the richness I expected. The side dish was passable, but nothing special. The meal could benefit from more seasoning and a bit more creativity in the flavor combinations. It wasn’t bad, but it wasn’t memorable either.",
+  "mess": "PG Mess",
+  "date": "2025-04-26"
+},
+{
+  "_id": {
+    "$oid": "680b7dab628559401a81205f"
+  },
+  "session": "Dinner",
+  "main_dish_rating": 5,
+  "side_dish_rating": 5,
+  "overall_rating": 5,
+  "review": "Dinner was truly outstanding today. The main dish had fantastic flavor and was cooked to perfection, with each ingredient contributing to a rich, harmonious taste. The side dish was equally impressive, providing a perfect balance of flavor and texture. It was a complete meal that left me feeling fully satisfied. Highly recommended!",
+  "mess": "PG Mess",
+  "date": "2025-04-26"
+},
+{
+  "_id": {
+    "$oid": "680b7dab628559401a812060"
+  },
+  "session": "Dinner",
+  "main_dish_rating": 4,
+  "side_dish_rating": 4,
+  "overall_rating": 4,
+  "review": "I enjoyed dinner, but I felt the main dish could have been a bit more flavorful. It was still good and well-prepared, but I was expecting a bit more depth. The side dish was excellent, though, and provided a nice contrast to the main dish. Overall, it was a solid dinner, but I would love to see a bit more innovation in the main dish.",
+  "mess": "PG Mess",
+  "date": "2025-04-26"
+},
+{
+  "_id": {
+    "$oid": "680b7dab628559401a812061"
+  },
+  "session": "Dinner",
+  "main_dish_rating": 3,
+  "side_dish_rating": 3,
+  "overall_rating": 3,
+  "review": "Dinner today was decent, but it did not exceed expectations. The main dish was okay but lacked strong flavors. The side dish, while fine, didn’t offer much in terms of excitement or variety. It was filling, but not particularly memorable. A little more attention to flavor balance and creativity would make a big difference.",
+  "mess": "PG Mess",
+  "date": "2025-04-26"
+},
+{
+  "_id": {
+    "$oid": "680b7ee397fe1aa88fe4e54c"
+  },
+  "session": "Lunch",
+  "main_dish_rating": 1,
+  "side_dish_rating": 1,
+  "overall_rating": 1,
+  "review": "Worst food I have Ever Ate in my Life.\nPlease Cook Properly.\nEverything was halfcooked",
+  "mess": "Veg Mess",
+  "date": "2025-04-25"
+}]

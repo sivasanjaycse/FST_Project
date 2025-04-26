@@ -1,0 +1,190 @@
+[{
+  "_id": {
+    "$oid": "6807cf914985a541cd32b20f"
+  },
+  "date": "2025-03-26",
+  "session": "Breakfast",
+  "totalCost": "1550.00"
+},
+{
+  "_id": {
+    "$oid": "6807cf914985a541cd32b210"
+  },
+  "date": "2025-03-29",
+  "session": "Lunch",
+  "totalCost": "4340.75"
+},
+{
+  "_id": {
+    "$oid": "6807cf914985a541cd32b211"
+  },
+  "date": "2025-03-29",
+  "session": "Breakfast",
+  "totalCost": "1394.68"
+},
+{
+  "_id": {
+    "$oid": "6807cf914985a541cd32b212"
+  },
+  "date": "2025-03-29",
+  "session": "Snacks",
+  "totalCost": "2000.00"
+},
+{
+  "_id": {
+    "$oid": "6807cf914985a541cd32b213"
+  },
+  "date": "2025-03-29",
+  "session": "Dinner",
+  "totalCost": "1900.75"
+},
+{
+  "_id": {
+    "$oid": "6807cf914985a541cd32b214"
+  },
+  "date": "2025-04-18",
+  "session": "Breakfast",
+  "totalCost": "1050.00"
+},
+{
+  "_id": {
+    "$oid": "6807cf914985a541cd32b215"
+  },
+  "date": "2025-04-18",
+  "session": "Lunch",
+  "totalCost": "210.00"
+},
+{
+  "_id": {
+    "$oid": "6807cf914985a541cd32b216"
+  },
+  "date": "2025-04-21",
+  "session": "Breakfast",
+  "totalCost": "630.00"
+},
+{
+  "_id": {
+    "$oid": "6807d17a66defd80526e5962"
+  },
+  "date": "2025-04-22",
+  "session": "Breakfast",
+  "totalCost": "5471.00",
+  "mess": "NV Mess"
+},
+{
+  "_id": {
+    "$oid": "6807d79dd6a30ad6ecba6391"
+  },
+  "date": "2025-04-22",
+  "session": "Snacks",
+  "totalCost": "3000.00",
+  "mess": "NV Mess"
+},
+{
+  "_id": {
+    "$oid": "6807d7a6d6a30ad6ecba6392"
+  },
+  "date": "2025-04-22",
+  "session": "Lunch",
+  "totalCost": "1000.00",
+  "mess": "NV Mess"
+},
+{
+  "_id": {
+    "$oid": "6807d7aed6a30ad6ecba6393"
+  },
+  "date": "2025-04-22",
+  "session": "Dinner",
+  "totalCost": "1000.00",
+  "mess": "NV Mess"
+},
+{
+  "_id": {
+    "$oid": "680b84e067d69b7ac09d2b50"
+  },
+  "date": "2025-04-25",
+  "session": "Breakfast",
+  "totalCost": "2320.00",
+  "mess": "PG Mess"
+},
+{
+  "_id": {
+    "$oid": "680b84e667d69b7ac09d2b51"
+  },
+  "date": "2025-04-25",
+  "session": "Lunch",
+  "totalCost": "4000.00",
+  "mess": "PG Mess"
+},
+{
+  "_id": {
+    "$oid": "680b84ed67d69b7ac09d2b52"
+  },
+  "date": "2025-04-25",
+  "session": "Snacks",
+  "totalCost": "2545.00",
+  "mess": "PG Mess"
+},
+{
+  "_id": {
+    "$oid": "680b84f467d69b7ac09d2b53"
+  },
+  "date": "2025-04-25",
+  "session": "Dinner",
+  "totalCost": "2000.00",
+  "mess": "PG Mess"
+},
+{
+  "_id": {
+    "$oid": "680b857967d69b7ac09d2b58"
+  },
+  "date": "2025-04-25",
+  "session": "Breakfast",
+  "totalCost": "1800.00",
+  "mess": "Veg Mess"
+},
+{
+  "_id": {
+    "$oid": "680b858067d69b7ac09d2b59"
+  },
+  "date": "2025-04-25",
+  "session": "Lunch",
+  "totalCost": "1920.00",
+  "mess": "Veg Mess"
+},
+{
+  "_id": {
+    "$oid": "680b85a167d69b7ac09d2b5a"
+  },
+  "date": "2025-04-25",
+  "session": "Snacks",
+  "totalCost": "6941.05",
+  "mess": "Veg Mess"
+},
+{
+  "_id": {
+    "$oid": "680b85b667d69b7ac09d2b5b"
+  },
+  "date": "2025-04-25",
+  "session": "Dinner",
+  "totalCost": "9543.95",
+  "mess": "Veg Mess"
+},
+{
+  "_id": {
+    "$oid": "680c94fea8d6c326857e73b8"
+  },
+  "date": "2025-04-26",
+  "session": "Lunch",
+  "totalCost": "1150.00",
+  "mess": "Veg Mess"
+},
+{
+  "_id": {
+    "$oid": "680ca27d3894e56d1acd47ff"
+  },
+  "date": "2025-04-26",
+  "session": "Snacks",
+  "totalCost": "1200.00",
+  "mess": "PG Mess"
+}]

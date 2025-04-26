@@ -1,0 +1,40 @@
+[{
+  "_id": {
+    "$oid": "68068edae568c10ea3c53a2c"
+  },
+  "rollno": "12345",
+  "name": "John Doe",
+  "current_mess": "Veg",
+  "changing_mess": "Non Veg",
+  "status": "Approved"
+},
+{
+  "_id": {
+    "$oid": "68068edae568c10ea3c53a2d"
+  },
+  "rollno": "12395",
+  "name": "Ram Doe",
+  "current_mess": "Veg",
+  "changing_mess": "Non Veg",
+  "status": "Approved"
+},
+{
+  "_id": {
+    "$oid": "68068edae568c10ea3c53a2e"
+  },
+  "rollno": "67890",
+  "name": "Jane Smith",
+  "current_mess": "Non Veg",
+  "changing_mess": "Veg",
+  "status": "Approved"
+},
+{
+  "_id": {
+    "$oid": "680cf12017fb3d8ad279bc94"
+  },
+  "rollno": "301",
+  "name": "Swasthik",
+  "current_mess": "PG Mess",
+  "changing_mess": "PG Mess",
+  "status": "Approval Pending"
+}]

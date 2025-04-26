@@ -1,0 +1,168 @@
+[{
+  "_id": "6807c8dd4985a541cd32b1f4",
+  "day": "Monday",
+  "breakfast": "Channa",
+  "lunch": "Rice & Dal",
+  "dinner": "Chapati & Curry",
+  "mess": "NV Mess"
+},
+{
+  "_id": "6807c8dd4985a541cd32b1f5",
+  "day": "Tuesday",
+  "breakfast": "Poha",
+  "lunch": "Rajma & Rice",
+  "dinner": "Dosa & Chutney",
+  "mess": "NV Mess"
+},
+{
+  "_id": "6807c8dd4985a541cd32b1f6",
+  "day": "Wednesday",
+  "breakfast": "Upma",
+  "lunch": " Chicken Briyani",
+  "dinner": "Noodles",
+  "mess": "NV Mess"
+},
+{
+  "_id": "6807c8dd4985a541cd32b1f7",
+  "day": "Thursday",
+  "breakfast": "Puri & Bhaji",
+  "lunch": "Katli",
+  "dinner": "Pav Bhaji",
+  "mess": "NV Mess"
+},
+{
+  "_id": "6807c8dd4985a541cd32b1f8",
+  "day": "Friday",
+  "breakfast": "Aloo Paratha",
+  "lunch": "Mutton Briyani",
+  "dinner": "Biryani and Curd Rice",
+  "mess": "NV Mess"
+},
+{
+  "_id": "6807c8dd4985a541cd32b1f9",
+  "day": "Saturday",
+  "breakfast": "Uttapam",
+  "lunch": "Veg Thali",
+  "dinner": "Dal Khichdi",
+  "mess": "NV Mess"
+},
+{
+  "_id": "6807c8dd4985a541cd32b1fa",
+  "day": "Sunday",
+  "breakfast": "Dhokla",
+  "lunch": "Fried Rice",
+  "dinner": "Pasta",
+  "mess": "NV Mess"
+},
+{
+  "_id": "6807cbe04985a541cd32b204",
+  "day": "Monday",
+  "breakfast": "Channa",
+  "lunch": "Rice & Dal",
+  "dinner": "Chapati & Curry",
+  "mess": "Veg Mess"
+},
+{
+  "_id": "6807cbe04985a541cd32b205",
+  "day": "Tuesday",
+  "breakfast": "Poha",
+  "lunch": "Rajma & Rice",
+  "dinner": "Dosa & Chutney",
+  "mess": "Veg Mess"
+},
+{
+  "_id": "6807cbe04985a541cd32b206",
+  "day": "Wednesday",
+  "breakfast": "Upma",
+  "lunch": "Briyani",
+  "dinner": "Noodles",
+  "mess": "Veg Mess"
+},
+{
+  "_id": "6807cbe04985a541cd32b207",
+  "day": "Thursday",
+  "breakfast": "Puri & Bhaji",
+  "lunch": "Dosa",
+  "dinner": "Pav Bhaji",
+  "mess": "Veg Mess"
+},
+{
+  "_id": "6807cbe04985a541cd32b208",
+  "day": "Friday",
+  "breakfast": "Aloo Paratha",
+  "lunch": "Idly with Tomato Curry",
+  "dinner": "Biryani",
+  "mess": "Veg Mess"
+},
+{
+  "_id": "6807cbe04985a541cd32b209",
+  "day": "Saturday",
+  "breakfast": "Uttapam",
+  "lunch": "Veg Thali",
+  "dinner": "Dal Khichdi",
+  "mess": "Veg Mess"
+},
+{
+  "_id": "6807cbe04985a541cd32b20a",
+  "day": "Sunday",
+  "breakfast": "Dhokla",
+  "lunch": "Fried Rice",
+  "dinner": "Pasta",
+  "mess": "Veg Mess"
+},
+{
+  "_id": "6807cb824985a541cd32b1fc",
+  "day": "Monday",
+  "breakfast": "Channa",
+  "lunch": "Rice & Dal",
+  "dinner": "Chapati & Curry",
+  "mess": "PG Mess"
+},
+{
+  "_id": "6807cb824985a541cd32b1fd",
+  "day": "Tuesday",
+  "breakfast": "Poha",
+  "lunch": "Rajma & Rice",
+  "dinner": "Dosa & Chutney",
+  "mess": "PG Mess"
+},
+{
+  "_id": "6807cb824985a541cd32b1fe",
+  "day": "Wednesday",
+  "breakfast": "Upma",
+  "lunch": "Briyani",
+  "dinner": "Noodles",
+  "mess": "PG Mess"
+},
+{
+  "_id": "6807cb824985a541cd32b1ff",
+  "day": "Thursday",
+  "breakfast": "Puri & Bhaji",
+  "lunch": "Dosa",
+  "dinner": "Pav Bhaji",
+  "mess": "PG Mess"
+},
+{
+  "_id": "6807cb824985a541cd32b200",
+  "day": "Friday",
+  "breakfast": "Aloo Paratha",
+  "lunch": "Paneer Pulao",
+  "dinner": "Biryani",
+  "mess": "PG Mess"
+},
+{
+  "_id": "6807cb824985a541cd32b201",
+  "day": "Saturday",
+  "breakfast": "Uttapam",
+  "lunch": "Veg Thali",
+  "dinner": "Dal Khichdi",
+  "mess": "PG Mess"
+},
+{
+  "_id": "6807cb824985a541cd32b202",
+  "day": "Sunday",
+  "breakfast": "Dhokla",
+  "lunch": "Pulao",
+  "dinner": "Pasta",
+  "mess": "PG Mess"
+}]

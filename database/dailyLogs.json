@@ -1,0 +1,267 @@
+[{
+  "_id": {
+    "$oid": "68067d9ce568c10ea3c53999"
+  },
+  "date": "2025-03-15",
+  "session": "breakfast",
+  "studentCount": 50
+},
+{
+  "_id": {
+    "$oid": "68067d9ce568c10ea3c5399a"
+  },
+  "date": "2025-03-15",
+  "session": "lunch",
+  "studentCount": 100
+},
+{
+  "_id": {
+    "$oid": "68067d9ce568c10ea3c5399b"
+  },
+  "date": "2025-03-15",
+  "session": "snacks",
+  "studentCount": 70
+},
+{
+  "_id": {
+    "$oid": "68067d9ce568c10ea3c5399c"
+  },
+  "date": "2025-03-15",
+  "session": "dinner",
+  "studentCount": 90
+},
+{
+  "_id": {
+    "$oid": "68067d9ce568c10ea3c5399d"
+  },
+  "date": "2025-03-17",
+  "session": "lunch",
+  "studentCount": 23
+},
+{
+  "_id": {
+    "$oid": "68067d9ce568c10ea3c5399e"
+  },
+  "date": "2025-03-17",
+  "session": "breakfast",
+  "studentCount": 23
+},
+{
+  "_id": {
+    "$oid": "68067d9ce568c10ea3c5399f"
+  },
+  "date": "2025-03-29",
+  "session": "lunch",
+  "studentCount": 200
+},
+{
+  "_id": {
+    "$oid": "68067d9ce568c10ea3c539a0"
+  },
+  "date": "2025-03-29",
+  "session": "breakfast",
+  "studentCount": 210
+},
+{
+  "_id": {
+    "$oid": "68067d9ce568c10ea3c539a1"
+  },
+  "date": "2025-03-29",
+  "session": "snacks",
+  "studentCount": 125
+},
+{
+  "_id": {
+    "$oid": "68067d9ce568c10ea3c539a2"
+  },
+  "date": "2025-03-29",
+  "session": "dinner",
+  "studentCount": 250
+},
+{
+  "_id": {
+    "$oid": "68067d9ce568c10ea3c539a3"
+  },
+  "date": "2025-04-21",
+  "session": "breakfast",
+  "studentCount": 55
+},
+{
+  "_id": {
+    "$oid": "68067d9ce568c10ea3c539a4"
+  },
+  "date": "2025-04-21",
+  "session": "lunch",
+  "studentCount": 55
+},
+{
+  "_id": {
+    "$oid": "68067f32b89e2d150b57adc2"
+  },
+  "date": "2025-04-21",
+  "session": "breakfast",
+  "studentCount": 23,
+  "mess": "Veg Mess"
+},
+{
+  "_id": {
+    "$oid": "68067f6fb89e2d150b57adc3"
+  },
+  "date": "2025-04-21",
+  "session": "snacks",
+  "studentCount": 34,
+  "mess": "Veg Mess"
+},
+{
+  "_id": {
+    "$oid": "68067fb0b89e2d150b57adc4"
+  },
+  "date": "2025-04-21",
+  "session": "lunch",
+  "studentCount": 45,
+  "mess": "Veg Mess"
+},
+{
+  "_id": {
+    "$oid": "68067fe9b89e2d150b57adc5"
+  },
+  "date": "2025-04-21",
+  "session": "lunch",
+  "studentCount": 23,
+  "mess": "PG Mess"
+},
+{
+  "_id": {
+    "$oid": "6807d50e7f39da116d9e14a3"
+  },
+  "date": "2025-04-22",
+  "session": "breakfast",
+  "studentCount": 25,
+  "mess": "NV Mess"
+},
+{
+  "_id": {
+    "$oid": "6807d729d6a30ad6ecba638c"
+  },
+  "date": "2025-04-22",
+  "session": "lunch",
+  "studentCount": 43,
+  "mess": "NV Mess"
+},
+{
+  "_id": {
+    "$oid": "6807d730d6a30ad6ecba638d"
+  },
+  "date": "2025-04-22",
+  "session": "snacks",
+  "studentCount": 56,
+  "mess": "NV Mess"
+},
+{
+  "_id": {
+    "$oid": "6807d73bd6a30ad6ecba638e"
+  },
+  "date": "2025-04-22",
+  "session": "dinner",
+  "studentCount": 78,
+  "mess": "NV Mess"
+},
+{
+  "_id": {
+    "$oid": "680b853567d69b7ac09d2b54"
+  },
+  "date": "2025-04-25",
+  "session": "breakfast",
+  "studentCount": 78,
+  "mess": "PG Mess"
+},
+{
+  "_id": {
+    "$oid": "680b853d67d69b7ac09d2b55"
+  },
+  "date": "2025-04-25",
+  "session": "lunch",
+  "studentCount": 98,
+  "mess": "PG Mess"
+},
+{
+  "_id": {
+    "$oid": "680b854667d69b7ac09d2b56"
+  },
+  "date": "2025-04-25",
+  "session": "snacks",
+  "studentCount": 50,
+  "mess": "PG Mess"
+},
+{
+  "_id": {
+    "$oid": "680b855167d69b7ac09d2b57"
+  },
+  "date": "2025-04-25",
+  "session": "dinner",
+  "studentCount": 23,
+  "mess": "PG Mess"
+},
+{
+  "_id": {
+    "$oid": "680b85d867d69b7ac09d2b5c"
+  },
+  "date": "2025-04-25",
+  "session": "breakfast",
+  "studentCount": 80,
+  "mess": "Veg Mess"
+},
+{
+  "_id": {
+    "$oid": "680b85e067d69b7ac09d2b5d"
+  },
+  "date": "2025-04-25",
+  "session": "lunch",
+  "studentCount": 120,
+  "mess": "Veg Mess"
+},
+{
+  "_id": {
+    "$oid": "680b861867d69b7ac09d2b5e"
+  },
+  "date": "2025-04-25",
+  "session": "snacks",
+  "studentCount": 120,
+  "mess": "Veg Mess"
+},
+{
+  "_id": {
+    "$oid": "680b861f67d69b7ac09d2b5f"
+  },
+  "date": "2025-04-25",
+  "session": "dinner",
+  "studentCount": 200,
+  "mess": "Veg Mess"
+},
+{
+  "_id": {
+    "$oid": "680c94b2a8d6c326857e73b6"
+  },
+  "date": "2025-04-26",
+  "session": "breakfast",
+  "studentCount": 70,
+  "mess": "Veg Mess"
+},
+{
+  "_id": {
+    "$oid": "680c94c2a8d6c326857e73b7"
+  },
+  "date": "2025-04-26",
+  "session": "lunch",
+  "studentCount": 120,
+  "mess": "Veg Mess"
+},
+{
+  "_id": {
+    "$oid": "680ca2323894e56d1acd47fe"
+  },
+  "date": "2025-04-26",
+  "session": "breakfast",
+  "studentCount": 100,
+  "mess": "PG Mess"
+}]

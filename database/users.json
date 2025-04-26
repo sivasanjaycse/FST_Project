@@ -1,0 +1,70 @@
+[{
+  "_id": {
+    "$oid": "680268a372db53547a275f88"
+  },
+  "usrid": 1,
+  "user": "admin",
+  "password": "admin",
+  "role": "admin",
+  "mess": null
+},
+{
+  "_id": {
+    "$oid": "680b799397fe1aa88fe4e546"
+  },
+  "usrid": 1001,
+  "user": "Gokul",
+  "password": "gokul",
+  "role": "supervisor",
+  "mess": "Veg Mess"
+},
+{
+  "_id": {
+    "$oid": "680b79a897fe1aa88fe4e547"
+  },
+  "usrid": 1002,
+  "user": "Jawahar",
+  "password": "jawahar",
+  "role": "supervisor",
+  "mess": "PG Mess"
+},
+{
+  "_id": {
+    "$oid": "680b79c197fe1aa88fe4e548"
+  },
+  "usrid": 1003,
+  "user": "Shanmugam",
+  "password": "shnamugam",
+  "role": "supervisor",
+  "mess": "NV Mess"
+},
+{
+  "_id": {
+    "$oid": "680b79ff97fe1aa88fe4e549"
+  },
+  "usrid": 301,
+  "user": "Swasthik",
+  "password": "swasthik",
+  "role": "student",
+  "mess": "PG Mess"
+},
+{
+  "_id": {
+    "$oid": "680b7a1997fe1aa88fe4e54a"
+  },
+  "usrid": 2023103302,
+  "user": "Suriya Prakash",
+  "password": "suriya",
+  "role": "student",
+  "mess": "NV Mess"
+},
+{
+  "_id": {
+    "$oid": "680c8c4aed7cc5b97ece3699"
+  },
+  "usrid": 2023103527,
+  "user": "Deepak",
+  "password": "deepak",
+  "role": "student",
+  "mess": "NV Mess"
+}]
